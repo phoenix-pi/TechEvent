@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function notAllowedAction()
     {
-        return $this->render('@News/Default/index.html.twig');
+        return $this->render('@News/Default/notAllowed.html.twig');
     }
 }

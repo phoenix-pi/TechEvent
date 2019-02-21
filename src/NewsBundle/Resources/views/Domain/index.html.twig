@@ -1,0 +1,106 @@
+{% extends app.user.hasRole('ROLE_ADMIN')  ? 'backoffice.html.twig' : '@News/Default/notAllowed.html.twig'%}
+{% block admin_name %}{{ app.user.firstName }}{% endblock %}
+{% block admin_last_name %}{{ app.user.lastName }}{% endblock %}
+{% block news_tache %}
+    <li>
+        <a href="{{ path('news_domain_homepage') }}">Domain</a>
+    </li>
+    <li>
+        <a href="#">Articles</a>
+    </li>
+    <li>
+        <a href="#">Subscribers</a>
+    </li>
+    <li>
+        <a href="#">Newsletters</a>
+    </li>
+{% endblock %}
+{% block content %}
+    <div class="col-lg-12">
+        <h2>Domains</h2>
+        <hr>
+    </div>
+    {% if domain_del is defined %}
+    <div class="col-lg-4 bg-light card-body">
+        <h5>Delete Domain</h5>
+        <hr>
+        <div class="alert bg-white">
+            <form method="post" action="{{ path('news_domain_delete',{'id':domain_del.id_domain}) }}">
+            <p>Are you sure you want to delete <strong>{{ domain_del.name_domain }}</strong> ?</p>
+            <div class="alert center-block align-content-center">
+                <a href="{{ path('news_domain_homepage') }}" class="btn btn-xs btn-secondary pull-right">Cancel</a>
+                <button class="btn btn-xs btn-danger pull-right">Delete</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    {% elseif not domain is defined  %}
+        <div class="col-lg-4 bg-light card-body">
+            <div>
+                <form class="navbar-form" role="search" method="post" action="{{ path('news_domain_search') }}">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="query" >
+                        <div class="input-group-btn">
+                            <button class="btn btn-dark" type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <hr>
+        <h5>Add New Domain</h5>
+        <form method="post">
+            <div class="form-group row">
+                <label for="text" class="col-12 col-form-label">Name</label>
+                <div class="col-12">
+                    <input id="text" name="nom" class="form-control here" type="text" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12">
+                    <button name="submit" type="submit" class="btn btn-primary btn-sm">Add New Domain</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% elseif domain is defined %}
+        <div class="col-lg-4 bg-light card-body">
+
+            <h5>Update Domain</h5>
+            <form method="post" action="{{ path('news_domain_update',{'id':domain.id_domain}) }}">
+                <div class="form-group row">
+                    <label for="text" class="col-12 col-form-label">Name</label>
+                    <div class="col-12">
+                        <input id="text" name="nom" class="form-control here" type="text" value="{{ domain.name_domain }}" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12">
+                        <button name="submit" type="submit" class="btn btn-primary btn-sm">Update Domain</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    {% endif %}
+    <div class="col-lg-8">
+            <table class="table table-hover " id="myTable">
+                <thead class="bg-light ">
+                <tr>
+                    <th style="width: 60%">Name</th>
+                    <th style="width: 20%">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {%  for domain in domains %}
+                <tr>
+                    <td>{{ domain.name_domain }}</td>
+                    <td>
+                        <a href="{{ path('news_domain_update',{'id':domain.id_domain}) }}"><i class="fa fa-edit"></i> Edit </a>
+                        <a href="{{ path('news_domain_delete',{'id':domain.id_domain}) }}"><i class="fa fa-trash"></i> Delete </a>
+                    </td>
+                </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+{% endblock %}

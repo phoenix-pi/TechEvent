@@ -1,5 +1,21 @@
-news_homepage:
-    path:     /
+news_notAllowed:
+    path:     /notAllowed
+    defaults: { _controller: NewsBundle:Default:NotAllowed }
+
+news_domain_homepage:
+    path:     /domain/
     defaults: { _controller: NewsBundle:Domain:index }
+
+news_domain_delete:
+    path:     /domain/delete/{id}
+    defaults: { _controller: NewsBundle:Domain:delete }
+
+news_domain_update:
+    path:     domain/update/{id}
+    defaults: { _controller: NewsBundle:Domain:update }
+
+news_domain_search:
+    path:     domain/search
+    defaults: { _controller: NewsBundle:Domain:search }
 
 
