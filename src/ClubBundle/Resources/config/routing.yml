@@ -1,3 +1,33 @@
-club_homepage:
-    path:     /
-    defaults: { _controller: ClubBundle:Default:index }
+clubs_managment_homepage:
+    path:     /clubs
+    defaults: { _controller: ClubBundle:Clubs:afficherClub }
+AdminClub:
+    path:     /admin/club
+    defaults: { _controller: ClubBundle:Clubs:AdminClub }
+My_Club:
+    path:     /clubs/MyClub
+    defaults: { _controller: ClubBundle:Clubs:ClubPage }
+Join_us:
+    path:     /clubs/joinUs
+    defaults: { _controller: ClubBundle:Clubs:JoinUs }
+
+create:
+    path:     /create
+    defaults: { _controller: ClubBundle:Clubs:create }
+
+Status:
+    path:     /refuse/{id}
+    defaults: { _controller: ClubBundle:Clubs:StatusClub }
+
+
+
+
+Theme_create:
+    path:     /admin/theme
+    defaults: { _controller: ClubBundle:Theme:create }
+Theme_del:
+    path:     /admin/theme/del{id}
+    defaults: { _controller: ClubBundle:Theme:delete }
+Theme_ed:
+    path:     /admin/theme/edit{id}
+    defaults: { _controller: ClubBundle:Theme:update }
