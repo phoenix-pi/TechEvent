@@ -1,0 +1,11 @@
+tech_event_homepage:
+    path:     /
+    defaults: { _controller: TechEventBundle:User:index }
+
+tech_event_homepage_user:
+    path:     /user/
+    defaults: { _controller: TechEventBundle:User:UserRedirect }
+
+tech_event_homepage_admin:
+    path:     /admin/
+    defaults: { _controller: TechEventBundle:User:AdminRedirect }

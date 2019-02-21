@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="{{ asset('backoffice/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('backoffice/css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('backoffice/css/jquery.mCustomScrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('backoffice/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('backoffice/css/sidebar-themes.css') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('backoffice/img/favicon.png') }}" />
+</head>
+
+<body>
+<div class="page-wrapper default-theme sidebar-bg bg1 toggled">
+    <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+            <!-- sidebar-brand  -->
+            <div class="sidebar-item sidebar-brand">
+                <a href="#">Admin Dashboard</a>
+            </div>
+            <!-- sidebar-header  -->
+            <div class="sidebar-item sidebar-header d-flex flex-nowrap">
+                <div class="user-pic">
+                    <img class="img-responsive img-rounded" src="{% block admin_img %}{{ asset('backoffice/img/user.jpg') }}{% endblock %}" alt="User picture">
+                </div>
+                <div class="user-info">
+                        <span class="user-name">{% block admin_name %}Jhon{% endblock %}
+                            <strong>{% block admin_last_name %}Smith{% endblock %}</strong>
+                        </span>
+                    <span class="user-status">
+                            <i class="fa fa-circle"></i>
+                            <span>Online</span>
+                        </span>
+                </div>
+            </div>
+            <div class="sidebar-item sidebar-menu">
+                <ul>
+                    <li class="header-menu">
+                        <span>General</span>
+                    </li>
+                    <li class="sidebar">
+                        <a href="{{ path('tech_event_homepage_admin') }}">
+                            <i class="fa fa-tachometer-alt"></i>
+                            <span class="menu-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fa fa-user"></i>
+                            <span class="menu-text">Users</span>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                {% block user_tache %}
+                                    <li>
+                                        <a href="#">Products </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Orders</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Credit cart</a>
+                                    </li>
+                                {% endblock %}
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fa fa-users"></i>
+                            <span class="menu-text">Events</span>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                {% block event_tache %}
+                                <li>
+                                    <a href="#">Products </a>
+                                </li>
+                                <li>
+                                    <a href="#">Orders</a>
+                                </li>
+                                <li>
+                                    <a href="#">Credit cart</a>
+                                </li>
+                                {% endblock %}
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="far fa-gem"></i>
+                            <span class="menu-text">Clubs</span>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                {% block club_tache %}
+                                <li>
+                                    <a href="#">General</a>
+                                </li>
+                                <li>
+                                    <a href="#">Panels</a>
+                                </li>
+                                <li>
+                                    <a href="#">Tables</a>
+                                </li>
+                                {% endblock %}
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fa fa-newspaper"></i>
+                            <span class="menu-text">News</span>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                {% block news_tache %}
+                                <li>
+                                    <a href="#">Pie chart</a>
+                                </li>
+                                <li>
+                                    <a href="#">Line chart</a>
+                                </li>
+                                <li>
+                                    <a href="#">Bar chart</a>
+                                </li>
+                                <li>
+                                    <a href="#">Histogram</a>
+                                </li>
+                                {% endblock %}
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header-menu">
+                        <span>Extra</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-book"></i>
+                            <span class="menu-text">Reports</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-star"></i>
+                            <span class="menu-text">VIP Request</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- sidebar-menu  -->
+        </div>
+        <!-- sidebar-footer  -->
+        <div class="sidebar-footer">
+            <div>
+                <a href="#">
+                    <i class="fa fa-cog"></i>
+                </a>
+            </div>
+            <div>
+                <a href="{{ path('fos_user_security_logout') }}">
+                    <i class="fa fa-power-off"></i>
+                </a>
+            </div>
+            <div class="pinned-footer">
+                <a href="#">
+                    <i class="fas fa-ellipsis-h"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- page-content  -->
+    <main class="page-content pt-2">
+        <div id="overlay" class="overlay"></div>
+        <div class="container-fluid p-5">
+            <div class="row">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </main>
+    <!-- page-content" -->
+</div>
+<!-- page-wrapper -->
+
+<script src="{{ asset('backoffice/js/jquery.min.js') }}"></script>
+<script src="{{ asset('backoffice/js/popper.min.js') }}" ></script>
+<script src="{{ asset('backoffice/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('backoffice/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+<script src="{{ asset('backoffice/js/main.js') }}"></script>
+</body>
+
+</html>

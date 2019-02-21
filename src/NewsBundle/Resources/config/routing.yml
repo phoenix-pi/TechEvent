@@ -1,0 +1,5 @@
+news_homepage:
+    path:     /
+    defaults: { _controller: NewsBundle:Domain:index }
+
+

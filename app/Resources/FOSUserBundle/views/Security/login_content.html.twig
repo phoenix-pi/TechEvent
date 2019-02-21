@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <header class="card-header">
+                    <a href="{{ path('fos_user_registration_register') }}" class="float-right btn btn-outline-primary mt-1">Sign in</a>
+                    <h4 class="card-title mt-2">Login</h4>
+                </header>
+                <article class="card-body">
+                    <form role="form" action="{{ path("fos_user_security_check") }}" method="post">
+                        <div class="form-group">
+                            <label for="_username">Username or email</label>
+                            <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="_password">Password </label>
+                            <input type="password" class="form-control" id="password" name="_password" required="required" autocomplete="current-password">
+                        </div>
+                        <div class="form-group">
+                            {% if error %}
+                                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="remember_me" name="_remember_me" value="on">Remember Me
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-info" id="_submit" name="_submit">Log in</button>
+                        </div>
+                    </form>
+                </article> <!-- card-body end .// -->
+                <div class="border-top card-body text-center">Don't have an account? <a href="{{ path('fos_user_registration_register') }}">Create one</a></div>
+            </div> <!-- card.// -->
+        </div> <!-- col.//-->
+    </div> <!-- row.//-->
+</div>
+<!--container end.//-->

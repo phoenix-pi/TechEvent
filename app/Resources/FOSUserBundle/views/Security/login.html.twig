@@ -1,0 +1,10 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block title %}Log in{% endblock %}
+{% block fos_user_content %}
+{% if not app.user %}
+    {{ include('@FOSUser/Security/login_content.html.twig') }}
+{% endif %}
+{% if app.user %}
+    {{ render(path('tech_event_homepage')) }}
+{% endif %}
+{% endblock fos_user_content %}

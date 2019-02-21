@@ -1,0 +1,10 @@
+{% if app.user %}
+    {% if app.user.hasRole('ROLE_ADMIN') %}
+        {{ render(path('tech_event_homepage_admin')) }}
+    {% else %}
+        {{ render(path('tech_event_homepage_user')) }}
+    {% endif %}
+{% endif %}
+{% if not app.user %}
+    {{ render(path('tech_event_homepage_user')) }}
+{% endif %}
