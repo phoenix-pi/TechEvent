@@ -1,28 +1,35 @@
 {% extends 'base.html.twig' %}
 {% block content %}
+    <link rel="stylesheet" href="{{ asset('Clubs/css/flip.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('Clubs/css/search.css') }}"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 <section class="category-section spad">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 order-2 order-lg-1">
                 <div class="filter-widget">
                     <h1 class="fw-title">Clubs</h1>
-                    <form action="" method="GET">
+                    <form  method="post" action="{{ path('FindClub') }}">
                                 <div class="input-group">
                                                 <form action="" class="search-form">
                                                     <div class="form-group has-feedback">
                                                         <label for="search" class="sr-only">Search</label>
-                                                        <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                                                        <input type="text" class="form-control" name="query" id="search" placeholder="search">
                                                         <span class="glyphicon glyphicon-search form-control-feedback"></span>
                                                     </div>
                                                 </form>
                                 </div>
-
-
                     </form>
                     <ul class="category-menu">
-                        <li><a href="#">Categories</a>
+                        <li><a href="#">Themes</a>
                             <ul class="sub-menu">
-                                <li><a href="#">Internet Of Things</a></li>
+                                {% for th in theme %}
+                                <li><a href="{{ path('FindClub') }}" name="query">{{ th.theme_name }}</a></li>
+                                {% endfor %}
                                 <li><a href="#">Artificial intelligence</a></li>
                                 <li><a href="#">Development</a></li>
                                 <li><a href="#">Hacking</a></li>
@@ -53,41 +60,19 @@
                                 <div class="card">
                                     <div class="card-body text-center">
                                         <p><img class=" img-fluid" src="{{ asset('Clubs/img/9c565b5031b48eb96b549e9cb4817b45.png') }}" alt="card image"></p>
-                                        <h4 class="card-title">{{ c.clubName }}</h4>
-                                        <p class="card-text">{{ c.email}}</p>
-                                        <p class="card-text">{{ c.facebook}}</p>
-                                        <p class="card-text">{{ c.logo}}</p>
-                                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                        <h4 class="card-title"><b>Club Name: </b> {{ c.club_Name }}</h4>
+                                        <p class="card-text"><b>Logo: </b>{{ c.logo}}</p>
+                                        <p class="card-text"><b>Email: </b>{{ c.email}}</p>
+                                        <p class="card-text"><b>Facebook: </b>{{ c.facebook}}</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="backside">
                                 <div class="card">
-                                    <div class="card-body text-center">
-                                        <h4 class="card-title">{{ c.clubName }}</h4>
-                                        <p class="card-text">{{ c.clubDescription }}</p>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-skype"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-google"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title"><b>Club Name:  </b> {{ c.club_Name }}</h4> </br> </br>
+                                        <p class="card-text"><b> Club Description: </b> </br> </br>{{ c.club_description}}</p> </br> </br>
+
                                         <ul class="list-inline">
 
                                             <li class="list-inline-item">
@@ -98,13 +83,13 @@
                                     </div>
                                 </div>
                             </div>
+
+                            </div>
                         </div>
                     </div>
-                </div>
                 {% endfor %}
 
-
-            </div>
+</div>
 
 
 
@@ -117,55 +102,6 @@
         </div>
     </div>
 </section>
-{% block create_club %}
 
-    <div class="modal fade" id="CreateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"><h3 class="panel-title"><strong>Create your Club</strong></h3></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <form method="post">
-
-
-                                    <label for="ClubName">ClubName </label>
-                                    <input type="text" class="form-control" name="ClubName"/><br><br>
-
-
-
-                                    <label for="Logo">Logo </label>
-                                    <input type="text" class="form-control" name="Logo"/><br><br>
-
-
-                                    <label for="email">email </label>
-                                    <input type="text" class="form-control" name="email"/><br><br>
-
-
-                                    <label for="Facebook">Facebook </label>
-                                    <input type="text" class="form-control" name="Facebook"/><br><br>
-
-
-                                <label for="ClubDescription">ClubDescription</label>
-                                <input type="text" class="form-control" name="ClubDescription"/><br><br>
-
-                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-dark">Submit</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-{% endblock %}
 
 {% endblock %}

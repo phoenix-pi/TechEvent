@@ -12,7 +12,7 @@ namespace TechEventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ClubBundle\Repository\ClubRepository")
  * @ORM\Table(name="club")
  */
 class Club
@@ -39,11 +39,11 @@ class Club
      */private $facebook;
     /**
      * @ORM\Column(type="string")
-     */private $club_status;
+     */private $club_status="Waiting";
 
     /**
-     * @ORM\ManyToOne(targetEntity="theme")
-     * @ORM\JoinColumn(name="theme_id", referencedColumnName="id_theme")
+     * @ORM\ManyToOne(targetEntity="Theme")
+     * @ORM\JoinColumn(name="theme_id", referencedColumnName="id_theme",nullable=true)
      */
      private $theme;
 
@@ -135,7 +135,7 @@ class Club
     }
 
     /**
-     * @ORM\ManyToOne(targetEntity="user")
+     * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="owner_id", referencedColumnName="id")
      */
     private $owner;

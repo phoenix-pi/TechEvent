@@ -10,8 +10,8 @@
             <h5>Delete Theme</h5>
             <hr>
             <div class="alert bg-white">
-                <form method="post" action="{{ path('Theme_del',{'id':theme_del.idTheme}) }}">
-                    <p>Are you sure you want to delete <strong>{{ theme_del.themeName }}</strong> ?</p>
+                <form method="post" action="{{ path('Theme_del',{'id':theme_del.id_Theme}) }}">
+                    <p>Are you sure you want to delete <strong>{{ theme_del.theme_Name }}</strong> ?</p>
                     <div class="alert center-block align-content-center">
                         <a href="{{ path('Theme_create') }}" class="btn btn-xs btn-secondary pull-right">Cancel</a>
                         <button class="btn btn-xs btn-danger pull-right">Delete</button>
@@ -38,11 +38,11 @@
         <div class="col-lg-4 bg-light card-body">
 
             <h5>Update Theme</h5>
-            <form method="post" action="{{ path('Theme_ed',{'id':theme_ed.idTheme}) }}">
+            <form method="post" action="{{ path('Theme_ed',{'id':theme_ed.id_Theme}) }}">
                 <div class="form-group row">
                     <label for="text" class="col-12 col-form-label">Name</label>
                     <div class="col-12">
-                        <input id="text" name="name" class="form-control here" type="text" value="{{ theme_ed.themeName }}" required>
+                        <input id="text" name="name" class="form-control here" type="text" value="{{ theme_ed.theme_Name }}" required>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -64,10 +64,10 @@
             <tbody>
             {%  for th in themes %}
                 <tr>
-                    <td>{{th.themeName  }}</td>
+                    <td>{{th.theme_Name  }}</td>
                     <td>
-                        <a href="{{ path('Theme_ed',{'id':th.idTheme}) }}"><i class="fa fa-edit"></i> Edit</a>
-                        <a href="{{ path('Theme_del',{'id':th.idTheme}) }}"><i class="fa fa-trash"></i> Delete</a>
+                        <a href="{{ path('Theme_ed',{'id':th.id_Theme}) }}"><i class="fa fa-edit"></i> Edit</a>
+                        <a href="{{ path('Theme_del',{'id':th.id_Theme}) }}"><i class="fa fa-trash"></i> Delete</a>
                     </td>
                 </tr>
             {% endfor %}

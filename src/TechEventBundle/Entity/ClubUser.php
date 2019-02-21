@@ -27,7 +27,7 @@ class ClubUser
     private $id_club_user;
     /**
      * @ORM\Column(type="string")
-     */private $club_user_status;
+     */private $club_user_status="Waiting";
     /**
      * @ORM\Column(type="string")
      */private $why;
@@ -39,14 +39,14 @@ class ClubUser
      */private $skills;
 
     /**
-     * @ORM\ManyToOne(targetEntity="user")
+     * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="member_id", referencedColumnName="id")
      */
     private $member;
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="club")
+     * @ORM\ManyToOne(targetEntity="Club")
      * @ORM\JoinColumn(name="club_id", referencedColumnName="id_club")
      */
     private $club;

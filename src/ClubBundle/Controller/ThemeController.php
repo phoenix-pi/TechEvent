@@ -19,7 +19,7 @@ class ThemeController extends Controller
     {
         if($request->isMethod('POST')) {
             $theme = new Theme();
-            $theme->setThemeName($request->get('name'));
+            $theme->setTheme_Name($request->get('name'));
             $em=$this->getDoctrine()->getManager();
             $em->persist($theme);
             $em->flush();
@@ -48,7 +48,7 @@ class ThemeController extends Controller
         $em = $this->getDoctrine()->getManager();
         $theme_ed=$em->getRepository(Theme::class)->find($id);
         if ($request->isMethod('POST')) {
-            $theme_ed->setName_Domain($request->get('name'));
+            $theme_ed->setTheme_Name($request->get('name'));
             $em->flush();
             return $this->redirectToRoute('Theme_create');
         }

@@ -9,7 +9,7 @@ My_Club:
     defaults: { _controller: ClubBundle:Clubs:ClubPage }
 Join_us:
     path:     /clubs/joinUs
-    defaults: { _controller: ClubBundle:Clubs:JoinUs }
+    defaults: { _controller: ClubBundle:Clubs:Join }
 
 create:
     path:     /create
@@ -18,6 +18,9 @@ create:
 Status:
     path:     /refuse/{id}
     defaults: { _controller: ClubBundle:Clubs:StatusClub }
+FindClub:
+    path:     /Find
+    defaults: { _controller: ClubBundle:Clubs:findClub }
 
 
 
