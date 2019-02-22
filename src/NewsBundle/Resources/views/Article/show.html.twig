@@ -1,0 +1,114 @@
+{% extends app.user.hasRole('ROLE_ADMIN')  ? 'backoffice.html.twig' : '@News/Default/notAllowed.html.twig'%}
+{% block admin_name %}{{ app.user.firstName }}{% endblock %}
+{% block admin_last_name %}{{ app.user.lastName }}{% endblock %}
+{% block news_tache %}
+    <li>
+        <a href="{{ path('news_domain_homepage') }}">Domain</a>
+    </li>
+    <li>
+        <a href="{{ path('news_article_show') }}">Articles</a>
+    </li>
+    <li>
+        <a href="#">Subscribers</a>
+    </li>
+    <li>
+        <a href="#">Newsletters</a>
+    </li>
+{% endblock %}
+{% block content %}
+
+    <style type="text/css">
+        img {width:100%;}
+    </style>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-2 border-right">
+                <h3>List of News</h3>
+            </div>
+            <div class="col-md-10">
+                <div class="container">
+                    <div class="row float-right">
+                        <div class="col-sm-12 pull-center well ">
+                            <form class="form-inline" action="{{ path('news_article_search') }}" method="POST">
+                                <select name="domain" class="form-control">
+                                    <option value="any">Select domain</option>
+                                    {% for d in domains %}
+                                        <option value="{{ d.id_domain }}">{{ d.name_domain }}</option>
+                                    {% endfor %}
+                                </select>
+                                <select name="orderBy" class="form-control">
+                                    <option value="any">Order by</option>
+                                    <option value="views_number">Number of views</option>
+                                    <option value="date_of_publish">Date of publish</option>
+                                </select>
+                                <div class="input-group custom-search-form">
+                                    <input type="text" name="keyword" class="form-control" placeholder="Search...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-success" type="submit">Search</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 border-right">
+                    <a href="{{ path('news_article_add') }}"><button type="button" class="btn btn-md btn-primary float-right">Add New</button></a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row mb-2">
+                    {% for a in articles %}
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img src="{{ a.image }}">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="card-body">
+                                            <div class="news-content">
+                                                <a href="{{ path('news_article_showOne',{'id':a.id_article}) }}"><h2>{{ a.title_article }}</h2></a>
+                                                <p>{{ a.content_article|length > 200 ?  a.content_article|slice(0, 200) ~ '...' :  a.content_article  }}</p>
+                                            </div>
+                                            <div class="news-footer">
+                                                <div class="news-author">
+                                                    <ul class="list-inline list-unstyled">
+                                                        <li class="list-inline-item text-secondary">
+                                                            <i class="fa fa-user"></i>
+                                                            admin
+                                                        </li>
+                                                        <li class="list-inline-item text-secondary">
+                                                            <i class="fa fa-list-alt"></i>
+                                                            {{ a.domain.name_domain }}
+                                                        </li>
+                                                        <li class="list-inline-item text-secondary">
+                                                            <i class="fa fa-eye"></i>
+                                                            {{ a.views_number }}
+                                                        </li>
+                                                        <li class="list-inline-item text-secondary">
+                                                            <i class="fa fa-calendar"></i>
+                                                            {{ a.date_of_publish | date }}
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

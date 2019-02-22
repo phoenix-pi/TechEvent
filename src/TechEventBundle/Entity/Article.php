@@ -5,7 +5,7 @@ namespace TechEventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="NewsBundle\Repository\ArticleRepository")
  * @ORM\Table(name="article")
  */
 class Article
@@ -116,7 +116,7 @@ class Article
     }
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="text")
      */
     private $image;
 

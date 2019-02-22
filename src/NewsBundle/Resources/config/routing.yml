@@ -18,4 +18,26 @@ news_domain_search:
     path:     domain/search
     defaults: { _controller: NewsBundle:Domain:search }
 
+news_article_add:
+    path:     /article/add
+    defaults: { _controller: NewsBundle:Article:add }
 
+news_article_show:
+    path:     /article/show
+    defaults: { _controller: NewsBundle:Article:show }
+
+news_article_showOne:
+    path:     /article/show/{id}
+    defaults: { _controller: NewsBundle:Article:showOne }
+
+news_article_delete:
+    path:   /article/delete/{id}
+    defaults: { _controller: NewsBundle:Article:delete }
+
+news_article_update:
+    path:   /article/update/{id}
+    defaults: { _controller: NewsBundle:Article:update }
+
+news_article_search:
+    path:   /article/search
+    defaults: { _controller: NewsBundle:Article:search }

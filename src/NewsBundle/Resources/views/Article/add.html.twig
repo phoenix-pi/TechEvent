@@ -1,0 +1,69 @@
+{% extends app.user.hasRole('ROLE_ADMIN')  ? 'backoffice.html.twig' : '@News/Default/notAllowed.html.twig'%}
+{% block admin_name %}{{ app.user.firstName }}{% endblock %}
+{% block admin_last_name %}{{ app.user.lastName }}{% endblock %}
+{% block news_tache %}
+    <li>
+        <a href="{{ path('news_domain_homepage') }}">Domain</a>
+    </li>
+    <li>
+        <a href="{{ path('news_article_show') }}">Articles</a>
+    </li>
+    <li>
+        <a href="#">Subscribers</a>
+    </li>
+    <li>
+        <a href="#">Newsletters</a>
+    </li>
+{% endblock %}
+{% block content %}
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3 border-right">
+                    <h4>Add New Post</h4>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <form method="post" action="{{ path('news_article_add') }}">
+                        <div class="form-group row">
+                            <label for="text" class="col-12 col-form-label">Enter Title here</label>
+                            <div class="col-12">
+                                <input id="text" name="title" placeholder="Enter Title here" class="form-control here" required="required" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="textarea" class="col-12 col-form-label">Content</label>
+                            <div class="col-12">
+                                <textarea id="textarea" name="content" cols="40" rows="5" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                        <label for="imageUpload" class="btn btn-large">Upload photo</label>
+                            <div class="col-12">
+                                <input type="file" class="btn btn-large hide" name="imageUpload" id="imageUpload" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="text" class="col-12 col-form-label">Domain</label>
+                            <div class="col-12">
+                                <select name="domain" class="form-control here">
+                                    {% for d in domains %}
+                                        <option value="{{ d.id_domain }}">{{ d.name_domain }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                            <div class="float-right">
+                                <button type="submit" class="btn btn-md btn-primary">Add New</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

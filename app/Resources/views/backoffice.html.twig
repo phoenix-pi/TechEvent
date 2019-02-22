@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('backoffice/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('backoffice/css/sidebar-themes.css') }}">
     <link rel="shortcut icon" type="image/png" href="{{ asset('backoffice/img/favicon.png') }}" />
+    {% block css %} {% endblock %}
 </head>
 
 <body>
@@ -187,7 +188,7 @@
     <!-- page-content" -->
 </div>
 <!-- page-wrapper -->
-
+{% block js %} {% endblock %}
 <script src="{{ asset('backoffice/js/jquery.min.js') }}"></script>
 <script src="{{ asset('backoffice/js/popper.min.js') }}" ></script>
 <script src="{{ asset('backoffice/js/bootstrap.min.js') }}"></script>

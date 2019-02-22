@@ -38,7 +38,7 @@ class DomainController extends Controller
         ));
     }
 
-    public function updateAction(Request $request, $id) //
+    public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
         $domain = $em->getRepository(Domain::class)->find($id);
