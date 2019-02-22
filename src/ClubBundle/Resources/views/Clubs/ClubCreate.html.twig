@@ -45,7 +45,7 @@
                     <span class="label-input100">ClubName </span>
                     <input  class="input100" type="text"  name="ClubName" placeholder="Your Club name..."/><br><br>
                 </div>
-               {#<div class="wrap-input100 validate-input bg1" data-validate="Please Type The Club Name">
+               <div class="wrap-input100 validate-input bg1" data-validate="Please Type The Club Name">
                     <span class="label-input100">Theme </span>
                     <div>
                     <select class="js-select2" name="Theme">
@@ -54,7 +54,7 @@
                         {% endfor %}
                     </select>
                     </div>
-                </div>#}
+                </div>
                 <div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate="Please Enter your logo">
                     <span class="label-input100">Logo </span>
                     <input  class="input100" type="text" name="Logo" placeholder="Your Logo..."/><br><br>
@@ -73,7 +73,8 @@
                 </div>
                 <div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
                     <div class="container-contact100-form-btn">
-                        <button class="contact100-form-btn">
+
+                        <button class="contact100-form-btn" href="{{ path('create') }}">
 						<span>
 							Submit
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>

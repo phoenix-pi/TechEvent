@@ -29,9 +29,10 @@ class ClubsController extends Controller
     {
         return $this->render('@Club/clubs/Clubs.html.twig');
     }
-    public function ClubPageAction()
+    public function ClubPageAction($id)
     {
-        return $this->render('@Club/Clubs/ClubPage.html.twig');
+        $clubs = $this->getDoctrine()->getRepository(Club::class)->myfindMemberClub($id);
+        return $this->render('@Club/Clubs/ClubPage.html.twig',array('club'=>$clubs));
     }
     public function afficherClubAction(Request $request)
     {
@@ -49,21 +50,21 @@ class ClubsController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $themes = $this->getDoctrine()->getRepository(Theme::class)->findAll();
-        //$user=$this->getDoctrine()->getRepository(User::class)->find($id);
+        $user=$this->getUser();
         if($request->isMethod('post')){
             $club = new Club();
             $club->setClub_Name($request->get('ClubName'));
             $club->setLogo($request->get('Logo'));
             $club->setEmail($request->get('email'));
             $club->setFacebook($request->get('Facebook'));
-            //$club->setTheme($request->get('Theme'));
+            $club->setTheme($this->getDoctrine()->getRepository(Theme::class)->find($request->get('Theme')));
             $club->setClub_Description($request->get('ClubDescription'));
-            //$club->setOwner($id);
+            $club->setOwner($user);
             $em->persist($club);
             $em->flush();
 
         }
-        return $this->render('@Club/Clubs/ClubCreate.html.twig',array('th'=>$themes));
+        return $this->render('@Club/Clubs/ClubCreate.html.twig',array('th'=>$themes,'user'=>$user));
         }
     public function StatusClubAction(Request $request,$id)
     {
@@ -86,19 +87,44 @@ class ClubsController extends Controller
             'Club'=>$Clubs,'theme'=>$themes
         ));
     }
-    public function joinAction(Request $request)
+    public function joinAction(Request $request,$id)
     {
+
         $em = $this->getDoctrine()->getManager();
+        $club_id=$this->getDoctrine()->getRepository(Club::class)->find($id);
+        $member=$this->getUser();
         if($request->isMethod('post')){
             $userC = new ClubUser();
             $userC->setSkills($request->get('skills'));
             $userC->setWhy($request->get('why'));
             $userC->setYou_Are($request->get('youAre'));
-            //$club->setOwner($id);
+            $userC->setMember($member);
+            $userC->setClub($club_id);
             $em->persist($userC);
             $em->flush();
 
         }
         return $this->render('@Club/Clubs/joinUs.html.twig');
+    }
+
+    public function StatusMemberClubAction(Request $request,$id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $member = $em->getRepository(ClubUser::class)->find($id);
+        if ($request->isMethod('POST')) {
+            $member->setClub_User_Status($request->get('member'));
+            $em->flush();
+        }
+        return $this->redirectToRoute('members');
+    }
+    public function manClubAction()
+    {
+
+        $user = $this->getDoctrine()->getRepository(User::class)->findAll();
+
+        $member = $this->getDoctrine()->getRepository(ClubUser::class)->findAll();
+
+        return $this->render('@Club/Clubs/MembershipRequests.html.twig', array('members'=>$member));
     }
 }

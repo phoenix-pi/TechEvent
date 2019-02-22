@@ -1,11 +1,11 @@
 {% extends 'backoffice.html.twig' %}
 {% block content %}
 <table id="ta" border='5'>
-    <tr><td>Club Name</td><td>Email</td><td>Description</td><td>Facebook</td><td>Status</td><td></td></tr>
+    <tr><td>Club Name</td><td>Email</td><td>Description</td><td>Theme</td><td>Facebook</td><td>Status</td><td></td></tr>
     {% for c in Clubs %}
         <form method="post" action="{{ path('Status',{'id':c.id_club}) }}">
         <tr>
-            <td> {{ c.club_name }}</td><td>{{ c.email}}</td> <td>{{ c.club_description}}</td><td>{{ c.facebook}}</td>
+            <td> {{ c.club_name }}</td><td>{{ c.email}}</td> <td>{{ c.club_description}}</td> <td>{{ c.theme}}</td><td>{{ c.facebook}}</td>
             <td>{{ c.club_status }}</td>
             <td><button  name="status" class="btn-danger" value="Refused">Refuse</button>
             <button name="status" class="btn-success" value="Accepted">Accept</button></td>

@@ -5,10 +5,10 @@ AdminClub:
     path:     /admin/club
     defaults: { _controller: ClubBundle:Clubs:AdminClub }
 My_Club:
-    path:     /clubs/MyClub
+    path:     /clubs/MyClub/{id}
     defaults: { _controller: ClubBundle:Clubs:ClubPage }
 Join_us:
-    path:     /clubs/joinUs
+    path:     /clubs/joinUs/{id}
     defaults: { _controller: ClubBundle:Clubs:Join }
 
 create:
@@ -18,6 +18,14 @@ create:
 Status:
     path:     /refuse/{id}
     defaults: { _controller: ClubBundle:Clubs:StatusClub }
+
+member:
+    path:     /member/{id}
+    defaults: { _controller: ClubBundle:Clubs:StatusMemberClub }
+
+members:
+    path:     /members
+    defaults: { _controller: ClubBundle:Clubs:manClub }
 FindClub:
     path:     /Find
     defaults: { _controller: ClubBundle:Clubs:findClub }

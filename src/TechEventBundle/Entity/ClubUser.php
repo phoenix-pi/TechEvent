@@ -44,6 +44,22 @@ class ClubUser
      */
     private $member;
 
+    /**
+     * @return mixed
+     */
+    public function getMember()
+    {
+        return $this->member;
+    }
+
+    /**
+     * @param mixed $member
+     */
+    public function setMember($member)
+    {
+        $this->member = $member;
+    }
+
 
     /**
      * @ORM\ManyToOne(targetEntity="Club")

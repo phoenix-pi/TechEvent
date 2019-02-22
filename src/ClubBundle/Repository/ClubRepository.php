@@ -27,4 +27,17 @@ class ClubRepository extends EntityRepository
             ->createQuery("select c from TechEventBundle:Club c where c.club_status='Accepted'");
         return $q->getResult();
     }
+    public function findMemberClub()
+    {
+        $q=$this->getEntityManager()
+            ->createQuery("select u from TechEventBundle:User u where u.id=(select m.id_club_user from TechEventBundle:ClubUser m)");
+        return $q->getResult();
+    }
+    public function myfindMemberClub($idclub)
+    {
+        $q=$this->getEntityManager()
+            ->createQuery("select u from TechEventBundle:ClubUser u where u.id_club_user=:id_club ")
+            ->setParameter('id_club',$idclub);
+        return $q->getResult();
+    }
 }

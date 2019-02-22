@@ -30,14 +30,15 @@
                                 {% for th in theme %}
                                 <li><a href="{{ path('FindClub') }}" name="query">{{ th.theme_name }}</a></li>
                                 {% endfor %}
-                                <li><a href="#">Artificial intelligence</a></li>
-                                <li><a href="#">Development</a></li>
-                                <li><a href="#">Hacking</a></li>
-                                <li><a href="#">Other..</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ path('My_Club') }}" >My club</a>
-
+                        <li><a href="#">My Clubs</a>
+                            <ul class="sub-menu">
+                        {% for y in Club %}
+                        <li><a href="{{ path('My_Club',{'id':y.id_club}) }}" >{{ y.club_name }}</a>
+                        {% endfor %}
+                        </li>
+                            </ul>
                         </li>
                         <li><a href="{{ path('create') }}" >Create a Club</a>
 
@@ -76,7 +77,7 @@
                                         <ul class="list-inline">
 
                                             <li class="list-inline-item">
-                                                <a href="{{ path('Join_us') }}"> Join us</a>
+                                                <a href="{{ path('Join_us',{'id':c.id_club}) }}" name="Club_id"> Join us</a>
                                             </li>
 
                                         </ul>
