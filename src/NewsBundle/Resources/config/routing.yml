@@ -41,3 +41,15 @@ news_article_update:
 news_article_search:
     path:   /article/search
     defaults: { _controller: NewsBundle:Article:search }
+
+news_front_article_show:
+    path:   /front/article/show
+    defaults: { _controller: NewsBundle:Article:showfront }
+
+news_front_article_showOne:
+    path:     /front/article/show/{id}
+    defaults: { _controller: NewsBundle:Article:showOneFront }
+
+news_front_article_add:
+    path:     /front/article/save/{id}
+    defaults: { _controller: NewsBundle:Article:addBookmark }

@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Normalizer\DataUriNormalizer;
 use TechEventBundle\Entity\Article;
 use TechEventBundle\Entity\Domain;
+use TechEventBundle\Entity\Saved;
 
 class ArticleController extends Controller
 {
@@ -101,4 +102,41 @@ class ArticleController extends Controller
         ));
 
     }
+
+    public function showfrontAction() {
+        $articles=$this->getDoctrine()->getRepository(Article::class)->findAll();
+        $domains=$this->getDoctrine()->getRepository(Domain::class)->findAll();
+        return $this->render('@News/Article/front/show.html.twig', array(
+            'articles'=>$articles,
+            'domains'=>$domains
+        ));
+    }
+
+
+    public function showOneFrontAction($id) {
+        $article=$this->getDoctrine()->getRepository(Article::class)->find($id);
+        $em = $this->getDoctrine()->getManager();
+        $article->setViews_Number($article->getViews_Number()+1);
+        $em->flush();
+        return $this->render('@News/Article/front/article.html.twig', array(
+            'article'=>$article
+        ));
+    }
+
+    public function addBookmarkAction($id) {
+        $article=$this->getDoctrine()->getRepository(Article::class)->find($id);
+        $user=$this->getUser();
+        $save=new Saved();
+        $save->setUser($user);
+        $save->setArticle($article);
+        $save->setDate_Save(new \DateTime());
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($save);
+        $em->flush();
+        return $this->render('@News/Article/front/article.html.twig', array(
+            'article'=>$article
+        ));
+    }
+
+
 }

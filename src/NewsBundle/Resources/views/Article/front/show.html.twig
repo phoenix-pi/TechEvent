@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<br>
+    <style type="text/css">
+        img {width:100%;}
+    </style>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row mb-2">
+                    {% for a in articles %}
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="{{ a.image }}">
+                                        </div>
+                                        <div class="col-md-10">
+                                            <div class="card-body">
+                                                <div class="news-content">
+                                                    <a href="{{ path('news_front_article_showOne',{'id':a.id_article}) }}"><h2>{{ a.title_article }}</h2></a>
+                                                    <p>{{ a.content_article|length > 200 ?  a.content_article|slice(0, 200) ~ '...' :  a.content_article  }}</p>
+                                                </div>
+                                                <div class="news-footer">
+                                                    <div class="news-author">
+                                                        <ul class="list-inline list-unstyled">
+                                                            <li class="list-inline-item text-secondary">
+                                                                <i class="fa fa-list-alt"></i>
+                                                                {{ a.domain.name_domain }}
+                                                            </li>
+                                                            <li class="list-inline-item text-secondary">
+                                                                <i class="fa fa-eye"></i>
+                                                                {{ a.views_number }}
+                                                            </li>
+                                                            <li class="list-inline-item text-secondary">
+                                                                <i class="fa fa-calendar"></i>
+                                                                {{ a.date_of_publish | date }}
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

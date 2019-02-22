@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <style type="text/css">
+        img{width:100%;}
+    </style>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="news-title">
+                                            <h2>{{ article.title_article }}</h2>
+                                        </div>
+                                        <div class="news-cats">
+                                            <ul class="list-unstyled list-inline mb-1">
+                                                <li class="list-inline-item">
+                                                    <i class="fa fa-folder-o text-danger"></i>
+                                                    <a href="#"><small>{{ article.domain.name_domain }}</small> </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <i class="fa fa-folder-o text-danger"></i>
+                                                    <a href="#"><small>{{ article.date_of_publish | date }}</small></a>
+                                                </li>
+                                                {% if app.user %}
+                                                <li class="list-inline-item float-right">
+                                                    <i class="fa fa-save text-danger"></i>
+                                                    <a href="{{ path('news_front_article_add',{'id':article.id_article}) }}"><small>Add to bookmark</small></a>
+                                                </li>
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                        <hr>
+                                        <div class="news-image">
+                                            <img src="http://demo.beeteam368.com/vidorev/wp-content/uploads/2017/12/vanessa-bumbeers-117946-1500x844.jpg">
+                                        </div>
+                                        <br>
+                                        <div class="news-content">
+                                            <p>{{ article.content_article }}</p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action">Domain 1</a>
+                                <a href="#" class="list-group-item list-group-item-action">Domain 2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
