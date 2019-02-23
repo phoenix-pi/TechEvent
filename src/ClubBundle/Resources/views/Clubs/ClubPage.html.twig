@@ -14,12 +14,12 @@
                             </li>
                             <li><a href="#">Workshops</a>
                                 <ul class="sub-menu">
-                                    <li><a href="#">New workshop</a></li>
-                                    <li><a href="#">Upcoming workshops</a></li>
+                                    <li><a href="{{ path('Workshop_new') }}">New workshop</a></li>
+                                    <li><a href="{{ path('up') }}">Upcoming workshops</a></li>
                                 </ul>
                             </li>
 
-                            <li><a href="{{ path('members') }}"> Membership requests</a>
+                            <li><a href="{{ path('members',{'id':id}) }}"> Membership requests</a>
 
                             </li>
                             <li><a href="#"> Chat</a>

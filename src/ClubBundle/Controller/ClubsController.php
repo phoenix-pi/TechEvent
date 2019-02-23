@@ -32,7 +32,8 @@ class ClubsController extends Controller
     public function ClubPageAction($id)
     {
         $clubs = $this->getDoctrine()->getRepository(Club::class)->myfindMemberClub($id);
-        return $this->render('@Club/Clubs/ClubPage.html.twig',array('club'=>$clubs));
+
+        return $this->render('@Club/Clubs/ClubPage.html.twig',array('club'=>$clubs,'id'=>$id));
     }
     public function afficherClubAction(Request $request)
     {
@@ -118,13 +119,11 @@ class ClubsController extends Controller
         }
         return $this->redirectToRoute('members');
     }
-    public function manClubAction()
+    public function manClubAction($id)
     {
-
-        $user = $this->getDoctrine()->getRepository(User::class)->findAll();
-
+        $clubs = $this->getDoctrine()->getRepository(Club::class)->myfindMemberClub($id);
         $member = $this->getDoctrine()->getRepository(ClubUser::class)->findAll();
 
-        return $this->render('@Club/Clubs/MembershipRequests.html.twig', array('members'=>$member));
+        return $this->render('@Club/Clubs/MembershipRequests.html.twig', array('members'=>$member,'c'=>$clubs));
     }
 }

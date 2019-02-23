@@ -24,7 +24,7 @@ member:
     defaults: { _controller: ClubBundle:Clubs:StatusMemberClub }
 
 members:
-    path:     /members
+    path:     /members/{id}
     defaults: { _controller: ClubBundle:Clubs:manClub }
 FindClub:
     path:     /Find
@@ -42,3 +42,16 @@ Theme_del:
 Theme_ed:
     path:     /admin/theme/edit{id}
     defaults: { _controller: ClubBundle:Theme:update }
+
+
+Workshop_new:
+    path:     /workshop
+    defaults: { _controller: ClubBundle:Workshop:createWorkshop }
+
+up:
+    path:     /up_workshop
+    defaults: { _controller: ClubBundle:Workshop:upWorkshop }
+participer:
+    path:     /parti/{id}
+    defaults: { _controller: ClubBundle:Workshop:particpe }
+

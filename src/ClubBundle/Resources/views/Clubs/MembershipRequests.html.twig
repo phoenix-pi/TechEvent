@@ -18,10 +18,11 @@
                                     <li><a href="#">Upcoming workshops</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{ path('members') }}"> Membership requests</a>
-
+                            {% for club in c %}
+                            <li><a href="{{ path('members',{'id':club.id_club_user}) }}"> Membership requests</a>
+                             {% endfor %}
                             </li>
-                            <li><a href="#"> Chat</a>
+                            <li><a href=""> Chat</a>
 
                             </li>
                             <li><a href="#"> Calender</a>
@@ -35,12 +36,12 @@
                 </div>
                 <div class="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0" >
 <table id="ta" border='5'>
-    <tr><td>Why he wants to join us</td><td>He is a</td><td>His skills</td><td>Status</td></tr>
+    <tr><td>First Name</td><td>Last Name</td><td>Email</td><td>Why he wants to join us</td><td>He is a</td><td>His skills</td><td>Status</td></tr>
     {% for m in members  %}
         <form method="post" action="{{ path('member',{'id':m.id_club_user}) }}">
             <tr>
-                <td> {{ m.why }}</td><td>{{ m.you_are}}</td> <td>{{m.skills}}</td>
-                <td>{{ m.club_user_status }}</td><td>{{ m.member.username }}</td>
+                <td>{{ m.member.FirstName }}</td><td>{{ m.member.LastName }}</td><td>{{ m.member.Email }}</td><td> {{ m.why }}</td><td>{{ m.you_are}}</td> <td>{{m.skills}}</td>
+                <td>{{ m.club_user_status }}</td>
                 <td><button  name="member" class="btn-danger" value="Refused">Refuse</button>
                     <button name="member" class="btn-success" value="Accepted">Accept</button></td>
             </tr>

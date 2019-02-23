@@ -1,0 +1,143 @@
+{% extends 'base.html.twig'%}
+{% block content %}
+    <section class="category-section spad">
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-3 order-2 order-lg-1">
+        <div class="filter-widget">
+            <h1 class="fw-title">My Club</h1>
+
+
+            <ul class="category-menu">
+                <li><a href="#">Club info</a>
+
+                </li>
+                <li><a href="#">Workshops</a>
+                    <ul class="sub-menu">
+                        <li><a href="{{ path('Workshop_new') }}">New workshop</a></li>
+                        <li><a href="{{ path('up') }}">Upcoming workshops</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#"> Membership requests</a>
+
+                </li>
+                <li><a href="#"> Chat</a>
+
+                </li>
+                <li><a href="#"> Calender</a>
+
+                </li>
+
+
+
+            </ul>
+        </div>
+    </div>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Table V02</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--===============================================================================================-->
+        <link rel="icon" type="image/png" href="{{ asset('Clubs/table/images/icons/favicon.ico') }}"/>
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/table/vendor/bootstrap/css/bootstrap.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/table/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/table/vendor/animate/animate.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/table/vendor/select2/select2.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/table/vendor/perfect-scrollbar/perfect-scrollbar.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/table/css/util.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/table/css/main.css') }}">
+        <!--===============================================================================================-->
+    </head>
+    <body>
+    <div class="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0" >
+    <div class="limiter">
+
+            <div class="wrap-table100">
+                <div class="table">
+
+                    <div class="row header">
+                        <div class="cell">
+                            Title
+                        </div>
+                        <div class="cell">
+                            Description
+                        </div>
+                        <div class="cell">
+                            Location
+                        </div>
+                        <div class="cell">
+                            Date
+                        </div>
+                        <div class="cell">
+                            Remaining places
+                        </div>
+                        <div class="cell">
+                            Action
+                        </div>
+                    </div>
+{% for w in wo %}
+
+                    <div class="row">
+
+                        <div class="cell" data-title="Title">
+                            {{ w.title }}
+                        </div>
+                        <div class="cell" data-title="Description">
+                            {{ w.workshop_Description }}
+                        </div>
+                        <div class="cell" data-title="Location">
+                            {{ w.location }}
+                        </div>
+                        <div class="cell" data-title="Date">
+                            {{ w.start_Date | date('Y-m-d') }}
+                        </div>
+                        <div class="cell" data-title="Remaining places">
+                            {{ w.nbr_Places }}
+                        </div>
+
+                        <div class="cell" data-title="Action">
+                            <form method="post" action="{{ path('participer',{'id':w.id_workshop}) }}">
+                            <button name="participate" class="btn btn-dark" href="">Participate</button>
+                            </form>
+                        </div>
+
+                    </div>
+
+{% endfor %}
+
+
+                </div>
+            </div>
+
+    </div>
+
+
+
+
+    <!--===============================================================================================-->
+    <script src="{{ asset('Clubs/table/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('Clubs/table/vendor/bootstrap/js/popper.js') }}"></script>
+    <script src="{{ asset('Clubs/table/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('Clubs/table/vendor/select2/select2.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('Clubs/table/js/main.js') }}"></script>
+
+    </body>
+    </html>
+    </div>
+    </div>
+    </div>
+    </section>
+{% endblock %}

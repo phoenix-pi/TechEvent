@@ -11,9 +11,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 order-2 order-lg-1">
+                <form  method="post" action="{{ path('FindClub') }}">
                 <div class="filter-widget">
                     <h1 class="fw-title">Clubs</h1>
-                    <form  method="post" action="{{ path('FindClub') }}">
+
                                 <div class="input-group">
                                                 <form action="" class="search-form">
                                                     <div class="form-group has-feedback">
@@ -23,22 +24,27 @@
                                                     </div>
                                                 </form>
                                 </div>
-                    </form>
+
                     <ul class="category-menu">
                         <li><a href="#">Themes</a>
                             <ul class="sub-menu">
                                 {% for th in theme %}
-                                <li><a href="{{ path('FindClub') }}" name="query">{{ th.theme_name }}</a></li>
+                                <li><a  name="query">{{ th.theme_name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>
                         <li><a href="#">My Clubs</a>
+
                             <ul class="sub-menu">
                         {% for y in Club %}
+
                         <li><a href="{{ path('My_Club',{'id':y.id_club}) }}" >{{ y.club_name }}</a>
-                        {% endfor %}
                         </li>
+
+                        {% endfor %}
+
                             </ul>
+
                         </li>
                         <li><a href="{{ path('create') }}" >Create a Club</a>
 
@@ -46,7 +52,9 @@
 
                     </ul>
                 </div>
+                </form>
             </div>
+
 
         <div class="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0" >
             <section id="team" class="pb-5">
