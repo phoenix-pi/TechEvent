@@ -20,31 +20,32 @@ use Doctrine\ORM\Mapping as ORM;
     protected $id;
 
      /**
-      * @ORM\Column(type="string")
+      * @ORM\Column(type="string", nullable=true)
+      *
       */
      private $firstName;
      /**
-      * @ORM\Column(type="string")
+      * @ORM\Column(type="string", nullable=true)
       */
      private $lastName;
 
      /**
-      * @ORM\Column(type="string")
+      * @ORM\Column(type="string", nullable=true)
       */
      private $address;
 
      /**
-      * @ORM\Column(type="string")
+      * @ORM\Column(type="string", nullable=true)
       */
      private $phone;
 
      /**
-      * @ORM\Column(type="string")
+      * @ORM\Column(type="string", nullable=true)
       */
      private $status;
 
      /**
-      * @ORM\Column(type="string")
+      * @ORM\Column(type="string", nullable=true)
       */
      private $picture;
 

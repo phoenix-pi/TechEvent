@@ -3,6 +3,8 @@
 namespace TechEventBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="NewsBundle\Repository\ArticleRepository")
@@ -15,23 +17,23 @@ class Article
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id_article;
+    private $idArticle;
     /**
      * @ORM\Column(type="string")
      */
-    private $title_article;
+    private $titleArticle;
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="text")
      */
-    private $content_article;
+    private $contentArticle;
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="integer")
      */
-    private $views_number;
+    private $viewsNumber;
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
-    private $date_of_publish;
+    private $dateOfPublish;
 
     /**
      * @ORM\ManyToOne(targetEntity="domain")
@@ -45,54 +47,54 @@ class Article
      */
     private $newsletter;
 
-    public function getId_Article()
+    public function getIdArticle()
     {
-        return $this->id_article;
+        return $this->idArticle;
     }
 
-    public function setId_Article($id_article)
+    public function setIdArticle($id_article)
     {
-        $this->id_article = $id_article;
+        $this->idArticle = $id_article;
     }
 
-    public function getTitle_Article()
+    public function getTitleArticle()
     {
-        return $this->title_article;
+        return $this->titleArticle;
     }
 
-    public function setTitle_Article($title_article)
+    public function setTitleArticle($title_article)
     {
-        $this->title_article = $title_article;
+        $this->titleArticle = $title_article;
     }
 
-    public function getContent_Article()
+    public function getContentArticle()
     {
-        return $this->content_article;
+        return $this->contentArticle;
     }
 
-    public function setContent_Article($content_article)
+    public function setContentArticle($content_article)
     {
-        $this->content_article = $content_article;
+        $this->contentArticle = $content_article;
     }
 
-    public function getViews_Number()
+    public function getViewsNumber()
     {
-        return $this->views_number;
+        return $this->viewsNumber;
     }
 
-    public function setViews_Number($views_number)
+    public function setViewsNumber($views_number)
     {
-        $this->views_number = $views_number;
+        $this->viewsNumber = $views_number;
     }
 
-    public function getDate_Of_Publish()
+    public function getDateOfPublish()
     {
-        return $this->date_of_publish;
+        return $this->dateOfPublish;
     }
 
-    public function setDate_Of_Publish($date_of_publish)
+    public function setDateOfPublish($date_of_publish)
     {
-        $this->date_of_publish = $date_of_publish;
+        $this->dateOfPublish = $date_of_publish;
     }
 
     public function getDomain()
@@ -117,6 +119,9 @@ class Article
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="add an image jpg")
+     * @Assert\File(mimeTypes={ "image/jpeg", "image/png" })
+     * @Assert\File(maxSize = "32768k")
      */
     private $image;
 
@@ -129,6 +134,4 @@ class Article
     {
         $this->image = $image;
     }
-
-
 }

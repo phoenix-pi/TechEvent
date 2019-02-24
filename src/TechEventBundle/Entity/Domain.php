@@ -22,29 +22,43 @@ class Domain
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id_domain;
+    private $idDomain;
     /**
      * @ORM\Column(type="string")
      */
-    private $name_domain;
+    private $nameDomain;
 
-    public function getId_Domain()
+    /**
+     * @return mixed
+     */
+    public function getIdDomain()
     {
-        return $this->id_domain;
+        return $this->idDomain;
     }
 
-    public function setId_Domain($id_domain)
+    /**
+     * @param mixed $idDomain
+     */
+    public function setIdDomain($idDomain)
     {
-        $this->id_domain = $id_domain;
+        $this->idDomain = $idDomain;
     }
 
-    public function getName_Domain()
+    /**
+     * @return mixed
+     */
+    public function getNameDomain()
     {
-        return $this->name_domain;
+        return $this->nameDomain;
     }
 
-    public function setName_Domain($name_domain)
+    /**
+     * @param mixed $nameDomain
+     */
+    public function setNameDomain($nameDomain)
     {
-        $this->name_domain = $name_domain;
+        $this->nameDomain = $nameDomain;
     }
+
+
 }

@@ -13,5 +13,20 @@ use Doctrine\ORM\EntityRepository;
 
 class ArticleRepository extends EntityRepository
 {
+    public function findByDomainKeywordAndOrderBy($d, $k, $o)
+    {
+        $sql='';
+        if ($d != 'any') {
+            $sql = $sql . ' AND a.domain=' . $d . ' ';
+        }
 
+        if ($o != 'any') {
+            $sql = $sql . ' ORDER BY a.'.$o.' DESC ';
+        }
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT a FROM TechEventBundle:Article a where a.titleArticle LIKE :key'.$sql)
+            ->setParameter('key', '%'.$k.'%')
+            ->getResult();
+    }
 }

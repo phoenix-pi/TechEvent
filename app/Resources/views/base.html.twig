@@ -86,7 +86,12 @@
                         <li><a href="#">Category 5</a></li>
                     </ul>
                 </li>
-                <li><a href="#">News</a></li>
+                <li>
+                    <a href="{{ path('news_front_article_show') }}">News</a>
+                    <ul class="sub-menu">
+                        <li><a href="{{ path('news_front_article_show_bookmark') }}">My bookmarks </a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>

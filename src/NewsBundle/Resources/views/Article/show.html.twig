@@ -34,13 +34,13 @@
                                 <select name="domain" class="form-control">
                                     <option value="any">Select domain</option>
                                     {% for d in domains %}
-                                        <option value="{{ d.id_domain }}">{{ d.name_domain }}</option>
+                                        <option value="{{ d.idDomain }}">{{ d.nameDomain }}</option>
                                     {% endfor %}
                                 </select>
                                 <select name="orderBy" class="form-control">
                                     <option value="any">Order by</option>
-                                    <option value="views_number">Number of views</option>
-                                    <option value="date_of_publish">Date of publish</option>
+                                    <option value="viewsNumber">Number of views</option>
+                                    <option value="dateOfPublish">Date of publish</option>
                                 </select>
                                 <div class="input-group custom-search-form">
                                     <input type="text" name="keyword" class="form-control" placeholder="Search...">
@@ -65,39 +65,36 @@
             <div class="col-sm-12">
                 <div class="row mb-2">
                     {% for a in articles %}
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <img src="{{ a.image }}">
-                                    </div>
-                                    <div class="col-md-10">
-                                        <div class="card-body">
-                                            <div class="news-content">
-                                                <a href="{{ path('news_article_showOne',{'id':a.id_article}) }}"><h2>{{ a.title_article }}</h2></a>
-                                                <p>{{ a.content_article|length > 200 ?  a.content_article|slice(0, 200) ~ '...' :  a.content_article  }}</p>
-                                            </div>
-                                            <div class="news-footer">
-                                                <div class="news-author">
-                                                    <ul class="list-inline list-unstyled">
-                                                        <li class="list-inline-item text-secondary">
-                                                            <i class="fa fa-user"></i>
-                                                            admin
-                                                        </li>
-                                                        <li class="list-inline-item text-secondary">
-                                                            <i class="fa fa-list-alt"></i>
-                                                            {{ a.domain.name_domain }}
-                                                        </li>
-                                                        <li class="list-inline-item text-secondary">
-                                                            <i class="fa fa-eye"></i>
-                                                            {{ a.views_number }}
-                                                        </li>
-                                                        <li class="list-inline-item text-secondary">
-                                                            <i class="fa fa-calendar"></i>
-                                                            {{ a.date_of_publish | date }}
-                                                        </li>
-                                                    </ul>
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="{{ asset('uploads/images/' ~ a.image) }}">
+                                        </div>
+                                        <div class="col-md-10">
+                                            <div class="card-body">
+                                                <div class="news-content">
+                                                    <a href="{{ path('news_article_showOne',{'id':a.idArticle}) }}"><h2>{{ a.titleArticle }}</h2></a>
+                                                    <p>{{ a.contentArticle|length > 200 ?  a.contentArticle|slice(0, 200) ~ '...' :  a.contentArticle  }}</p>
+                                                </div>
+                                                <div class="news-footer">
+                                                    <div class="news-author">
+                                                        <ul class="list-inline list-unstyled">
+                                                            <li class="list-inline-item text-secondary">
+                                                                <i class="fa fa-list-alt"></i>
+                                                                {{ a.domain.nameDomain }}
+                                                            </li>
+                                                            <li class="list-inline-item text-secondary">
+                                                                <i class="fa fa-eye"></i>
+                                                                {{ a.viewsNumber }}
+                                                            </li>
+                                                            <li class="list-inline-item text-secondary">
+                                                                <i class="fa fa-calendar"></i>
+                                                                {{ a.dateOfPublish | date }}
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -105,7 +102,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                     {% endfor %}
                 </div>
             </div>

@@ -50,6 +50,22 @@ news_front_article_showOne:
     path:     /front/article/show/{id}
     defaults: { _controller: NewsBundle:Article:showOneFront }
 
+news_front_article__search:
+    path:     /front/article/search
+    defaults: { _controller: NewsBundle:Article:searchFront }
+
 news_front_article_add:
     path:     /front/article/save/{id}
-    defaults: { _controller: NewsBundle:Article:addBookmark }
+    defaults: { _controller: NewsBundle:Save:addBookmark }
+
+news_front_article_show_bookmark:
+    path:     /front/article/saved
+    defaults: { _controller: NewsBundle:Save:showBookmarks }
+
+news_front_article_bookmark_search:
+    path:     /front/article/bookmark/search
+    defaults: { _controller: NewsBundle:Save:searchFrontBookmark }
+
+news_front_article_remove:
+    path:     /front/article/remove/{id}
+    defaults: { _controller: NewsBundle:Save:removeBookmark }

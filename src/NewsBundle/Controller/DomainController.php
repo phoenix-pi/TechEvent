@@ -12,7 +12,7 @@ class DomainController extends Controller
     {
         if($request->isMethod('POST')) {
             $domain = new Domain();
-            $domain->setName_Domain($request->get('nom'));
+            $domain->setNameDomain($request->get('nom'));
             $em=$this->getDoctrine()->getManager();
             $em->persist($domain);
             $em->flush();
@@ -43,7 +43,7 @@ class DomainController extends Controller
         $em = $this->getDoctrine()->getManager();
         $domain = $em->getRepository(Domain::class)->find($id);
         if ($request->isMethod('POST')) {
-            $domain->setName_Domain($request->get('nom'));
+            $domain->setNameDomain($request->get('nom'));
             $em->flush();
             return $this->redirectToRoute('news_domain_homepage');
         }

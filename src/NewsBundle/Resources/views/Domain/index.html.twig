@@ -25,8 +25,8 @@
         <h5>Delete Domain</h5>
         <hr>
         <div class="alert bg-white">
-            <form method="post" action="{{ path('news_domain_delete',{'id':domain_del.id_domain}) }}">
-            <p>Are you sure you want to delete <strong>{{ domain_del.name_domain }}</strong> ?</p>
+            <form method="post" action="{{ path('news_domain_delete',{'id':domain_del.idDomain}) }}">
+            <p>Are you sure you want to delete <strong>{{ domain_del.nameDomain }}</strong> ?</p>
             <div class="alert center-block align-content-center">
                 <a href="{{ path('news_domain_homepage') }}" class="btn btn-xs btn-secondary pull-right">Cancel</a>
                 <button class="btn btn-xs btn-danger pull-right">Delete</button>
@@ -66,11 +66,11 @@
         <div class="col-lg-4 bg-light card-body">
 
             <h5>Update Domain</h5>
-            <form method="post" action="{{ path('news_domain_update',{'id':domain.id_domain}) }}">
+            <form method="post" action="{{ path('news_domain_update',{'id':domain.idDomain}) }}">
                 <div class="form-group row">
                     <label for="text" class="col-12 col-form-label">Name</label>
                     <div class="col-12">
-                        <input id="text" name="nom" class="form-control here" type="text" value="{{ domain.name_domain }}" required>
+                        <input id="text" name="nom" class="form-control here" type="text" value="{{ domain.nameDomain }}" required>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -92,10 +92,10 @@
                 <tbody>
                 {%  for domain in domains %}
                 <tr>
-                    <td>{{ domain.name_domain }}</td>
+                    <td>{{ domain.nameDomain }}</td>
                     <td>
-                        <a href="{{ path('news_domain_update',{'id':domain.id_domain}) }}"><i class="fa fa-edit"></i> Edit </a>
-                        <a href="{{ path('news_domain_delete',{'id':domain.id_domain}) }}"><i class="fa fa-trash"></i> Delete </a>
+                        <a href="{{ path('news_domain_update',{'id':domain.idDomain}) }}"><i class="fa fa-edit"></i> Edit </a>
+                        <a href="{{ path('news_domain_delete',{'id':domain.idDomain}) }}"><i class="fa fa-trash"></i> Delete </a>
                     </td>
                 </tr>
                 {% endfor %}

@@ -14,6 +14,7 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    uploads_directory: '%kernel.project_dir%/web/uploads/images'
 
 framework:
     #esi: ~
@@ -87,4 +88,6 @@ fos_user:
     from_email:
         address: "iheb.chakroun@esprit.tn"
         sender_name: "iheb"
+
+
 

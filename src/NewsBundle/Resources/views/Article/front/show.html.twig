@@ -7,6 +7,47 @@
     </style>
 
     <div class="container">
+
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-9">
+                <div class="container">
+                    <div class="row float-right">
+                        <div class="col-sm-12 pull-center well ">
+                            {% if bookmark is not defined %}
+                                <form class="form-inline" action="{{ path('news_front_article__search') }}" method="POST">
+                                {% else %}
+                                <form class="form-inline" action="{{ path('news_front_article_bookmark_search') }}" method="POST">
+                                {% endif %}
+                                <select name="domain" class="form-control" id="domain">
+                                    <option value="any">Select domain</option>
+                                    {% for d in domains %}
+                                        <option value="{{ d.idDomain }}">{{ d.nameDomain }}</option>
+                                    {% endfor %}
+                                </select>
+                                <select name="orderBy" class="form-control" id="orderBy">
+                                    <option value="any">Order by</option>
+                                    <option value="viewsNumber">Number of views</option>
+                                    <option value="dateOfPublish">Date of publish</option>
+                                </select>
+                                <div class="input-group custom-search-form">
+                                    <input type="text" name="keyword" class="form-control" placeholder="Search..." id="keyword">
+                                    <span class="input-group-btn">
+                                        <button id='search' class="btn btn-success" type="submit">Search</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 border-right">
+                </div>
+            </div>
+
+
+        </div>
+        <br>
         <div class="row">
             <div class="col-sm-12">
                 <div class="row mb-2">
@@ -16,28 +57,28 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <img src="{{ a.image }}">
+                                            <img src="{{ asset('uploads/images/' ~ a.image) }}">
                                         </div>
                                         <div class="col-md-10">
                                             <div class="card-body">
                                                 <div class="news-content">
-                                                    <a href="{{ path('news_front_article_showOne',{'id':a.id_article}) }}"><h2>{{ a.title_article }}</h2></a>
-                                                    <p>{{ a.content_article|length > 200 ?  a.content_article|slice(0, 200) ~ '...' :  a.content_article  }}</p>
+                                                    <a href="{{ path('news_front_article_showOne',{'id':a.idArticle}) }}"><h2>{{ a.titleArticle }}</h2></a>
+                                                    <p>{{ a.contentArticle|length > 200 ?  a.contentArticle|slice(0, 200) ~ '...' :  a.contentArticle  }}</p>
                                                 </div>
                                                 <div class="news-footer">
                                                     <div class="news-author">
                                                         <ul class="list-inline list-unstyled">
                                                             <li class="list-inline-item text-secondary">
                                                                 <i class="fa fa-list-alt"></i>
-                                                                {{ a.domain.name_domain }}
+                                                                {{ a.domain.nameDomain }}
                                                             </li>
                                                             <li class="list-inline-item text-secondary">
                                                                 <i class="fa fa-eye"></i>
-                                                                {{ a.views_number }}
+                                                                {{ a.viewsNumber }}
                                                             </li>
                                                             <li class="list-inline-item text-secondary">
                                                                 <i class="fa fa-calendar"></i>
-                                                                {{ a.date_of_publish | date }}
+                                                                {{ a.dateOfPublish | date }}
                                                             </li>
                                                         </ul>
                                                     </div>
