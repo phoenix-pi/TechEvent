@@ -88,9 +88,12 @@
                 </li>
                 <li>
                     <a href="{{ path('news_front_article_show') }}">News</a>
+                    {% if app.user %}
                     <ul class="sub-menu">
+
                         <li><a href="{{ path('news_front_article_show_bookmark') }}">My bookmarks </a></li>
                     </ul>
+                    {% endif %}
                 </li>
             </ul>
         </div>
