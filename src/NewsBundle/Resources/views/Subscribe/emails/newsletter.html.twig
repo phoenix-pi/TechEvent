@@ -1,0 +1,80 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<style>
+    .jasgrid{padding:0;}
+    .box-item {
+        float: left;
+        opacity: 1;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .box-item img {
+        width: 100%;
+    }
+    .box-item a,span{color:#FFF;}
+
+    .box-item .box-post span.meta {
+        font-family:  sans-serif;
+        font-size: 12px;
+        color: #fff;
+        margin-top: 15px;
+        display: block;
+    }
+
+    .box-item .box-post span.meta span {
+        margin-right: 15px;
+    }
+
+    .box-item .box-post {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+        padding: 30px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .box-item .box-post h1..post-title {
+        font-size:10pt;
+    }
+
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 jasgrid">
+            {% for a in articles %}
+            <div class="box-item">
+                <div class="box-post">
+                    <span class="label label-success">
+                        <a href="{{ url('news_article_showOne',{'id':a.idArticle}) }}" rel="tag">{{ a.titleArticle }}</a>
+                    </span>
+                    <h1 class="post-title">
+                        <a href="{{ url('news_article_showOne',{'id':a.idArticle}) }}">
+                            {{ a.titleArticle }}
+                        </a>
+                    </h1>
+                    <span class="meta">
+                        <span><i class="glyphicon glyphicon-time"></i>{{ a.dateOfPublish | date }}</span>
+                    </span>
+                </div>
+                <img src="{{ asset('uploads/images/' ~ a.image) }}" class="">
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</div>
+<div class="container">
+    <div class="row">
+        <a href="{{ url('news_sub_update',{'id':sub.id_subscriber}) }}" class="float-left">update :)</a>
+        <a href="{{ url('news_front_subs_remove_visitor',{'id':sub.id_subscriber}) }}" class="float-right">unsubscribe from the newsletter :(</a>
+    </div>
+</div>

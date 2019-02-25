@@ -93,3 +93,7 @@ news_front_subs_remove_visitor:
 news_sub_update:
     path:     /sub/update/{id}
     defaults: { _controller: NewsBundle:Subscribe:update }
+
+news_letter_create:
+    path:     /newsletter/create
+    defaults: { _controller: NewsBundle:Newsletter:create }

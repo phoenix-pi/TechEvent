@@ -121,18 +121,18 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 {% block news_tache %}
-                                <li>
-                                    <a href="#">Pie chart</a>
-                                </li>
-                                <li>
-                                    <a href="#">Line chart</a>
-                                </li>
-                                <li>
-                                    <a href="#">Bar chart</a>
-                                </li>
-                                <li>
-                                    <a href="#">Histogram</a>
-                                </li>
+                                    <li>
+                                        <a href="{{ path('news_domain_homepage') }}">Domain</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('news_article_show') }}">Articles</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('news_front_subs_getAll') }}">Subscribers</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('news_letter_create') }}">Send newsletters</a>
+                                    </li>
                                 {% endblock %}
                             </ul>
                         </div>

@@ -29,4 +29,14 @@ class ArticleRepository extends EntityRepository
             ->setParameter('key', '%'.$k.'%')
             ->getResult();
     }
+
+
+    public function getArticleByDomain($domain){
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT a FROM TechEventBundle:Article a where a.domain=:domain and a.newsletter is null')
+            ->setParameter('domain',$domain)
+            ->getResult();
+    }
+
 }

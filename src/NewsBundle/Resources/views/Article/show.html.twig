@@ -9,10 +9,10 @@
         <a href="{{ path('news_article_show') }}">Articles</a>
     </li>
     <li>
-        <a href="#">Subscribers</a>
+        <a href="{{ path('news_front_subs_getAll') }}">Subscribers</a>
     </li>
     <li>
-        <a href="#">Newsletters</a>
+        <a href="{{ path('news_letter_create') }}">Send newsletters</a>
     </li>
 {% endblock %}
 {% block content %}
