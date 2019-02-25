@@ -69,3 +69,27 @@ news_front_article_bookmark_search:
 news_front_article_remove:
     path:     /front/article/remove/{id}
     defaults: { _controller: NewsBundle:Save:removeBookmark }
+
+news_front_subs_add:
+    path:     /subscribe
+    defaults: { _controller: NewsBundle:Subscribe:subscribe }
+
+news_front_subs_getAll:
+    path:     /sub/all
+    defaults: { _controller: NewsBundle:Subscribe:getAll }
+
+news_front_subs_remove:
+    path:     /sub/remove/{id}
+    defaults: { _controller: NewsBundle:Subscribe:remove }
+
+news_sub_search:
+    path:     /sub/search
+    defaults: { _controller: NewsBundle:Subscribe:search }
+
+news_front_subs_remove_visitor:
+    path:     /sub/removeVisitor/{id}
+    defaults: { _controller: NewsBundle:Subscribe:removeVisitor }
+
+news_sub_update:
+    path:     /sub/update/{id}
+    defaults: { _controller: NewsBundle:Subscribe:update }

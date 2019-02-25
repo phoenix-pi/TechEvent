@@ -11,7 +11,7 @@ namespace TechEventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="NewsBundle\Repository\SubscriberRepository")
  * @ORM\Table(name="subscriber")
  */
 class Subscriber

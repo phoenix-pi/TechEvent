@@ -1,0 +1,57 @@
+{% extends app.user.hasRole('ROLE_ADMIN')  ? 'backoffice.html.twig' : '@News/Default/notAllowed.html.twig'%}
+{% block admin_name %}{{ app.user.firstName }}{% endblock %}
+{% block admin_last_name %}{{ app.user.lastName }}{% endblock %}
+{% block news_tache %}
+    <li>
+        <a href="{{ path('news_domain_homepage') }}">Domain</a>
+    </li>
+    <li>
+        <a href="{{ path('news_article_show') }}">Articles</a>
+    </li>
+    <li>
+        <a href="{{ path('news_front_subs_getAll') }}">Subscribers</a>
+    </li>
+    <li>
+        <a href="#">Newsletters</a>
+    </li>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row float-right">
+            <form class="navbar-form" role="search" method="post" action="{{ path('news_sub_search') }}">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="email" >
+                    <div class="input-group-btn">
+                        <button class="btn btn-dark" type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<div class="container">
+    <br>
+</div>
+    <div class="container">
+    <div class="row">
+    <table class="table table-hover " id="myTable">
+        <thead class="bg-light ">
+        <tr>
+            <th style="width: 60%">E-mail</th>
+            <th style="width: 20%">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {%  for s in subs %}
+            <tr>
+                <td>{{ s.email_subscriber }}</td>
+                <td>
+                    <a href="{{ path('news_front_subs_remove',{'id':s.id_subscriber}) }}"><i class="fa fa-trash"></i> Delete </a>
+                </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+    </div>
+    </div>
+{% endblock %}
