@@ -53,10 +53,10 @@
             <div class="box-item">
                 <div class="box-post">
                     <span class="label label-success">
-                        <a href="{{ url('news_article_showOne',{'id':a.idArticle}) }}" rel="tag">{{ a.titleArticle }}</a>
+                        <a href="{{ url('news_front_article_show',{'id':a.idArticle}) }}" rel="tag">{{ a.titleArticle }}</a>
                     </span>
                     <h1 class="post-title">
-                        <a href="{{ url('news_article_showOne',{'id':a.idArticle}) }}">
+                        <a href="{{ url('news_front_article_show',{'id':a.idArticle}) }}">
                             {{ a.titleArticle }}
                         </a>
                     </h1>
@@ -64,7 +64,6 @@
                         <span><i class="glyphicon glyphicon-time"></i>{{ a.dateOfPublish | date }}</span>
                     </span>
                 </div>
-                <img src="{{ asset('uploads/images/' ~ a.image) }}" class="">
             </div>
             {% endfor %}
         </div>
