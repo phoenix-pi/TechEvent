@@ -66,6 +66,7 @@ class ArticleController extends Controller
 
     public function showAction() {
         $Allarticles=$this->getDoctrine()->getRepository(Article::class)->findAll();
+        $Allarticles=array_reverse($Allarticles);
         $Alldomains=$this->getDoctrine()->getRepository(Domain::class)->findAll();
         return $this->render('@News/Article/show.html.twig', array(
             'articles'=>$Allarticles,
@@ -153,6 +154,7 @@ class ArticleController extends Controller
 
     public function showfrontAction() {
         $articles=$this->getDoctrine()->getRepository(Article::class)->findAll();
+        $articles=array_reverse($articles);
         $domains=$this->getDoctrine()->getRepository(Domain::class)->findAll();
         return $this->render('@News/Article/front/show.html.twig', array(
             'articles'=>$articles,
