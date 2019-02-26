@@ -15,30 +15,28 @@
         <a href="{{ path('news_letter_create') }}">Send newsletters</a>
     </li>
 {% endblock %}
+{% block content %}
     {% form_theme form 'bootstrap_4_horizontal_layout.html.twig' %}
     <div class="col-md-12">
-    <div class="card">
-    <div class="card-body">
-    <div class="row">
-        <div class="col-md-3 border-right">
-            <h4>Add New Post</h4>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 border-right">
+                        <h4>Add New Post</h4>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_start(form) }}
+                            {{ form_row(form.titleArticle , {'attr': {'class': 'form-control here'}}) }}
+                            {{ form_row(form.ContentArticle, {'attr': {'class': 'form-control here', 'cols':'40', 'rows':'4'}}) }}
+                            {{ form_row(form.image) }}
+                            {{ form_row(form.domain) }}
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <hr>
-    <div class="row">
-    <div class="col-md-12">
-    {{ form_start(form) }}
-    {{ form_row(form.titleArticle , {'attr': {'class': 'form-control here'}}) }}
-    {{ form_row(form.ContentArticle, {'attr': {'class': 'form-control here', 'cols':'40', 'rows':'4'}}) }}
-    {{ form_row(form.image) }}
-    {{ form_row(form.domain) }}
-    {{ form_end(form) }}
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-
-
-
 {% endblock %}
