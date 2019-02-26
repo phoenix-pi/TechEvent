@@ -27,17 +27,16 @@
                                                     <a href="#"><small>{{ article.dateOfPublish | date }}</small></a>
                                                 </li>
                                                 {% if app.user %}
-                                                    {% if (added|first)=='0' %}
-                                                <li class="list-inline-item float-right">
-                                                    <i class="fa fa-save text-danger"></i>
-                                                    <a href="{{ path('news_front_article_add',{'id':article.idArticle}) }}"><small>Add to bookmark</small></a>
-                                                </li>
+                                                    {% if added == 1 %}
+                                                        <li class="list-inline-item float-right">
+                                                            <i class="fa fa-save text-danger"></i>
+                                                            <a href="{{ path('news_front_article_remove',{'id':article.idArticle}) }}"><small>Remove from bookmark</small></a>
+                                                        </li>
                                                         {% else %}
                                                             <li class="list-inline-item float-right">
                                                                 <i class="fa fa-save text-danger"></i>
-                                                                <a href="{{ path('news_front_article_remove',{'id':article.idArticle}) }}"><small>Remove from bookmark</small></a>
+                                                                <a href="{{ path('news_front_article_add',{'id':article.idArticle}) }}"><small>Add to bookmark</small></a>
                                                             </li>
-
                                                         {% endif %}
                                                 {% endif %}
                                             </ul>

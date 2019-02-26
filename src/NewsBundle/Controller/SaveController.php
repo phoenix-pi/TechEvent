@@ -20,8 +20,13 @@ class SaveController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->persist($save);
         $em->flush();
+        $addToBookmark=array();
+        if($this->getUser()) {
+            $addToBookmark=$this->getDoctrine()->getRepository(Saved::class)->IAddedItBefore($id, $this->getUser()->getId());
+        }
         return $this->render('@News/Article/front/article.html.twig', array(
-            'article'=>$article
+            'article'=>$article,
+            'added'=>sizeof($addToBookmark)
         ));
     }
 
@@ -56,10 +61,13 @@ class SaveController extends Controller
         $em->remove(current($saved));
         $em->flush();
         $article=$this->getDoctrine()->getRepository(Article::class)->find($id);
-        $addToBookmark=$this->getDoctrine()->getRepository(Saved::class)->IAddedItBefore($id, $this->getUser()->getId());
+        $addToBookmark=array();
+        if($this->getUser()) {
+            $addToBookmark=$this->getDoctrine()->getRepository(Saved::class)->IAddedItBefore($id, $this->getUser()->getId());
+        }
         return $this->render('@News/Article/front/article.html.twig', array(
             'article'=>$article,
-            'added'=>$addToBookmark[0]
+            'added'=>sizeof($addToBookmark)
         ));
     }
 }

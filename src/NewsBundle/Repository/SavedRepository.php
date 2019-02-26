@@ -41,7 +41,7 @@ class SavedRepository extends EntityRepository
 
     public function IAddedItBefore($id_article, $id_user) {
         $query=$this->getEntityManager()
-            ->createQuery("select count(s) from TechEventBundle:Saved s where s.article=".$id_article." and s.user=".$id_user);
+            ->createQuery("select s from TechEventBundle:Saved s where s.article=".$id_article." and s.user=".$id_user);
         return $query->getResult();
     }
 

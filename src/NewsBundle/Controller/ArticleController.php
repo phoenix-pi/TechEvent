@@ -164,11 +164,14 @@ class ArticleController extends Controller
         $article=$this->getDoctrine()->getRepository(Article::class)->find($id);
         $em = $this->getDoctrine()->getManager();
         $article->setViewsNumber($article->getViewsNumber()+1);
-        $addToBookmark=$this->getDoctrine()->getRepository(Saved::class)->IAddedItBefore($id, $this->getUser()->getId());
+        $addToBookmark=array();
+        if($this->getUser()) {
+            $addToBookmark=$this->getDoctrine()->getRepository(Saved::class)->IAddedItBefore($id, $this->getUser()->getId());
+        }
         $em->flush();
         return $this->render('@News/Article/front/article.html.twig', array(
             'article'=>$article,
-            'added'=>$addToBookmark[0]
+            'added'=>sizeof($addToBookmark)
         ));
     }
 

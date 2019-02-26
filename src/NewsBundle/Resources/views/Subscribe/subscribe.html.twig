@@ -41,7 +41,7 @@
                     <form method="post">
                         <h2>SUBSCRIBE TO OUR NEWSLETTER</h2>
                         <div class="input-group">
-                            <input type="email" name="email" class="form-control" placeholder="Enter your email">
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email">
                             <select class="form-control" name="domain_id">
                                 {% for d in domains %}
                                 <option value="{{ d.idDomain }}">{{ d.nameDomain }}</option>
@@ -60,4 +60,9 @@
         </div>
     </div>
 </section>
+
+
+
+
+
 {% endblock %}
