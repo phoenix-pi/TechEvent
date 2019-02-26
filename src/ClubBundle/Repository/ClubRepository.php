@@ -17,8 +17,31 @@ class ClubRepository extends EntityRepository
     {
         $q=$this->getEntityManager()
             ->createQuery("select c from TechEventBundle:Club c where c.theme= 
-            (select t from TechEventBundle:Theme t where t.theme_name=:name )")
+            (select t from TechEventBundle:Theme t where t.theme_name=:name ) and c.club_status='Accepted'")
             ->setParameter('name',$name);
+        return $q->getResult();
+    }
+
+    public function FindOwnerClub($id)
+    {
+        $q=$this->getEntityManager()
+            ->createQuery("select c from TechEventBundle:Club c where c.owner=:id")
+            ->setParameter('id',$id);
+        return $q->getResult();
+    }
+
+    public function FindMembersClub($id)
+    {
+        $q=$this->getEntityManager()
+            ->createQuery("select m from TechEventBundle:ClubUser m where m.club=:id_m ")
+        ->setParameter('id_m',$id);
+        return $q->getResult();
+    }
+    public function FindMyClub($id)
+    {
+        $q=$this->getEntityManager()
+            ->createQuery("select m from TechEventBundle:ClubUser m where m.member=:id ")
+            ->setParameter('id',$id);
         return $q->getResult();
     }
     public function showClub()

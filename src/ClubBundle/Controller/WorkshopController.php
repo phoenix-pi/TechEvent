@@ -9,6 +9,7 @@
 namespace ClubBundle\Controller;
 
 
+use Proxies\__CG__\TechEventBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use TechEventBundle\Entity\Workshop;
@@ -37,6 +38,8 @@ class WorkshopController extends Controller
         return $this->render('@Club/Workshop/Affiche.html.twig',array('wo'=>$work));
     }
     public function particpeAction($id){
+        $user= $this->getUser();
+        $part = $this->getDoctrine()->getRepository(User::class)->find($user);
         $work = $this->getDoctrine()->getRepository(Workshop::class)->findAll();
         $em=$this->getDoctrine()->getManager();
         $workshop=$this->getDoctrine()->getRepository(Workshop::class)->find($id);
@@ -44,7 +47,21 @@ class WorkshopController extends Controller
         $workshop->setNbr_Places($workshop->getNbr_Places()-1);
         $em->persist($workshop);
         $em->flush();
+
     }
+
+        return $this->render('@Club/Workshop/Cancel.html.twig',array('wo'=>$work,'user'=>$part));
+    }
+    public function cancelAction($id){
+        $work = $this->getDoctrine()->getRepository(Workshop::class)->findAll();
+        $em=$this->getDoctrine()->getManager();
+        $workshop=$this->getDoctrine()->getRepository(Workshop::class)->find($id);
+        if($workshop->getNbr_Places()>0){
+            $workshop->setNbr_Places($workshop->getNbr_Places()+1);
+            $em->persist($workshop);
+            $em->flush();
+
+        }
 
         return $this->render('@Club/Workshop/Affiche.html.twig',array('wo'=>$work));
     }

@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 {% block content %}
+    <link rel="stylesheet" href="{{ asset('Clubs/css/tab.css') }}"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <section class="category-section spad">
         <div class="container">
             <div class="row">
@@ -9,23 +13,19 @@
 
 
                         <ul class="category-menu">
-                            <li><a href="#">Club info</a>
 
-                            </li>
                             <li><a href="#">Workshops</a>
                                 <ul class="sub-menu">
                                     <li><a href="{{ path('Workshop_new') }}">New workshop</a></li>
                                     <li><a href="{{ path('up') }}">Upcoming workshops</a></li>
                                 </ul>
                             </li>
-
-                            <li><a href="{{ path('members',{'id':id}) }}"> Membership requests</a>
-
-                            </li>
-                            <li><a href="#"> Chat</a>
+                             {% for x in m %}
+                            <li><a href="{{ path('members',{'id':x.club.id_club}) }}">{% endfor %} Membership requests</a>
 
                             </li>
-                            <li><a href="#"> Calender</a>
+
+                            <li><a href="{{ url('fos_message_thread_new') }}"> Chat</a>
 
                             </li>
 
@@ -34,8 +34,8 @@
                         </ul>
                     </div>
                 </div>
-                {% block Req %}
-                {% endblock %}
+
+
             </div>
         </div>
     </section>

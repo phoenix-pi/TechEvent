@@ -12,7 +12,7 @@ namespace TechEventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ClubBundle\Repository\ClubRepository")
  * @ORM\Table(name="club_user")
  */
 class ClubUser

@@ -2,6 +2,7 @@
 
 namespace TechEventBundle\Entity;
 
+use FOS\MessageBundle\Model\ParticipantInterface;
 use FOS\UserBundle\Model\User as BaseUser;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 * @ORM\Entity(repositoryClass="ClubBundle\Repository\ClubRepository")
  * @ORM\Table(name="fos_user")
  */
- class User extends BaseUser
+ class User extends BaseUser implements ParticipantInterface
  {
      /**
      * @ORM\Id

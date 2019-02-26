@@ -37,6 +37,8 @@ framework:
     assets: ~
     php_errors:
         log: true
+    templating:
+        engines: ['twig']
 
 
 # Twig Configuration
@@ -88,3 +90,7 @@ fos_user:
         address: "iheb.chakroun@esprit.tn"
         sender_name: "iheb"
 
+fos_message:
+    db_driver: orm
+    thread_class: TechEventBundle\Entity\Thread
+    message_class: TechEventBundle\Entity\Message

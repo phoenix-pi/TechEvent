@@ -67,7 +67,7 @@
                     <td>{{th.theme_Name  }}</td>
                     <td>
                         <a href="{{ path('Theme_ed',{'id':th.id_Theme}) }}"><i class="fa fa-edit"></i> Edit</a>
-                        <a href="{{ path('Theme_del',{'id':th.id_Theme}) }}"><i class="fa fa-trash"></i> Delete</a>
+                        <a class="text-danger" href="{{ path('Theme_del',{'id':th.id_Theme}) }}"><i class="fa fa-trash"></i> Delete</a>
                     </td>
                 </tr>
             {% endfor %}

@@ -1,16 +1,21 @@
 {% extends 'backoffice.html.twig' %}
 {% block content %}
-<table id="ta" border='5'>
-    <tr><td>Club Name</td><td>Email</td><td>Description</td><td>Theme</td><td>Facebook</td><td>Status</td><td></td></tr>
+    <div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+
+    <tr><td>Club Name</td><td>Email</td><td >Description</td><td ></td><td ></td><td>Facebook</td><td>Status</td><td class="text-center" colspan="2">Action</td></tr>
     {% for c in Clubs %}
         <form method="post" action="{{ path('Status',{'id':c.id_club}) }}">
         <tr>
-            <td> {{ c.club_name }}</td><td>{{ c.email}}</td> <td>{{ c.club_description}}</td> <td>{{ c.theme}}</td><td>{{ c.facebook}}</td>
+            <td> {{ c.club_name }}</td><td>{{ c.email}}</td> <td colspan="3">{{ c.club_description}}</td><td>{{ c.facebook}}</td>
             <td>{{ c.club_status }}</td>
-            <td><button  name="status" class="btn-danger" value="Refused">Refuse</button>
-            <button name="status" class="btn-success" value="Accepted">Accept</button></td>
+            <td class="text-center"><button  name="status" class="btn btn-danger btn-sm" value="Refused">Refuse</button></td>
+            <td><button name="status" class="btn btn-success btn-sm" value="Accepted">Accept</button></td>
         </tr>
         </form>
     {% endfor %}
 </table>
+    </div>
+    </div>
 {% endblock %}

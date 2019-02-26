@@ -36,14 +36,18 @@
                         <li><a href="#">My Clubs</a>
 
                             <ul class="sub-menu">
-                        {% for y in Club %}
+                        {% for y in user %}
 
-                        <li><a href="{{ path('My_Club',{'id':y.id_club}) }}" >{{ y.club_name }}</a>
+                        <li><a href="{{ path('My_Club',{'id':y.owner.id}) }}" >{{ y.club_name }}</a>
                         </li>
 
                         {% endfor %}
 
                             </ul>
+
+                        </li>
+
+                        <li><a href="{{ path('Joined') }}" >Clubs im in</a>
 
                         </li>
                         <li><a href="{{ path('create') }}" >Create a Club</a>

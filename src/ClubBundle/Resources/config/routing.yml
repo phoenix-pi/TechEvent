@@ -18,7 +18,9 @@ create:
 Status:
     path:     /refuse/{id}
     defaults: { _controller: ClubBundle:Clubs:StatusClub }
-
+Joined:
+    path:     /joined
+    defaults: { _controller: ClubBundle:Clubs:joinedClubs }
 member:
     path:     /member/{id}
     defaults: { _controller: ClubBundle:Clubs:StatusMemberClub }
@@ -29,6 +31,15 @@ members:
 FindClub:
     path:     /Find
     defaults: { _controller: ClubBundle:Clubs:findClub }
+Club_admin:
+    path:     /admin/action
+    defaults: { _controller: ClubBundle:Clubs:ClubsList }
+delete:
+    path:     /admin/close/{id}
+    defaults: { _controller: ClubBundle:Clubs:delete }
+edit:
+    path:     /edit/{id}
+    defaults: { _controller: ClubBundle:Clubs:update }
 
 
 
@@ -54,4 +65,7 @@ up:
 participer:
     path:     /parti/{id}
     defaults: { _controller: ClubBundle:Workshop:particpe }
+cancel:
+    path:     /cancel/{id}
+    defaults: { _controller: ClubBundle:Workshop:cancel }
 

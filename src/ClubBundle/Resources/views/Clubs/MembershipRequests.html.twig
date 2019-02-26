@@ -1,55 +1,24 @@
 {% extends 'base.html.twig' %}
 {% block content %}
-    <section class="category-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 order-2 order-lg-1">
-                    <div class="filter-widget">
-                        <h1 class="fw-title">My Club</h1>
 
 
-                        <ul class="category-menu">
-                            <li><a href="#">Club info</a>
+                    <div class="container">
 
-                            </li>
-                            <li><a href="#">Workshops</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">New workshop</a></li>
-                                    <li><a href="#">Upcoming workshops</a></li>
-                                </ul>
-                            </li>
-                            {% for club in c %}
-                            <li><a href="{{ path('members',{'id':club.id_club_user}) }}"> Membership requests</a>
-                             {% endfor %}
-                            </li>
-                            <li><a href=""> Chat</a>
-
-                            </li>
-                            <li><a href="#"> Calender</a>
-
-                            </li>
-
-
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0" >
-<table id="ta" border='5'>
-    <tr><td>First Name</td><td>Last Name</td><td>Email</td><td>Why he wants to join us</td><td>He is a</td><td>His skills</td><td>Status</td></tr>
+                            <table class="table table-striped custab">
+                                <tr><td><b>First Name</b></td><td><b>Last Name</b></td><td><b>Email</b></td><td><b>Why he wants to join us</b></td><td><b>He is a</b></td><td><b>His skills</b></td><td><b>Status</b></td><td colspan="2" class="text-center"><b>Action</b></td></tr>
     {% for m in members  %}
         <form method="post" action="{{ path('member',{'id':m.id_club_user}) }}">
             <tr>
                 <td>{{ m.member.FirstName }}</td><td>{{ m.member.LastName }}</td><td>{{ m.member.Email }}</td><td> {{ m.why }}</td><td>{{ m.you_are}}</td> <td>{{m.skills}}</td>
                 <td>{{ m.club_user_status }}</td>
-                <td><button  name="member" class="btn-danger" value="Refused">Refuse</button>
-                    <button name="member" class="btn-success" value="Accepted">Accept</button></td>
+                <td><button  name="member" class="btn btn-danger btn-sm" value="Refused">Refuse</button></td>
+                   <td> <button name="member" class="btn btn-success btn-sm" value="Accepted">Accept</button></td>
             </tr>
         </form>
     {% endfor %}
 </table>
-                </div>
-            </div>
-        </div>
-    </section>
+                        </div>
+
+
+
     {% endblock %}

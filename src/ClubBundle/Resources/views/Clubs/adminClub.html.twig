@@ -1,0 +1,35 @@
+{% extends 'backoffice.html.twig' %}
+{% block content %}
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+        <thead>
+        <tr>
+            <th>Club_name</th>
+            <th> Description      </th>
+            <th>         </th>
+            <th> facebook        </th>
+            <th> Email </th>
+            <th> Action</th>
+        </tr>
+
+        </thead>
+
+
+        {% for c in club %}
+            <tr>
+                <td>{{ c.club_Name }}</td>
+                <td colspan="2">{{ c.club_Description }}</td>
+                <td>{{ c.facebook }}    </td>
+                <td>{{ c.email }}</td>
+                <td class="text-center"><a class='btn btn-danger btn-xs' href="{{ path('delete',{'id':c.id_club}) }}"> Close</a></td>
+            </tr>
+        {% endfor %}
+
+    </table>
+    </div>
+    </div>
+{% endblock %}

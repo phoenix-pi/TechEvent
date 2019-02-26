@@ -99,15 +99,19 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 {% block club_tache %}
+                                    <li>
+                                        <a href="{{ path('Club_admin') }}">Clubs</a>
+                                 </li>
                                 <li>
                                     <a href="{{ path('AdminClub') }}">Requests</a>
                                 </li>
                                 <li>
                                     <a href="{{ path('Theme_create') }}">Themes</a>
                                 </li>
-                                <li>
-                                    <a href="#">Tables</a>
-                                </li>
+                                    <li>
+                                        <a href="{{ url('fos_message_thread_new') }}">Chat</a>
+                                    </li>
+
                                 {% endblock %}
                             </ul>
                         </div>
