@@ -19,17 +19,16 @@ class WorkshopController extends Controller
     public function createWorkshopAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $current= new \DateTime();
+        $current= date('H:i:s \O\n d/m/Y');
         if($request->isMethod('post')){
             $work = new Workshop();
             $work->setTitle($request->get('Title'));
             $work->setWorkshop_Description($request->get('Description'));
             $work->setLocation($request->get('location'));
             $work->setNbr_Places($request->get('nbr'));
+            $work->setStart_Date(new \DateTime($request->get('date')) );
             $em->persist($work);
             $em->flush();
-
-
 
         }
         return $this->render('@Club/Workshop/AddWorkshop.html.twig');

@@ -92,10 +92,10 @@ class ClubsController extends Controller
         $themes = $this->getDoctrine()->getRepository(Theme::class)->findAll();
         $owner= $this->getUser();
         $user = $this->getDoctrine()->getRepository(Club::class)->FindOwnerClub($owner);
-
+        $mem = $this->getDoctrine()->getRepository(ClubUser::class)->FindMyClub($owner);
         $Clubs = $this->getDoctrine()->getRepository(Club::class)->FindClub($request->get('query'));
         return $this->render('@Club/Clubs/Clubs.html.twig',array(
-            'Club'=>$Clubs,'theme'=>$themes,'user'=>$user
+            'Club'=>$Clubs,'theme'=>$themes,'user'=>$user,'mem'=>$mem
         ));
     }
     public function joinAction(Request $request,$id)

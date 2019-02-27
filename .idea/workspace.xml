@@ -5,11 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClubBundle/Controller/ClubsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Controller/ClubsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClubBundle/Controller/WorkshopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Controller/WorkshopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClubBundle/Repository/ClubRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Repository/ClubRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClubBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubPage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubPage.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/Clubs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/Clubs.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/RequestAdmin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/RequestAdmin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/AddWorkshop.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/AddWorkshop.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,8 +50,8 @@
           <entry key="jpg" value="2" />
           <entry key="js" value="4" />
           <entry key="json" value="1" />
-          <entry key="php" value="201" />
-          <entry key="twig" value="200" />
+          <entry key="php" value="203" />
+          <entry key="twig" value="201" />
           <entry key="xml" value="24" />
           <entry key="yml" value="48" />
         </counts>
@@ -67,8 +63,8 @@
           <entry key="Image" value="2" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="4" />
-          <entry key="PHP" value="201" />
-          <entry key="Twig" value="201" />
+          <entry key="PHP" value="203" />
+          <entry key="Twig" value="202" />
           <entry key="XML" value="24" />
           <entry key="YAML" value="48" />
         </counts>
@@ -80,7 +76,7 @@
           <entry key="dummy" value="1" />
           <entry key="html" value="5" />
           <entry key="php" value="4659" />
-          <entry key="twig" value="7337" />
+          <entry key="twig" value="7436" />
           <entry key="txt" value="204" />
           <entry key="yml" value="603" />
         </counts>
@@ -91,7 +87,7 @@
           <entry key="HTML" value="10" />
           <entry key="PHP" value="4659" />
           <entry key="PLAIN_TEXT" value="205" />
-          <entry key="Twig" value="7333" />
+          <entry key="Twig" value="7432" />
           <entry key="YAML" value="603" />
         </counts>
       </usages-collector>
@@ -145,11 +141,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClubBundle/Controller/WorkshopController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+              <caret line="28" column="72" selection-start-line="28" selection-start-column="72" selection-end-line="28" selection-end-column="72" />
               <folding>
                 <element signature="e#125#172#0#PHP" expanded="true" />
               </folding>
@@ -158,10 +154,35 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClubBundle/Controller/ClubsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="97" column="69" selection-start-line="97" selection-start-column="69" selection-end-line="97" selection-end-column="69" />
+              <folding>
+                <element signature="e#126#183#0#PHP" expanded="true" />
+                <element signature="e#972#1005#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/AddWorkshop.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="60" column="109" selection-start-line="60" selection-start-column="109" selection-end-line="60" selection-end-column="109" />
+            <state relative-caret-position="435">
+              <caret line="117" column="19" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="19" />
+              <folding>
+                <element signature="e#12#26#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/Clubs.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="40" column="70" selection-start-line="40" selection-start-column="70" selection-end-line="40" selection-end-column="70" />
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
               </folding>
@@ -172,8 +193,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubPage.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+            <state relative-caret-position="340">
+              <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
               </folding>
@@ -276,7 +297,6 @@
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/TechEventBundle/Entity/Workshop.php" />
-        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/AddWorkshop.html.twig" />
         <option value="$PROJECT_DIR$/web/Clubs/css/tab.css" />
         <option value="$PROJECT_DIR$/src/TechEventBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
@@ -308,11 +328,12 @@
         <option value="$PROJECT_DIR$/src/ClubBundle/Repository/ClubRepository.php" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/joinUs.html.twig" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/ClubBundle/Controller/ClubsController.php" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubPage.html.twig" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/Clubs.html.twig" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/RequestAdmin.html.twig" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Controller/WorkshopController.php" />
+        <option value="$PROJECT_DIR$/src/ClubBundle/Controller/ClubsController.php" />
+        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/AddWorkshop.html.twig" />
       </list>
     </option>
   </component>
@@ -392,39 +413,6 @@
             <path>
               <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
               <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="FOSMessageBundle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="FOSMessageBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -463,15 +451,6 @@
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="Clubs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ClubBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Workshop" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -527,12 +506,12 @@
       <workItem from="1550651678079" duration="5444000" />
       <workItem from="1550658147771" duration="719000" />
       <workItem from="1550744245557" duration="186000" />
-      <workItem from="1550745389953" duration="95996000" />
+      <workItem from="1550745389953" duration="97729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171790000" />
+    <option name="totallyTimeSpent" value="173523000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="-5" width="1376" height="778" extended-state="6" />
@@ -814,16 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TechEventBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2829">
-          <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
-          <folding>
-            <element signature="e#42#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/JoinedClubs.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -926,16 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/Clubs.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="40" column="70" selection-start-line="40" selection-start-column="70" selection-end-line="40" selection-end-column="70" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/RequestAdmin.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -946,31 +905,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Controller/ClubsController.php">
+    <entry file="file://$PROJECT_DIR$/src/TechEventBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="47" column="78" selection-start-line="47" selection-start-column="78" selection-end-line="47" selection-end-column="78" />
-          <folding>
-            <element signature="e#126#183#0#PHP" expanded="true" />
-            <element signature="e#972#1005#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/AddWorkshop.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" column="109" selection-start-line="60" selection-start-column="109" selection-end-line="60" selection-end-column="109" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="4" column="49" lean-forward="true" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubPage.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+        <state relative-caret-position="340">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
@@ -980,9 +925,40 @@
     <entry file="file://$PROJECT_DIR$/src/ClubBundle/Controller/WorkshopController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <caret line="28" column="72" selection-start-line="28" selection-start-column="72" selection-end-line="28" selection-end-column="72" />
           <folding>
             <element signature="e#125#172#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/Clubs.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="40" column="70" selection-start-line="40" selection-start-column="70" selection-end-line="40" selection-end-column="70" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Controller/ClubsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="97" column="69" selection-start-line="97" selection-start-column="69" selection-end-line="97" selection-end-column="69" />
+          <folding>
+            <element signature="e#126#183#0#PHP" expanded="true" />
+            <element signature="e#972#1005#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/AddWorkshop.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="117" column="19" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="19" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>

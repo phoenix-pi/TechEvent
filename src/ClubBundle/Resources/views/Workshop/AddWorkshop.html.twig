@@ -58,12 +58,12 @@
                 <span class="focus-input100"></span>
             </div>
             <div class="wrap-input100 validate-input" data-validate = "Please enter the Date of the workshop">
-                <input class="input100" type="datetime-local" name="Date" placeholder="Date of the workshop">
+                <input class="input100" type="datetime-local" name="Date" id="Start" placeholder="Date of the workshop">
                 <span class="focus-input100"></span>
             </div>
 
             <div class="container-contact100-form-btn">
-                <button class="contact100-form-btn">
+                <button class="contact100-form-btn" id="btn">
 						<span>
 							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
 							Submit
@@ -104,7 +104,20 @@
 
     gtag('config', 'UA-23581568-13');
 </script>
+<script>
 
+    $( "#btn" ).click(function() {
+
+    var CurrentDate = new Date();
+    var SelectedDate = new Date(
+        $('#Start').val()
+
+    );
+    if(CurrentDate > SelectedDate){
+        $('#Start').val("invalid")
+    }
+    });
+</script>
 </body>
 </html>
 {% endblock %}
