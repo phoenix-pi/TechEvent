@@ -73,3 +73,6 @@ cancel:
 UpdateWorkshop:
     path:     /updateW/{id}
     defaults: { _controller: ClubBundle:Workshop:update }
+w_del:
+    path:     /del/{id}
+    defaults: { _controller: ClubBundle:Workshop:del }

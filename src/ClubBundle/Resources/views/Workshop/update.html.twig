@@ -39,26 +39,26 @@
 				</span>
 
             <div class="wrap-input100 validate-input" data-validate="Please enter the workshop title">
-                <input class="input100" type="text" name="Title" placeholder="Workshop title">
+                <input class="input100" type="text" name="Title" placeholder="Workshop title" value="{{ w.title }}">
                 <span class="focus-input100"></span>
             </div>
 
             <div class="wrap-input100 validate-input" data-validate = "Please describe the workshop">
-                <textarea class="input100" type="text" name="Description" placeholder="Description"></textarea>
+                <textarea class="input100" type="text" name="Description" placeholder="Description" value="{{ w.workshop_Description }}"></textarea>
                 <span class="focus-input100"></span>
             </div>
 
             <div class="wrap-input100 validate-input" data-validate = "Please the location">
-                <input class="input100" type="text" name="location" placeholder="Location">
+                <input class="input100" type="text" name="location" placeholder="Location" value="{{ w.location }}">
                 <span class="focus-input100"></span>
             </div>
 
             <div class="wrap-input100 validate-input" data-validate = "Please enter the number of places">
-                <input class="input100" type="number" name="nbr" placeholder="Number of places">
+                <input class="input100" type="number" name="nbr" placeholder="Number of places" value="{{ w.nbr_Places }}">
                 <span class="focus-input100"></span>
             </div>
             <div class="wrap-input100 validate-input" data-validate = "Please enter the Date of the workshop">
-                <input class="input100" type="datetime-local" name="Date" id="Start" placeholder="Date of the workshop">
+                <input class="input100" type="datetime-local" name="Date" id="Start" placeholder="Date of the workshop" value="{{ w.start_Date|date }}">
                 <span class="focus-input100"></span>
             </div>
 

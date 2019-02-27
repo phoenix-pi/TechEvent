@@ -88,5 +88,16 @@ class WorkshopController extends Controller
             'w' => $work
         ));
     }
+    public function delAction($id)
+    {
+//get the object to be removed given the submitted id
+        $em = $this->getDoctrine()->getManager();
+        $work= $em->getRepository(Workshop::class)->find($id);
+//remove from the ORM
+        $em->remove($work);
+//update the data base
+        $em->flush();
+        return $this->redirectToRoute("workUp");
+    }
 
 }

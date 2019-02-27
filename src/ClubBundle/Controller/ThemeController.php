@@ -55,9 +55,9 @@ class ThemeController extends Controller
 $th = $this->getDoctrine()->getRepository(Theme::class)->findAll();
 return $this->render('@Club/Theme/CreateTheme.html.twig',array(
     'theme_ed' => $theme_ed,
-    'themes'=>$th
-));
+    'themes'=>$th));
 }
+
 
 
 }

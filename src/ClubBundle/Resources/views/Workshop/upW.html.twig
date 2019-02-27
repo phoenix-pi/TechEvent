@@ -31,7 +31,7 @@
                     <td class="cell">
                         <b>Remaining places</b>
                     </td>
-                    <td class="cell pull-center">
+                    <td class="cell pull-center" colspan="2">
                         <b>Action</b>
                     </td>
                 </tr>
@@ -59,7 +59,7 @@
                         <td class="cell" data-title="Action">
                             <form method="post">
                                 <a href="{{ path('UpdateWorkshop',{'id':w.id_workshop}) }}"><i class="fa fa-edit"></i> Edit</a>
-
+                               <td> <a class="text-danger" href="{{ path('w_del',{'id':w.id_workshop}) }}"><i class="fa fa-trash"></i> Cancel</a></td>
                             </form>
                         </td>
                 </tr>
