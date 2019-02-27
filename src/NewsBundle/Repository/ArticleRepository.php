@@ -39,4 +39,12 @@ class ArticleRepository extends EntityRepository
             ->getResult();
     }
 
+    public function getArticleByTitle($title){
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT a FROM TechEventBundle:Article a where a.titleArticle=:title')
+            ->setParameter('title',$title)
+            ->getResult();
+    }
+
 }

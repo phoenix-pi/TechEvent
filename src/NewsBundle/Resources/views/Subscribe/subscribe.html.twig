@@ -52,9 +52,16 @@
                                 <button class="btn" type="submit">Subscribe Now</button>
                             </span>
                         </div>
+                        <div class="input-group">
+                            <div class="danger alert-danger" {% if 0 == exist %}hidden{% endif %}>
+                                <span>
+                                    <strong>This e-mail already exist.</strong>
+                                </span>
+                            </div>
+                        </div>
                     </form>
                     {% else %}
-                        <h2>You will now recieve our newsletter</h2>
+                        <h2>Congrats, you will now recieve our newsletter</h2>
                     {% endif %}
                 </div>
             </div>

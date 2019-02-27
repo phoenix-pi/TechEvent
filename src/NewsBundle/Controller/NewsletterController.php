@@ -26,7 +26,7 @@ class NewsletterController extends Controller
                 $em->flush();
                 foreach ($subscribers as $s) {
                     if($s->getDomain() == $d) {
-                        $this->sendEmail($s, $articles_by_domain);
+                        $this->sendEmail($s, $articles_by_domain, $newsletter);
                         $ns = new Newsletter_Subscriber();
                         $ns->setNewsletter($newsletter);
                         $ns->setSubscriber($s);
@@ -48,7 +48,7 @@ class NewsletterController extends Controller
     }
 
 
-    public function sendEmail($sub, $articlesToSend) {
+    public function sendEmail($sub, $articlesToSend, $newsletter) {
         $message = (new \Swift_Message('Newsletter'))
             ->setFrom('pi.phoenix.2019@gmail.com')
             ->setTo($sub->getEmail_subscriber())
@@ -56,7 +56,8 @@ class NewsletterController extends Controller
                 $this->renderView(
                     '@News/Subscribe/emails/newsletter.html.twig', array(
                         'sub'=>$sub,
-                        'articles'=>$articlesToSend
+                        'articles'=>$articlesToSend,
+                        'newsletter'=>$newsletter
                     )
                 ),
                 'text/html'

@@ -32,27 +32,33 @@ class ArticleController extends Controller
             ->add('save', SubmitType::class, ['label' => 'Submit'])
             ->getForm();
         $form->handleRequest($request);
+        $exist=0;
         if ($form->isSubmitted() && $form->isValid()) {
-            $file = $article->getImage();
-            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
-            try {
-                $file->move($this->getParameter('uploads_directory'), $fileName);
-            } catch (FileException $e) {
-                // ... handle exception if something happens during file upload
+            if (0==sizeof($this->getDoctrine()->getRepository(Article::class)->getArticleByTitle($article->getTitleArticle()))) {
+                $file = $article->getImage();
+                $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+                try {
+                    $file->move($this->getParameter('uploads_directory'), $fileName);
+                } catch (FileException $e) {
+                }
+                $article->setViewsNumber(0);
+                $article->setDateOfPublish(new \DateTime());
+                $article->setImage($fileName);
+                $em=$this->getDoctrine()->getManager();
+                $em->persist($article);
+                $em->flush();
+                return $this->render('@News/Article/article.html.twig', array(
+                    'article'=>$article
+                ));
+            } else {
+                $exist=1;
             }
-            $article->setViewsNumber(0);
-            $article->setDateOfPublish(new \DateTime());
-            $article->setImage($fileName);
-            $em=$this->getDoctrine()->getManager();
-            $em->persist($article);
-            $em->flush();
-            return $this->render('@News/Article/article.html.twig', array(
-                'article'=>$article
-            ));
+
         }
 
         return $this->render('@News/Article/add.html.twig', [
             'form' => $form->createView(),
+            'exist' => $exist
         ]);
 
     }

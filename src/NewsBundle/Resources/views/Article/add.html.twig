@@ -30,6 +30,13 @@
                     <div class="col-md-12">
                         {{ form_start(form) }}
                             {{ form_row(form.titleArticle , {'attr': {'class': 'form-control here'}}) }}
+                            <div class="input-group">
+                                <div class="danger alert-danger" {% if 0 == exist %}hidden{% endif %}>
+                                    <span>
+                                        This article already exist.
+                                    </span>
+                                </div>
+                             </div>
                             {{ form_row(form.ContentArticle, {'attr': {'class': 'form-control here', 'cols':'40', 'rows':'4'}}) }}
                             {{ form_row(form.image) }}
                             {{ form_row(form.domain) }}

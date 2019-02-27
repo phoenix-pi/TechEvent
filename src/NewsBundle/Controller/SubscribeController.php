@@ -11,38 +11,44 @@ class SubscribeController extends Controller
 {
     public function subscribeAction(Request $request)
     {
+        $exist=0;
         if ($request->isMethod('post')) {
-            $domain=$this->getDoctrine()->getRepository(Domain::class)->find($request->get('domain_id'));
             $email=$request->get('email');
-            $sub=new Subscriber();
-            $sub->setDomain($domain);
-            $sub->setEmail_Subscriber($email);
-            $em=$this->getDoctrine()->getManager();
-            $em->persist($sub);
-            $em->flush();
+            if (0!=sizeof($this->getDoctrine()->getRepository(Subscriber::class)->findSubByEmail($email))) {
+                $exist=1;
+            } else {
+                $domain=$this->getDoctrine()->getRepository(Domain::class)->find($request->get('domain_id'));
+                $sub=new Subscriber();
+                $sub->setDomain($domain);
+                $sub->setEmail_Subscriber($email);
+                $em=$this->getDoctrine()->getManager();
+                $em->persist($sub);
+                $em->flush();
 
-            $message = (new \Swift_Message('Welcome to our newsletter'))
-                ->setFrom('pi.phoenix.2019@gmail.com')
-                ->setTo($email)
-                ->setSubject("Welcome to the newsletter.")
-                ->setBody(
-                    $this->renderView(
-                        '@News/Subscribe/emails/welcome.html.twig', array(
+                $message = (new \Swift_Message('Welcome to our newsletter'))
+                    ->setFrom('pi.phoenix.2019@gmail.com')
+                    ->setTo($email)
+                    ->setSubject("Welcome to the newsletter.")
+                    ->setBody(
+                        $this->renderView(
+                            '@News/Subscribe/emails/welcome.html.twig', array(
                             'sub'=>$sub
-                        )
-                    ),
+                            )
+                        ),
                     'text/html'
-                ) ;
+                    ) ;
 
-            $this->get('mailer')->send($message);
+                $this->get('mailer')->send($message);
 
-            return $this->render('@News/Subscribe/subscribe.html.twig', array(
-                'confirm'=>1
-            ));
+                return $this->render('@News/Subscribe/subscribe.html.twig', array(
+                    'confirm'=>1
+                ));
+            }
         }
         $domains=$this->getDoctrine()->getRepository(Domain::class)->findAll();
         return $this->render('@News/Subscribe/subscribe.html.twig', array(
-            'domains'=>$domains
+            'domains'=>$domains,
+            'exist'=> $exist
         ));
     }
 

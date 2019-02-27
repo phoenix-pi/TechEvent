@@ -1,79 +1,160 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!DOCTYPE html>
+<html lang="en">
 
-<style>
-    .jasgrid{padding:0;}
-    .box-item {
-        float: left;
-        opacity: 1;
-        overflow: hidden;
-        position: relative;
-    }
+<head>
+    <meta charset="utf-8">
+    <title>Newsletter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+</head>
 
-    .box-item img {
-        width: 100%;
-    }
-    .box-item a,span{color:#FFF;}
-
-    .box-item .box-post span.meta {
-        font-family:  sans-serif;
-        font-size: 12px;
-        color: #fff;
-        margin-top: 15px;
-        display: block;
-    }
-
-    .box-item .box-post span.meta span {
-        margin-right: 15px;
-    }
-
-    .box-item .box-post {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
-        padding: 30px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-    .box-item .box-post h1..post-title {
-        font-size:10pt;
-    }
-
-</style>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 jasgrid">
-            {% for a in articles %}
-            <div class="box-item">
-                <div class="box-post">
-                    <span class="label label-success">
-                        <a href="{{ url('news_front_article_show',{'id':a.idArticle}) }}" rel="tag">{{ a.titleArticle }}</a>
-                    </span>
-                    <h1 class="post-title">
-                        <a href="{{ url('news_front_article_show',{'id':a.idArticle}) }}">
-                            {{ a.titleArticle }}
-                        </a>
-                    </h1>
-                    <span class="meta">
-                        <span><i class="glyphicon glyphicon-time"></i>{{ a.dateOfPublish | date }}</span>
-                    </span>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-
-    </div>
-
+<body>
+<div class="m_5772815688879916528tableWhite" style="width:100%!important;background:#e6e7e8;padding-bottom:10px">
+    <table class="m_5772815688879916528tableWide" width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#e6e7e8">
+        <tbody>
+        <tr>
+            <td class="m_5772815688879916528tableWhiteBackground" style="border-collapse:collapse" width="100%" bgcolor="#e6e7e8" valign="top" align="center">
+                <table class="m_5772815688879916528table" width="600" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                    <tr>
+                        <td class="m_5772815688879916528hide" style="border-collapse:collapse" width="50" height="70" bgcolor="#FFFFFF"><img style="outline:none;text-decoration:none;display:block" width="50" height="70" alt="" class="CToWUd">
+                        </td>
+                        <td style="border-collapse:collapse" height="70" bgcolor="#ffffff" class="m_5772815688879916528hide" align="left" valign="middle">
+                            <font style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#a4a4a4;font-weight:600">Newsletter</font>
+                            <font style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#a4a4a4;font-weight:300">{{ newsletter.creation_date |date("m/d/Y") }}</font>
+                        </td>
+                        <td style="border-collapse:collapse" class="m_5772815688879916528table" width="219" height="90" bgcolor="#ffffff" align="left" valign="middle">
+                        </td>
+                        <td class="m_5772815688879916528signin" style="border-collapse:collapse" align="right" valign="middle" width="85" bgcolor="#ffffff">
+                        </td>
+                        <td class="m_5772815688879916528hide" style="border-collapse:collapse" width="50" height="70" bgcolor="#FFFFFF"><img style="outline:none;text-decoration:none;display:block">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                {% for a in articles %}
+                    {% if loop.index is odd %}
+                        <table class="m_5772815688879916528table" width="600" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td class="m_5772815688879916528table" style="border-collapse:collapse;padding-top:50px" align="center" valign="top" bgcolor="#e46863">
+                                    <table class="m_5772815688879916528table90" width="450" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                        <tr>
+                                            <td class="m_5772815688879916528table" style="border-collapse:collapse" width="450" height="3" align="center" valign="top" bgcolor="#e46863">
+                                                <a href="{{ url('news_front_article_show',{'id':a.idArticle}) }}" style="line-height:39px;text-decoration:none;color:#ffffff;font-size:35px;font-weight:bold;font-family:helvetica,arial,sans-serif">
+                                                    {{ a.titleArticle }}</a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="m_5772815688879916528table" width="600" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td class="m_5772815688879916528tableCenterPad" style="border-collapse:collapse;padding-top:15px" align="center" valign="top" bgcolor="#e46863">
+                                    <a href="{{ url('news_front_article_show',{'id':a.idArticle}) }}" style="color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:32px;outline:none;white-space:nowrap;border-radius:2px;text-decoration:none;display:inline-block;border:1px solid #6af26e;background-color:#25d670">      READ MORE      </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="m_5772815688879916528table" width="600" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td class="m_5772815688879916528table" style="border-collapse:collapse;padding-bottom:50px;padding-top:10px" align="center" valign="top" bgcolor="#e46863">
+                                    <table class="m_5772815688879916528table90" width="80%" border="0" cellpadding="0" cellspacing="0">
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <table class="m_5772815688879916528table" width="600" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td class="m_5772815688879916528table" style="border-collapse:collapse;padding-top:50px" align="center" valign="top" bgcolor="#38a88c">
+                                    <table class="m_5772815688879916528table90" width="450" border="0" cellpadding="0" cellspacing="0">
+                                        <tbody>
+                                        <tr>
+                                            <td class="m_5772815688879916528table" style="border-collapse:collapse" width="450" height="3" align="center" valign="top" bgcolor="#38a88c">
+                                                <a href="{{ url('news_front_article_show',{'id':a.idArticle}) }}" style="line-height:39px;text-decoration:none;color:#ffffff;font-size:35px;font-weight:bold;font-family:helvetica,arial,sans-serif">
+                                                    {{ a.titleArticle }}
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="m_5772815688879916528table" width="600" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td class="m_5772815688879916528tableCenterPad" style="border-collapse:collapse;padding-top:15px" align="center" valign="top" bgcolor="#38a88c">
+                                    <a href="{{ url('news_front_article_show',{'id':a.idArticle}) }}" style="color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:32px;outline:none;white-space:nowrap;border-radius:2px;text-decoration:none;display:inline-block;border:1px solid #6af26e;background-color:#25d670">      READ MORE      </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="m_5772815688879916528table" width="600" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td class="m_5772815688879916528table" style="border-collapse:collapse;padding-bottom:50px;padding-top:10px" align="center" valign="top" bgcolor="#38a88c">
+                                    <table class="m_5772815688879916528table90" width="80%" border="0" cellpadding="0" cellspacing="0">
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    {% endif %}
+                {% endfor %}
+                <table class="m_5772815688879916528hide" width="600" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                    <tr>
+                        <td class="m_5772815688879916528table" style="border-collapse:collapse" bgcolor="#f6f9fb" align="center">
+                            <br>
+                            <table class="m_5772815688879916528hide" width="500" border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                <tr>
+                                    <td class="m_5772815688879916528table" style="border-collapse:collapse" bgcolor="#f6f9fb" align="center">
+                                        <table class="m_5772815688879916528hide" width="220" border="0" cellpadding="0" cellspacing="0" align="left">
+                                            <tbody>
+                                            <tr>
+                                                <td style="border-collapse:collapse;line-height:14px" align="left" valign="top">
+                                                    <font style="font-family:arial;font-size:11px;line-height:14px;color:#999999">
+                                                        This e-mail was sent to <font style="font-family:arial;font-size:11px;line-height:14px;color:#999999"><a style="color:#999999;text-decoration:none">{{ sub.email_subscriber }}</a></font>. You received this email because you signed up for a TechEvent newsletter.
+                                                        <br>
+                                                        <br>
+                                                        <a href="{{ url('news_front_subs_remove_visitor',{'id':sub.id_subscriber}) }}" style="font-family:arial;font-size:11px;color:#999999;font-weight:bold;text-decoration:none">Unsubscribe</a>   |   
+                                                        <a href="{{ url('news_sub_update',{'id':sub.id_subscriber}) }}" style="font-family:arial;font-size:11px;color:#999999;text-decoration:none">Update</a>
+                                                        <br>
+                                                        <br>
+                                                    </font>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
 </div>
-<div class="container">
-    <div class="row">
-        <a href="{{ url('news_sub_update',{'id':sub.id_subscriber}) }}" class="float-left">update :)</a>
-        <a href="{{ url('news_front_subs_remove_visitor',{'id':sub.id_subscriber}) }}" class="float-right">unsubscribe from the newsletter :(</a>
-    </div>
-</div>
+</body>
+
+</html>
