@@ -15,7 +15,7 @@ class DomainRepository extends EntityRepository
 {
     public function findDomainByName($name) {
         $query=$this->getEntityManager()
-            ->createQuery("select d from TechEventBundle:Domain d where d.name_domain=:name")
+            ->createQuery("select d from TechEventBundle:Domain d where d.nameDomain=:name")
             ->setParameter('name', $name);
         return $query->getResult();
     }
