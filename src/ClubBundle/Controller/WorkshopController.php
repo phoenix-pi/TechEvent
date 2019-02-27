@@ -38,6 +38,11 @@ class WorkshopController extends Controller
         $work = $this->getDoctrine()->getRepository(Workshop::class)->findAll();
         return $this->render('@Club/Workshop/Affiche.html.twig',array('wo'=>$work));
     }
+    public function WorkAction(Request $request)
+    {
+        $work = $this->getDoctrine()->getRepository(Workshop::class)->findAll();
+        return $this->render('@Club/Workshop/upW.html.twig',array('wo'=>$work));
+    }
     public function particpeAction($id){
         $user= $this->getUser();
         $part = $this->getDoctrine()->getRepository(User::class)->find($user);
@@ -65,6 +70,23 @@ class WorkshopController extends Controller
         }
 
         return $this->render('@Club/Workshop/Affiche.html.twig',array('wo'=>$work));
+    }
+    public function updateAction(Request $request,$id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $work=$em->getRepository(Workshop::class)->find($id);
+        if ($request->isMethod('POST')) {
+            $work->setTitle($request->get('Title'));
+            $work->setWorkshop_Description($request->get('Description'));
+            $work->setLocation($request->get('location'));
+            $work->setNbr_Places($request->get('nbr'));
+            $work->setStart_Date(new \DateTime($request->get('date')) );
+            $em->flush();
+            return $this->redirectToRoute('workUp');
+        }
+        return $this->render('@Club/Workshop/update.html.twig',array(
+            'w' => $work
+        ));
     }
 
 }

@@ -60,6 +60,9 @@ Workshop_new:
 up:
     path:     /up_workshop
     defaults: { _controller: ClubBundle:Workshop:upWorkshop }
+workUp:
+    path:     /myWork
+    defaults: { _controller: ClubBundle:Workshop:work }
 participer:
     path:     /parti/{id}
     defaults: { _controller: ClubBundle:Workshop:particpe }
@@ -67,3 +70,6 @@ cancel:
     path:     /cancel/{id}
     defaults: { _controller: ClubBundle:Workshop:cancel }
 
+UpdateWorkshop:
+    path:     /updateW/{id}
+    defaults: { _controller: ClubBundle:Workshop:update }
