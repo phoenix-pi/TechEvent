@@ -21,7 +21,7 @@
                 <table class="m_5772815688879916528table" width="600" border="0" cellpadding="0" cellspacing="0">
                     <tbody>
                     <tr>
-                        <td class="m_5772815688879916528hide" style="border-collapse:collapse" width="50" height="70" bgcolor="#FFFFFF"><img style="outline:none;text-decoration:none;display:block" width="50" height="70" alt="" class="CToWUd">
+                        <td class="m_5772815688879916528hide" style="border-collapse:collapse" width="50" height="70" bgcolor="#FFFFFF"><img style="outline:none;text-decoration:none;display:block" src="https://ci3.googleusercontent.com/proxy/CUlhUDkF0GhJXvMi8k-tsT6O7DUlj7C8S7VO5whfkhSbnD1s2cg9dWSFa60WI9w1LPbGaXkWeobneAv9dcnymkKFjq52KpJvc5i_35eb7q4MYCnwC06sPJoDYcEGgNTiljYEUtXI9DYIsE9itgN9TW9QHEbXgzL5JldO6QvnoiBS2rXPjzrHomoX=s0-d-e1-ft#https://static.cdn.responsys.net/i2/responsysimages/survey/contentlibrary/2017_q4/newsletter_wufoo/images/spacer.gif" width="50" height="70" alt="" class="CToWUd">
                         </td>
                         <td style="border-collapse:collapse" height="70" bgcolor="#ffffff" class="m_5772815688879916528hide" align="left" valign="middle">
                             <font style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#a4a4a4;font-weight:600">Newsletter</font>
@@ -37,15 +37,15 @@
                     </tbody>
                 </table>
                 {% for a in articles %}
-                    {% if loop.index is odd %}
+                    {% if loop.index is odd%}
                         <table class="m_5772815688879916528table" width="600" border="0" cellpadding="0" cellspacing="0">
                             <tbody>
                             <tr>
-                                <td class="m_5772815688879916528table" style="border-collapse:collapse;padding-top:50px" align="center" valign="top" bgcolor="#e46863">
+                                <td class="m_5772815688879916528table" style="border-collapse:collapse;padding-top:50px" align="center" valign="top" bgcolor="#3333ff">
                                     <table class="m_5772815688879916528table90" width="450" border="0" cellpadding="0" cellspacing="0">
                                         <tbody>
                                         <tr>
-                                            <td class="m_5772815688879916528table" style="border-collapse:collapse" width="450" height="3" align="center" valign="top" bgcolor="#e46863">
+                                            <td class="m_5772815688879916528table" style="border-collapse:collapse" width="450" height="3" align="center" valign="top" bgcolor="#3333ff">
                                                 <a href="{{ url('news_front_article_show',{'id':a.idArticle}) }}" style="line-height:39px;text-decoration:none;color:#ffffff;font-size:35px;font-weight:bold;font-family:helvetica,arial,sans-serif">
                                                     {{ a.titleArticle }}</a>
                                             </td>
@@ -59,8 +59,8 @@
                         <table class="m_5772815688879916528table" width="600" border="0" cellpadding="0" cellspacing="0">
                             <tbody>
                             <tr>
-                                <td class="m_5772815688879916528tableCenterPad" style="border-collapse:collapse;padding-top:15px" align="center" valign="top" bgcolor="#e46863">
-                                    <a href="{{ url('news_front_article_show',{'id':a.idArticle}) }}" style="color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:32px;outline:none;white-space:nowrap;border-radius:2px;text-decoration:none;display:inline-block;border:1px solid #6af26e;background-color:#25d670">      READ MORE      </a>
+                                <td class="m_5772815688879916528tableCenterPad" style="border-collapse:collapse;padding-top:15px" align="center" valign="top" bgcolor="#3333ff">
+                                    <a href="{{ url('news_front_article_show',{'id':a.idArticle}) }}" style="color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:32px;outline:none;white-space:nowrap;border-radius:2px;text-decoration:none;display:inline-block;border:1px solid #6af26e;background-color:#4d4dff">      READ MORE      </a>
                                 </td>
                             </tr>
                             </tbody>
@@ -68,7 +68,7 @@
                         <table class="m_5772815688879916528table" width="600" border="0" cellpadding="0" cellspacing="0">
                             <tbody>
                             <tr>
-                                <td class="m_5772815688879916528table" style="border-collapse:collapse;padding-bottom:50px;padding-top:10px" align="center" valign="top" bgcolor="#e46863">
+                                <td class="m_5772815688879916528table" style="border-collapse:collapse;padding-bottom:50px;padding-top:10px" align="center" valign="top" bgcolor="#3333ff">
                                     <table class="m_5772815688879916528table90" width="80%" border="0" cellpadding="0" cellspacing="0">
                                     </table>
                                 </td>

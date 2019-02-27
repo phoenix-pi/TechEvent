@@ -63,23 +63,26 @@ class ArticleController extends Controller
 
     }
 
-
     private function generateUniqueFileName()
     {
         return md5(uniqid());
     }
 
-
-    public function showAction() {
+    public function showAction(Request $request) {
         $Allarticles=$this->getDoctrine()->getRepository(Article::class)->findAll();
         $Allarticles=array_reverse($Allarticles);
         $Alldomains=$this->getDoctrine()->getRepository(Domain::class)->findAll();
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $Allarticles, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            5/*limit per page*/
+        );
         return $this->render('@News/Article/show.html.twig', array(
-            'articles'=>$Allarticles,
-            'domains'=>$Alldomains
+            'domains'=>$Alldomains,
+            'articles' => $pagination
         ));
     }
-
 
     public function showOneAction($id) {
         $article=$this->getDoctrine()->getRepository(Article::class)->find($id);
@@ -143,27 +146,38 @@ class ArticleController extends Controller
     }
 
     public function searchAction(Request $request) {
-        $articles=$this->getDoctrine()->getRepository(Article::class)->findAll();
-        if($request->isMethod('post')) {
-            $domain=$request->get('domain');
-            $orderBy=$request->get('orderBy');
-            $keyword=$request->get('keyword');
-            $articles=$this->getDoctrine()->getRepository(Article::class)->findByDomainKeywordAndOrderBy($domain, $keyword, $orderBy);
-        }
+        $domain=$request->get('domain');
+        $orderBy=$request->get('orderBy');
+        $keyword=$request->get('keyword');
+        $articles=$this->getDoctrine()->getRepository(Article::class)->findByDomainKeywordAndOrderBy($domain, $keyword, $orderBy);
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $articles, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
         $domains = $this->getDoctrine()->getRepository(Domain::class)->findAll();
         return $this->render('@News/Article/show.html.twig', array(
-            'articles'=>$articles,
-            'domains'=>$domains
+            'articles'=>$pagination,
+            'domains'=>$domains,
+            'domain'=>$domain,
+            'orderBy'=>$orderBy,
+            'keyword'=>$keyword
         ));
-
     }
 
-    public function showfrontAction() {
+    public function showfrontAction(Request $request) {
         $articles=$this->getDoctrine()->getRepository(Article::class)->findAll();
         $articles=array_reverse($articles);
         $domains=$this->getDoctrine()->getRepository(Domain::class)->findAll();
+        $paginator  = $this->get('knp_paginator');
+        $res = $paginator->paginate(
+            $articles, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            5/*limit per page*/
+        );
         return $this->render('@News/Article/front/show.html.twig', array(
-            'articles'=>$articles,
+            'articles'=>$res,
             'domains'=>$domains
         ));
     }
@@ -184,17 +198,23 @@ class ArticleController extends Controller
     }
 
     public function searchFrontAction(Request $request) {
-        $articles=$this->getDoctrine()->getRepository(Article::class)->findAll();
-        if($request->isMethod('post')) {
-            $domain=$request->get('domain');
-            $orderBy=$request->get('orderBy');
-            $keyword=$request->get('keyword');
-            $articles=$this->getDoctrine()->getRepository(Article::class)->findByDomainKeywordAndOrderBy($domain, $keyword, $orderBy);
-        }
+        $domain=$request->get('domain');
+        $orderBy=$request->get('orderBy');
+        $keyword=$request->get('keyword');
+        $articles=$this->getDoctrine()->getRepository(Article::class)->findByDomainKeywordAndOrderBy($domain, $keyword, $orderBy);
+        $paginator  = $this->get('knp_paginator');
+        $res = $paginator->paginate(
+            $articles, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            5/*limit per page*/
+        );
         $domains = $this->getDoctrine()->getRepository(Domain::class)->findAll();
         return $this->render('@News/Article/front/show.html.twig', array(
-            'articles'=>$articles,
-            'domains'=>$domains
+            'articles'=>$res,
+            'domains'=>$domains,
+            'domain'=>$domain,
+            'orderBy'=>$orderBy,
+            'keyword'=>$keyword
         ));
 
     }

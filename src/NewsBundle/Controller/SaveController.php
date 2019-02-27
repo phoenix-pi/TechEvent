@@ -30,28 +30,41 @@ class SaveController extends Controller
         ));
     }
 
-    public function showBookmarksAction() {
+    public function showBookmarksAction(Request $request) {
         $articles=$this->getDoctrine()->getRepository(Saved::class)->findSavedByUserId($this->getUser()->getId());
         $domains=$this->getDoctrine()->getRepository(Domain::class)->findAll();
+        $paginator  = $this->get('knp_paginator');
+        $res = $paginator->paginate(
+            $articles, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
         return $this->render('@News/Article/front/show.html.twig', array(
-            'articles'=>$articles,
+            'articles'=>$res,
             'domains'=>$domains,
             'bookmark'=>1
         ));
     }
 
     public function searchFrontBookmarkAction(Request $request) {
-        $articles=$this->getDoctrine()->getRepository(Article::class)->findAll();
-        if($request->isMethod('post')) {
-            $domain=$request->get('domain');
-            $orderBy=$request->get('orderBy');
-            $keyword=$request->get('keyword');
-            $articles=$this->getDoctrine()->getRepository(Saved::class)->findByDomainKeywordAndOrderBy($domain, $keyword, $orderBy, $this->getUser()->getId());
-        }
+        $domain=$request->get('domain');
+        $orderBy=$request->get('orderBy');
+        $keyword=$request->get('keyword');
+        $articles=$this->getDoctrine()->getRepository(Saved::class)->findByDomainKeywordAndOrderBy($domain, $keyword, $orderBy, $this->getUser()->getId());
+        $paginator  = $this->get('knp_paginator');
+        $res = $paginator->paginate(
+            $articles, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
         $domains = $this->getDoctrine()->getRepository(Domain::class)->findAll();
         return $this->render('@News/Article/front/show.html.twig', array(
-            'articles'=>$articles,
-            'domains'=>$domains
+            'articles'=>$res,
+            'domains'=>$domains,
+            'domain'=>$domain,
+            'orderBy'=>$orderBy,
+            'keyword'=>$keyword,
+            'bookmark'=>1
         ));
     }
 

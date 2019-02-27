@@ -18,9 +18,11 @@
 {% block content %}
     <div class="container">
         <div class="row float-right">
-            <form class="navbar-form" role="search" method="post" action="{{ path('news_sub_search') }}">
+            <form class="navbar-form" role="search" method="get" action="{{ path('news_sub_search') }}">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="email" >
+                    <input type="text"
+                           {% if email is defined %} value="{{ email }}" {% endif %}
+                           class="form-control" placeholder="Search" name="email" >
                     <div class="input-group-btn">
                         <button class="btn btn-dark" type="submit"><i class="fa fa-search"></i></button>
                     </div>
@@ -55,5 +57,14 @@
         </tbody>
     </table>
     </div>
+    </div>
+
+    <div class="navigation">
+        <div class="d-flex justify-content-center">
+            <div class="col-md-12"></div>
+            <div class="col-md-6"></div>
+            <div class="col-md-1">{{ knp_pagination_render(subs) }}</div>
+        </div>
+
     </div>
 {% endblock %}

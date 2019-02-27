@@ -52,29 +52,47 @@ class SubscribeController extends Controller
         ));
     }
 
-
-    public function getAllAction() {
+    public function getAllAction(Request $request) {
         $subs=$this->getDoctrine()->getRepository(Subscriber::class)->findAll();
+        $paginator  = $this->get('knp_paginator');
+        $res = $paginator->paginate(
+            $subs, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
         return $this->render('@News/Subscribe/all.html.twig', array(
-            'subs'=>$subs
+            'subs'=>$res
         ));
     }
 
-    public function removeAction($id) {
+    public function removeAction($id, Request $request) {
         $sub=$this->getDoctrine()->getRepository(Subscriber::class)->find($id);
         $em = $this->getDoctrine()->getManager();
         $em->remove($sub);
         $em->flush();
         $subs=$this->getDoctrine()->getRepository(Subscriber::class)->findAll();
+        $paginator  = $this->get('knp_paginator');
+        $res = $paginator->paginate(
+            $subs, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
         return $this->render('@News/Subscribe/all.html.twig', array(
-            'subs'=>$subs
+            'subs'=>$res
         ));
     }
 
     public function searchAction(Request $request) {
         $subs=$this->getDoctrine()->getRepository(Subscriber::class)->findSubByEmail($request->get('email'));
+        $paginator  = $this->get('knp_paginator');
+        $res = $paginator->paginate(
+            $subs, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
         return $this->render('@News/Subscribe/all.html.twig', array(
-            'subs'=>$subs
+            'subs'=>$res,
+            'email'=>$request->get('email')
         ));
     }
 

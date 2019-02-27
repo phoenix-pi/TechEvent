@@ -16,27 +16,50 @@
                     <div class="row float-right">
                         <div class="col-sm-12 pull-center well ">
                             {% if bookmark is not defined %}
-                                <form class="form-inline" action="{{ path('news_front_article__search') }}" method="POST">
+                                <form class="form-inline" action="{{ path('news_front_article__search') }}" method="get">
                                 {% else %}
-                                <form class="form-inline" action="{{ path('news_front_article_bookmark_search') }}" method="POST">
+                                <form class="form-inline" action="{{ path('news_front_article_bookmark_search') }}" method="get">
                                 {% endif %}
-                                <select name="domain" class="form-control" id="domain">
-                                    <option value="any">Select domain</option>
-                                    {% for d in domains %}
-                                        <option value="{{ d.idDomain }}">{{ d.nameDomain }}</option>
-                                    {% endfor %}
-                                </select>
-                                <select name="orderBy" class="form-control" id="orderBy">
-                                    <option value="any">Order by</option>
-                                    <option value="viewsNumber">Number of views</option>
-                                    <option value="dateOfPublish">Date of publish</option>
-                                </select>
-                                <div class="input-group custom-search-form">
-                                    <input type="text" name="keyword" class="form-control" placeholder="Search..." id="keyword">
-                                    <span class="input-group-btn">
-                                        <button id='search' class="btn btn-success" type="submit">Search</button>
+                                    <select name="domain" class="form-control">
+                                        <option value="any">Select domain</option>
+                                        {% for d in domains %}
+                                            <option
+                                                    {% if domain is defined %}
+                                                        {% if domain == d.idDomain %}
+                                                            selected
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    value="{{ d.idDomain }}">
+                                                {{ d.nameDomain }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    <select name="orderBy" class="form-control">
+                                        <option value="any">Order by</option>
+                                        <option value="viewsNumber"
+                                                {% if orderBy is defined %}
+                                            {% if orderBy == 'viewsNumber' %}
+                                                selected
+                                            {% endif %}
+                                                {% endif %}>
+                                            Number of views
+                                        </option>
+                                        <option value="dateOfPublish"
+                                                {% if orderBy is defined %}
+                                            {% if orderBy == 'dateOfPublish' %}
+                                                selected
+                                            {% endif %}
+                                                {% endif %}>Date of publish
+                                        </option>
+                                    </select>
+                                    <div class="input-group custom-search-form">
+                                        <input type="text" name="keyword" class="form-control"
+                                                {% if keyword is defined %}  value="{{ keyword }}" {% endif  %}
+                                               placeholder="Search...">
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-success" type="submit">Search</button>
                                     </span>
-                                </div>
+                                    </div>
                             </form>
                         </div>
                     </div>
@@ -94,4 +117,13 @@
             </div>
         </div>
     </div>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-5"></div>
+            <div class="col-md-4 pull-center">{{ knp_pagination_render(articles) }}</div>
+
+    </div>
+    </div>
+    <br>
+    <div class="row"></div>
 {% endblock %}
