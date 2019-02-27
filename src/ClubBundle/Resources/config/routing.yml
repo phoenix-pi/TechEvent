@@ -37,9 +37,7 @@ Club_admin:
 delete:
     path:     /admin/close/{id}
     defaults: { _controller: ClubBundle:Clubs:delete }
-edit:
-    path:     /edit/{id}
-    defaults: { _controller: ClubBundle:Clubs:update }
+
 
 
 

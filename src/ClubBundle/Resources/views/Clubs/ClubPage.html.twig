@@ -20,13 +20,12 @@
                                     <li><a href="{{ path('up') }}">Upcoming workshops</a></li>
                                 </ul>
                             </li>
+                            <li>
                              {% for x in m %}
-                            <li><a href="{{ path('members',{'id':x.club.id_club}) }}">{% endfor %} Membership requests</a>
-
-                            </li>
+                            <a href="{{ path('members',{'id':x.club.id_club}) }}">{% endfor %} Membership requests</a>
+                           </li>
 
                             <li><a href="{{ url('fos_message_thread_new') }}"> Chat</a>
-
                             </li>
 
 

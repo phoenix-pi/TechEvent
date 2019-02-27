@@ -35,16 +35,18 @@ class ClubsController extends Controller
         $owner= $this->getUser();
         $user = $this->getDoctrine()->getRepository(Club::class)->FindOwnerClub($owner);
         $mem = $this->getDoctrine()->getRepository(ClubUser::class)->FindMembersClub($id);
+        $my = $this->getDoctrine()->getRepository(ClubUser::class)->FindMembersClub($owner);
         $clubs = $this->getDoctrine()->getRepository(Club::class)->findAll();
-        return $this->render('@Club/Clubs/ClubPage.html.twig',array('club'=>$clubs,'m'=>$mem,'user'=>$user));
+        return $this->render('@Club/Clubs/ClubPage.html.twig',array('club'=>$clubs,'m'=>$mem,'user'=>$user,'my'=>$my));
     }
     public function afficherClubAction(Request $request)
     {
         $owner= $this->getUser();
         $user = $this->getDoctrine()->getRepository(Club::class)->FindOwnerClub($owner);
+        $mem = $this->getDoctrine()->getRepository(ClubUser::class)->FindMyClub($owner);
         $themes = $this->getDoctrine()->getRepository(Theme::class)->findAll();
         $clubs = $this->getDoctrine()->getRepository(Club::class)->showClub();
-        return $this->render('@Club/Clubs/Clubs.html.twig', array('Club'=>$clubs,'theme'=>$themes,'user'=>$user));
+        return $this->render('@Club/Clubs/Clubs.html.twig', array('Club'=>$clubs,'theme'=>$themes,'user'=>$user,'mem'=>$mem));
     }
     public function AdminClubAction(Request $request)
     {
@@ -90,6 +92,7 @@ class ClubsController extends Controller
         $themes = $this->getDoctrine()->getRepository(Theme::class)->findAll();
         $owner= $this->getUser();
         $user = $this->getDoctrine()->getRepository(Club::class)->FindOwnerClub($owner);
+
         $Clubs = $this->getDoctrine()->getRepository(Club::class)->FindClub($request->get('query'));
         return $this->render('@Club/Clubs/Clubs.html.twig',array(
             'Club'=>$Clubs,'theme'=>$themes,'user'=>$user

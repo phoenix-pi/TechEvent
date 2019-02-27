@@ -38,7 +38,7 @@
                             <ul class="sub-menu">
                         {% for y in user %}
 
-                        <li><a href="{{ path('My_Club',{'id':y.owner.id}) }}" >{{ y.club_name }}</a>
+                        <li><a href="{{ path('My_Club',{'id':y.id_club}) }}" >{{ y.club_name }}</a>
                         </li>
 
                         {% endfor %}
@@ -47,8 +47,16 @@
 
                         </li>
 
-                        <li><a href="{{ path('Joined') }}" >Clubs im in</a>
+                        <li><a href="#" >Clubs im in</a>
+                            <ul class="sub-menu">
+                                {% for m in mem %}
 
+                                    <li><a href="{{ path('Joined')}}" >{{ m.club.club_name }}</a>
+                                    </li>
+
+                                {% endfor %}
+
+                            </ul>
                         </li>
                         <li><a href="{{ path('create') }}" >Create a Club</a>
 
@@ -72,11 +80,12 @@
                             <div class="frontside">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="{{ asset('Clubs/img/9c565b5031b48eb96b549e9cb4817b45.png') }}" alt="card image"></p>
+                                    </br></br>
                                         <h4 class="card-title"><b>Club Name: </b> {{ c.club_Name }}</h4>
-                                        <p class="card-text"><b>Logo: </b>{{ c.logo}}</p>
+                                        <p class="card-text text-uppercase"><b>Owner: </b>{{ c.owner.FirstName}} {{ c.owner.LastName }}</p>
                                         <p class="card-text"><b>Email: </b>{{ c.email}}</p>
                                         <p class="card-text"><b>Facebook: </b>{{ c.facebook}}</p>
+                                        <p class="card-text"><b>Theme: </b>{{ c.theme.theme_name}}</p>
                                     </div>
                                 </div>
                             </div>

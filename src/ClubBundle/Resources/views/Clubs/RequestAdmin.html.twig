@@ -4,7 +4,7 @@
     <div class="row col-md-6 col-md-offset-2 custyle">
     <table class="table table-striped custab">
 
-    <tr><td>Club Name</td><td>Email</td><td >Description</td><td ></td><td ></td><td>Facebook</td><td>Status</td><td class="text-center" colspan="2">Action</td></tr>
+        <tr><td><b>Club Name</b></td><td><b>Email</b></td><td ><b>Description</b></td><td ></td><td ></td><td><b>Facebook</b></td><td><b>Status</b></td><td class="text-center" colspan="2"><b>Action</b></td></tr>
     {% for c in Clubs %}
         <form method="post" action="{{ path('Status',{'id':c.id_club}) }}">
         <tr>
