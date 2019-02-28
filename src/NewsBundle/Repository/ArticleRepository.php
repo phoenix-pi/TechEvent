@@ -27,7 +27,7 @@ class ArticleRepository extends EntityRepository
             ->createQuery(
                 'SELECT a FROM TechEventBundle:Article a where a.titleArticle LIKE :key'.$sql)
             ->setParameter('key', '%'.$k.'%')
-            ->getResult();
+            ->getResult()  ;
     }
 
 

@@ -68,7 +68,8 @@
                                             {% if keyword is defined %}  value="{{ keyword }}" {% endif  %}
                                            placeholder="Search...">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-success" type="submit">Search</button>
+                                        <button class="btn btn-secondary" type="submit">Search</button>
+                                        <a href="{{ path('news_article_show') }}"><button class="btn btn-secondary" type="button">Reset</button></a>
                                     </span>
                                 </div>
                             </form>
@@ -82,53 +83,41 @@
 
 
         </div>
+<br>
+
+      <div class="row">
+          <table class="table table-hover " id="myTable" style="background: white">
+              <thead class="bg-light ">
+              <tr>
+                  <th style="width: 60%">Title</th>
+                  <th style="width: 60%">Date of publish</th>
+                  <th>Views number</th>
+                  <th>Domain</th>
+                  <th style="width: 20%">Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              {% for a in articles  %}
+                  <tr>
+                      <td> <a href="{{ path('news_article_showOne',{'id':a.idArticle}) }}">{{ a.titleArticle }}</a></td>
+                      <td>{{ a.dateOfPublish | date }}</td>
+                      <td>{{ a.viewsNumber }}</td>
+                      <td>{{ a.domain.nameDomain }}</td>
+                      <td>
+                          <a href="{{ path('news_article_delete', {'id':a.idArticle}) }}"><i class="fa fa-trash"></i></a>
+                          <a href="{{ path('news_article_update', {'id':a.idArticle}) }}"><i class="fa fa-edit"></i></a>
+                      </td>
+                  </tr>
+              {% endfor %}
+
+              </tbody>
+          </table>
+      </div>
 
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="row mb-2">
-                    {% for a in articles  %}
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-2">
-                                            <img src="{{ asset('uploads/images/' ~ a.image) }}">
-                                        </div>
-                                        <div class="col-md-10">
-                                            <div class="card-body">
-                                                <div class="news-content">
-                                                    <a href="{{ path('news_article_showOne',{'id':a.idArticle}) }}"><h2>{{ a.titleArticle }}</h2></a>
-                                                    <p>{{ a.contentArticle|length > 200 ?  a.contentArticle|slice(0, 200) ~ '...' :  a.contentArticle  }}</p>
-                                                </div>
-                                                <div class="news-footer">
-                                                    <div class="news-author">
-                                                        <ul class="list-inline list-unstyled">
-                                                            <li class="list-inline-item text-secondary">
-                                                                <i class="fa fa-list-alt"></i>
-                                                                {{ a.domain.nameDomain }}
-                                                            </li>
-                                                            <li class="list-inline-item text-secondary">
-                                                                <i class="fa fa-eye"></i>
-                                                                {{ a.viewsNumber }}
-                                                            </li>
-                                                            <li class="list-inline-item text-secondary">
-                                                                <i class="fa fa-calendar"></i>
-                                                                {{ a.dateOfPublish | date }}
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
+
+
+
     </div>
 
     <div class="navigation">

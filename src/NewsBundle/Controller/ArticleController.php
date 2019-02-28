@@ -76,7 +76,7 @@ class ArticleController extends Controller
         $pagination = $paginator->paginate(
             $Allarticles, /* query NOT result */
             $request->query->getInt('page', 1)/*page number*/,
-            5/*limit per page*/
+            10/*limit per page*/
         );
         return $this->render('@News/Article/show.html.twig', array(
             'domains'=>$Alldomains,
@@ -202,7 +202,7 @@ class ArticleController extends Controller
         $orderBy=$request->get('orderBy');
         $keyword=$request->get('keyword');
         $articles=$this->getDoctrine()->getRepository(Article::class)->findByDomainKeywordAndOrderBy($domain, $keyword, $orderBy);
-        $paginator  = $this->get('knp_paginator');
+        $paginator = $this->get('knp_paginator');
         $res = $paginator->paginate(
             $articles, /* query NOT result */
             $request->query->getInt('page', 1)/*page number*/,
