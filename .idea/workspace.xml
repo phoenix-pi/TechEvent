@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65019412-c43c-4cfe-8a35-19bdafef63e3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/TechEvent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TechEvent.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewsBundle/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewsBundle/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewsBundle/Repository/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewsBundle/Repository/ArticleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewsBundle/Resources/views/Domain/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewsBundle/Resources/views/Domain/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewsBundle/Resources/views/Subscribe/all.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewsBundle/Resources/views/Subscribe/all.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/add.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/front/article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/front/article.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,12 +56,12 @@
           <entry key="css" value="3" />
           <entry key="html" value="1" />
           <entry key="jpg" value="2" />
-          <entry key="json" value="9" />
-          <entry key="lock" value="4" />
-          <entry key="php" value="277" />
-          <entry key="twig" value="290" />
+          <entry key="json" value="12" />
+          <entry key="lock" value="5" />
+          <entry key="php" value="283" />
+          <entry key="twig" value="293" />
           <entry key="xml" value="26" />
-          <entry key="yml" value="67" />
+          <entry key="yml" value="70" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -66,34 +69,34 @@
           <entry key="CSS" value="3" />
           <entry key="HTML" value="1" />
           <entry key="Image" value="2" />
-          <entry key="JSON" value="13" />
-          <entry key="PHP" value="273" />
+          <entry key="JSON" value="17" />
+          <entry key="PHP" value="279" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Twig" value="290" />
+          <entry key="Twig" value="293" />
           <entry key="XML" value="26" />
-          <entry key="YAML" value="67" />
+          <entry key="YAML" value="70" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="22" />
           <entry key="html" value="5" />
-          <entry key="json" value="6" />
+          <entry key="json" value="12" />
           <entry key="lock" value="1" />
-          <entry key="php" value="8574" />
-          <entry key="twig" value="10969" />
-          <entry key="txt" value="338" />
-          <entry key="yml" value="1113" />
+          <entry key="php" value="8577" />
+          <entry key="twig" value="11241" />
+          <entry key="txt" value="342" />
+          <entry key="yml" value="1159" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="10" />
-          <entry key="JSON" value="7" />
-          <entry key="PHP" value="8535" />
-          <entry key="PLAIN_TEXT" value="399" />
-          <entry key="Twig" value="10964" />
-          <entry key="YAML" value="1113" />
+          <entry key="JSON" value="13" />
+          <entry key="PHP" value="8538" />
+          <entry key="PLAIN_TEXT" value="403" />
+          <entry key="Twig" value="11236" />
+          <entry key="YAML" value="1159" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -148,62 +151,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/show.html.twig">
+        <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="71" column="75" selection-start-line="71" selection-start-column="75" selection-end-line="71" selection-end-column="75" />
-              <folding>
-                <element signature="e#644#706#0#HTML" />
-                <element signature="e#4246#4271#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/NewsBundle/Resources/config/routing.yml">
+        <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="24" column="17" selection-start-line="24" selection-end-line="24" selection-end-column="17" />
+            <state relative-caret-position="374">
+              <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TechEventBundle/Entity/Article.php">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="122" column="48" selection-start-line="122" selection-start-column="48" selection-end-line="122" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/article.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="82" column="72" selection-start-line="82" selection-start-column="72" selection-end-line="82" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/update.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+            <state relative-caret-position="397">
+              <caret line="140" column="48" selection-start-line="140" selection-start-column="48" selection-end-line="140" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/NewsBundle/Controller/ArticleController.php">
+        <entry file="file://$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/front/article.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="114" column="42" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="42" />
-              <folding>
-                <element signature="e#41#90#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="239">
+              <caret line="54" column="107" lean-forward="true" selection-start-line="54" selection-start-column="107" selection-end-line="54" selection-end-column="107" />
             </state>
           </provider>
         </entry>
@@ -253,9 +231,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="composer require vich/uploader-bundle" />
-      <command text="s doctrine:schema:update --force " />
-      <command text="c dump-autoload" />
       <command text="s doctrine:schema:update --force " />
       <command text="s doctrine:database:create" />
       <command text="s doctrine:schema:update --force " />
@@ -278,6 +253,9 @@
       <command text="s doctrine:schema:update" />
       <command text="s doctrine:schema:update --force " />
       <command text="composer require knplabs/knp-paginator-bundle" />
+      <command text="composer require friendsofsymfony/ckeditor-bundle" />
+      <command text="php bin/console ckeditor:install" />
+      <command text="composer update" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -290,9 +268,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/NewsBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/composer.lock" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Entity/ImageUpload.php" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/TechEventBundle/Entity/Saved.php" />
@@ -315,31 +290,34 @@
         <option value="$PROJECT_DIR$/src/NewsBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Resources/views/Default/notAllowed.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/front/article.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/backoffice.html.twig" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Repository/SubscriberRepository.php" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Resources/views/Subscribe/subscribe.html.twig" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Controller/NewsletterController.php" />
         <option value="$PROJECT_DIR$/src/TechEventBundle/Entity/Newsletter.php" />
-        <option value="$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/add.html.twig" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Resources/views/Subscribe/updateSub.html.twig" />
         <option value="$PROJECT_DIR$/src/TechEventBundle/Entity/Newsletter_Subscriber.php" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Resources/views/Subscribe/emails/newsletter.html.twig" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/front/showPage.html.twig" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/showPage.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/translations/KnpPaginatorBundle.en.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/pagination.html.twig" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Controller/SubscribeController.php" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/front/show.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Controller/SaveController.php" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Repository/ArticleRepository.php" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Resources/views/Domain/index.html.twig" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Resources/views/Subscribe/all.html.twig" />
         <option value="$PROJECT_DIR$/src/TechEventBundle/Entity/Article.php" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/show.html.twig" />
+        <option value="$PROJECT_DIR$/composer.lock" />
         <option value="$PROJECT_DIR$/src/NewsBundle/Controller/ArticleController.php" />
+        <option value="$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/add.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/front/article.html.twig" />
       </list>
     </option>
   </component>
@@ -393,6 +371,7 @@
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/nomaya/social-bundle" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -414,6 +393,11 @@
             <path>
               <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
               <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
@@ -446,14 +430,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="NewsBundle" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="NewsBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -464,6 +440,34 @@
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="Article" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="NewsBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Article" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -534,16 +538,15 @@
       <workItem from="1551201698484" duration="2512000" />
       <workItem from="1551232081047" duration="620000" />
       <workItem from="1551248502768" duration="491000" />
-      <workItem from="1551266729809" duration="28949000" />
+      <workItem from="1551266729809" duration="34307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208809000" />
+    <option name="totallyTimeSpent" value="214167000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="851" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24899329" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -559,7 +562,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="10" sideWeight="0.49932885" weight="0.32962447" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32962447" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32962447" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50067115" side_tool="true" weight="0.32962447" />
       <window_info anchor="right" x="0" y="0" width="337" height="651" id="Documentation" order="0" side_tool="true" weight="0.3295302" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -580,39 +583,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TechEventBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
-          <caret line="47" column="48" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TechEventBundle/Entity/Domain.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="856">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TechEventBundle/Entity/Subscriber.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="74" selection-start-line="13" selection-start-column="74" selection-end-line="13" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/NewsBundle/Resources/views/Subscribe/emails/unsubscribe.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
@@ -662,9 +632,6 @@
           <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NewsBundle/Resources/views/Subscribe/emails/welcome.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -765,13 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/add.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="35" column="67" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/showPage.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -790,13 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="27" column="64" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -830,13 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/front/article.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TechEventBundle/Entity/Newsletter_Subscriber.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
@@ -855,13 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="62" column="17" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -926,6 +865,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/article.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="82" column="72" selection-start-line="82" selection-start-column="72" selection-end-line="82" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TechEventBundle/Entity/Article.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -940,13 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/article.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="82" column="72" selection-start-line="82" selection-start-column="72" selection-end-line="82" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
@@ -958,13 +897,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/composer.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="939">
+          <caret line="895" column="41" selection-start-line="895" selection-start-column="41" selection-end-line="895" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/kms/froala-editor-bundle/Form/Type/FroalaEditorType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1209">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/kms/froala-editor-bundle/Twig/FroalaExtension.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/kms/froala-editor-bundle/Resources/views/Form/froala_widget.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/NewsBundle/Controller/ArticleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="114" column="42" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="42" />
+        <state relative-caret-position="68">
+          <caret line="24" column="55" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="55" />
           <folding>
             <element signature="e#41#90#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="33" column="63" lean-forward="true" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/add.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="140" column="48" selection-start-line="140" selection-start-column="48" selection-end-line="140" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NewsBundle/Resources/views/Article/front/article.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="54" column="107" lean-forward="true" selection-start-line="54" selection-start-column="107" selection-end-line="54" selection-end-column="107" />
         </state>
       </provider>
     </entry>
