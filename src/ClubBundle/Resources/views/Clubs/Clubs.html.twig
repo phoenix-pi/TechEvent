@@ -29,7 +29,7 @@
                         <li><a href="#">Themes</a>
                             <ul class="sub-menu">
                                 {% for th in theme %}
-                                <li><a  name="query">{{ th.theme_name }}</a></li>
+                                <li><button class="btn btn-link" name="query" value="{{ th.theme_name }}">{{ th.theme_name }}</button></li>
                                 {% endfor %}
                             </ul>
                         </li>
