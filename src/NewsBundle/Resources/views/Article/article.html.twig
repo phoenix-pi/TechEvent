@@ -1,4 +1,4 @@
-{% extends app.user.hasRole('ROLE_ADMIN')  ? 'backoffice.html.twig' : '@News/Default/notAllowed.html.twig'%}
+{% extends not app.user or not app.user.hasRole('ROLE_ADMIN') ?  '@News/Default/notAllowed.html.twig' : 'backoffice.html.twig' %}
 {% block admin_name %}{{ app.user.firstName }}{% endblock %}
 {% block admin_last_name %}{{ app.user.lastName }}{% endblock %}
 {% block news_tache %}
