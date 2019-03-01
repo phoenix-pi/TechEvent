@@ -4,6 +4,9 @@ namespace TechEventBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+
+
+
 class UserController extends Controller
 {
     public function indexAction()
@@ -13,6 +16,7 @@ class UserController extends Controller
 
     public function UserRedirectAction()
     {
+
         return $this->render('@TechEvent/Default/hello-world.html.twig');
     }
 

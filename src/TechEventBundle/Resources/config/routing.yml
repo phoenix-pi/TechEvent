@@ -9,3 +9,7 @@ tech_event_homepage_user:
 tech_event_homepage_admin:
     path:     /admin/
     defaults: { _controller: TechEventBundle:User:AdminRedirect }
+
+tech_event_home:
+    path:     /share
+    defaults: { _controller: TechEventBundle:Default:share }

@@ -20,4 +20,9 @@ class DefaultController extends Controller
     {
         return $this->render('@TechEvent/Default/hello-world-admin.html.twig');
     }
+
+    public function shareAction()
+    {
+        return $this->render('@TechEvent/Default/share.html.twig');
+    }
 }

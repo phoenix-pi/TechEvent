@@ -1,0 +1,65 @@
+{% block admin_name %}{{ app.user.firstName }}{% endblock %}
+{% block admin_last_name %}{{ app.user.lastName }}{% endblock %}
+{% extends app.user.hasRole('ROLE_ADMIN')  ? 'backoffice.html.twig' : '@Event/Default/index.html.twig'%}
+{% block content %}
+
+
+
+
+
+    <section class="category-section spad" style="padding-top: 10px;">
+
+
+        <div class="container">
+            <div class="row col-md-15 col-md-offset-2 custyle">
+                <table class="table table-striped custab">
+                    <thead>
+
+                    <tr>
+
+                        <th>Event Name</th>
+                        <th>Address</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                    </thead>
+                    {% for i in e %}
+                        {% if i.status == 'WAITING' %}
+                            <tr>
+                                <td><h4>{{ i.event_name }}</h4></td>
+                                <td>{{ i.organizer}}</td>
+                                <td class="text-center"><a href="{{ path('event_EventRequestaccept',{'id':i.id_event}) }}"> <img class="js-buttom" src="{{ asset('img/tick.png') }}" style="width:35px"></a>
+                                    <a href="{{ path('event_EventRequestrefuse',{'id':i.id_event}) }}">  <img class="js-buttom" src="{{ asset('img/delete.png') }}" style="width:25px"></a>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

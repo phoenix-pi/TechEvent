@@ -1,0 +1,138 @@
+{% extends app.user  ? 'base.html.twig' : '@Event/Default/index.html.twig'%}
+
+{% block content %}
+
+
+
+
+    <section class="category-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 order-2 order-lg-1">
+
+                    <div class="filter-widget">
+                        <h2 class="fw-title">ALL Category</h2>
+                        <ul class="category-menu">
+                            {% for i in category %}
+
+                                <ul><li>
+                                        <a href="{{ path('event_CatLike',{'id':i.id_Category}) }}"> {{ i.category_Name }}</a>
+                                    </li></ul>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+
+
+
+
+
+                    <div class="filter-widget">
+                        <h2 class="fw-title">My favorite</h2>
+                        <ul class="category-menu">
+                            {% for cat in myCat %}
+
+                                <ul><li>
+                                        <a href="{{ path('event_CatLike',{'id':cat.id_Category}) }}"> {{ cat.category_Name }}</a>
+                                    </li></ul>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-9  order-1 order-lg-2 mb-5 mb-lg-0">
+                    <div class="row data-search">
+
+
+                        {% for j in event %}
+
+                                {% for i in j %}
+                                <div class="col-lg-4 col-sm-6">
+                                    <div class="product-item">
+                                        <div class="pi-pic">
+                                            <img src="{{ asset('img/uploads/'~ i.photo) }}" alt="">
+                                                <div class="pi-links">
+                                                <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+                                                <a href="#" data-id="{{ i.getId_Event() }}"
+                                                   class="wishlist-btn js-like"
+                                                   style="background-color: {{ (i.getisLiked()) ? 'red' : '' }}"><i class="flaticon-heart"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="pi-text">
+                                            {% if i.priceticket != 0 %}
+                                                <h6>{{ i.priceticket }}TND</h6>
+                                            {% else %}
+                                                <h6>Free</h6>
+                                            {% endif %}
+                                            <h6></h6>
+                                            <p>{{ i.event_name }} : {{ i.start_date |date('y-m-d') }} </p>
+                                            <a href="{{ path('event_Description',{'id':i.id_event}) }}">view more </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- cart section end -->
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+
+
+
+
+
+
+
+    <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.slicknav.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+
+    <script>
+
+
+
+
+
+        $(".cat").on('click', function (ev) {
+            ev.preventDefault();
+            ev.stopPropagation();
+            $item = $(this);
+            $id = $item.attr('data-id');
+
+            $.get('verif/' + $id, function (data) {
+                if (data == 'liked') {
+                    $item.css("background-color", "red");
+                } else {
+                    $item.css("background-color", "");
+                }
+            });
+        })
+
+
+
+
+    </script>
+
+
+{% endblock %}

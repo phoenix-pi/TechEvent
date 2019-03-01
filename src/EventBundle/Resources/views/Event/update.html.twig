@@ -1,0 +1,133 @@
+{% extends app.user  ? 'base.html.twig' : '@Event/Default/index.html.twig'%}
+{% block content %}
+
+<div>
+    <form class="form-horizontal" method="post" action="{{ path('event_update',{'id':e.id_event}) }}">
+
+
+           <h1></h1>
+            <!-- Form Name -->
+            <legend>Update event</legend>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Event Name :</label>
+                <div class="col-md-4">
+                    <input id="textinput" name="eventName" type="text" placeholder="{{ e.event_Name}}"
+                         class="form-control input-md" value="{{ e.event_Name}}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="address" >Address :</label>
+                <div class="col-md-4">
+                    <input id="address" name="address" type="text" value="{{ e.address }}" placeholder="{{ e.address }}"class="form-control input-md">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="date">Date debut:</label>
+                <div class="col-md-4">
+                    <input id="date" name="startDate" type="date" class="form-control input-md" value="{{ e.start_Date|date}}">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="date">Date fin:</label>
+                <div class="col-md-4">
+                    <input id="date" name="endDate" type="date" class="form-control input-md" value="{{ e.end_Date|date }}">
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="nb">Participants number :</label>
+                <div class="col-md-2">
+                    <input id="nb" name="nb" type="text" placeholder="" value="{{ e.nb_Participant }}" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="categorie" >Categorie :</label>
+                <div class="col-md-4">
+                    <select id="categorie" name="categorie" class="form-control">
+                            {% for i in cat %}
+
+                            <option>{{ i.category_Name }}</option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+            </div>
+
+            <!-- File Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="photo" value={{ asset('img/uploads/'~ e.photo) }}">Picture
+                <div class="col-md-4">
+                    <input id="photo" name="photo" class="input-file" type="file" value="{{ e.photo }}">
+                </div></label>
+            </div>
+
+            <!-- Multiple Radios -->
+            <div class="form-group settings">
+                <label class="col-md-4 control-label" for="ticket">Ticket :</label>
+                <div class="col-md-4">
+                    <div class="radio">
+                        <label for="ticket-0">
+                            <input type="radio" name="ticket" id="ticket-0" value="1" checked="checked">
+                            Free
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="ticket-1">
+                            <input type="radio" name="ticket" id="ticket-1" value="2">
+                            paid
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Text input-->
+            <div class="form-group" id="js-price">
+                <label class="col-md-4 control-label" for="price">Price :</label>
+                <div class="col-md-4">
+                    <input id="price" name="price" type="number" value="{{ e.priceTicket }}" placeholder="Price"
+                           class="form-control input-md" >
+
+                </div>
+            </div>
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="description">Description :</label>
+                <div class="col-md-4">
+                    <textarea class="form-control" id="description" placeholder="Describe your event ..."
+                             name="description" > {{ e.description }}</textarea>
+                </div>
+            </div>
+
+        </fieldset>
+        <div class="text-center w-100 pt-3">
+            <button class="site-btn sb-line sb-dark" type="submit">Update Event</button>
+        </div>
+
+
+    </form>
+    </div>
+
+{% endblock %}
+
+
+{% block  javascripts %}
+    <script>
+        $("#js-price").hide();
+
+        $('.settings label').click(function () {
+            var clicked = this.getAttribute('for');
+            if (clicked == 'ticket-1') {
+                $('#js-price').show();
+            } else {
+                $('#js-price').hide();
+            }
+        });
+    </script>
+{% endblock %}

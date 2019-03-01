@@ -1,0 +1,192 @@
+{% block admin_name %}{{ app.user.firstName }}{% endblock %}
+{% block admin_last_name %}{{ app.user.lastName }}{% endblock %}
+{% extends app.user.hasRole('ROLE_ADMIN')  ? 'backoffice.html.twig' : '@Event/Default/index.html.twig'%}
+
+{% block content %}
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i') }}"
+          rel="stylesheet">
+
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/flaticon.css"') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- cart section end -->
+    <section class="category-section spad" style="padding-top: 10px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10" style="width: 1200px;">
+                    <div class="cart-table">
+                        <h3>Categorie</h3>
+                        <div class="cart-table-warp">
+                            <table>
+                                <thead>
+
+                                </thead>
+                                <div class="col-lg-4 card-right">
+
+
+                                    <a href="#" class="btn btn-default btn-sm" data-toggle="modal"
+                                       data-target="#myModal" ><img  style="width: 20px;" src="{{ asset('img/add.png') }}">Add New</a>
+
+
+                                </div>
+                                <tbody>
+                                <div class="row data-search">
+                                    {% for i in category %}
+                                        <tr>
+
+                                            <td class="size-col"><h4>{{ i.category_name }}</h4></td>
+                                            <div>
+                                                <td class="total-col"><a href="#" class="js-button">
+                                                        <img  src="{{ asset('img/rotate.png') }}"
+                                                             style="width:35px"></a>
+
+                                                </td>
+                                            </div>
+                                            <td class="total-col "><a
+                                                        href="{{ path('event_AdminEventCategoriedelete',{'id':i.id_category}) }}">
+                                                    <img src="{{ asset('img/del.png') }}" style="width:35px"></a></td>
+                                        <tr class="js-category">
+                                            <td>
+                                               <form method="post" action="{{ path('event_AdminEventCategorieupdate',{'id':i.id_category}) }}">
+
+                                                <div class="promo-code-form js-input">
+                                                    <input type="text" placeholder="category name" name="name">
+
+                                                    <input type="submit" class="btn btn-default btn-sm" name="add" value="Update" style="width:100px">
+                                                </div></form>
+                                            </td>
+                                        </tr>
+
+                                        </tr>
+
+                                    {% endfor %}
+                                </div>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Category</h4>
+                </div>
+
+                <div class="modal-body">
+                    Category Name :
+                    <form method="post" action="{{ path('event_AdminEventCategorieadd') }}">
+                        <div class="promo-code-form">
+                            <input type="text" placeholder="category name" name="name">
+                        </div>
+                        <input type="submit" class="btn btn-default btn-sm" name="add" value="Add" style="width:100px">
+
+                    </form>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Modal -->
+
+    </div>
+
+    </div>
+
+
+
+
+    <!-- cart section end -->
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+
+
+
+    <script>
+    $(document).ready(function () {
+    $('.modal').on('shown.bs.modal', function () {
+    });
+
+        $(".js-input").hide();
+
+        $('.js-button').click(function () {
+            $(".js-input").toggle();});
+
+
+
+
+    });
+
+
+
+
+    </script>
+
+    <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.slicknav.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+
+
+{% endblock %}

@@ -1,3 +1,108 @@
 event_homepage:
-    path:     /
-    defaults: { _controller: EventBundle:Default:index }
+  path:     /
+  defaults: { _controller: EventBundle:event:index }
+
+event_homeAffiche:
+  path:     /affichehome
+  defaults: { _controller: EventBundle:event:Affiche }
+
+event_delete:
+  path:     /deleteevent/{id}
+  defaults: { _controller: EventBundle:event:Delete }
+
+event_UserEvent:
+  path:     /affichelist
+  defaults: { _controller: EventBundle:event:AfficheList }
+
+event_Afficheupdate:
+  path:     /afficheupdate/{id}
+  defaults: { _controller: EventBundle:event:Afficheupdate }
+
+event_update:
+  path:     /updateevent/{id}
+  defaults: { _controller: EventBundle:event:Update }
+
+event_Description:
+  path:     /affichedescription/{id}
+  defaults: { _controller: EventBundle:Event:Affichedescription}
+
+event_EventLike:
+  path:     /eventLike/{id}
+  defaults: { _controller: EventBundle:Event:EventLike}
+
+event_SearchEvent:
+  path:     /eventSearch/{name}
+  defaults: { _controller: EventBundle:Event:searchEvent}
+
+event_SearchAllEvent:
+  path:     /searchAll
+  defaults: { _controller: EventBundle:Event:allEvents}
+
+event_AddEvent:
+  path:     /afficheadd
+  defaults: { _controller: EventBundle:Event:Addevent}
+
+event_AddEventData:
+  path:     /addEventData
+  defaults: { _controller: EventBundle:Event:AddeventData}
+
+event_AdminEvent:
+  path:     /affichback
+  defaults: { _controller: EventBundle:Categorie:index}
+
+event_AdminEventCategorie:
+  path:     /affichCategorie
+  defaults: { _controller: EventBundle:Categorie:CategorieAffiche}
+
+event_UserCategorie:
+  path:     /usercategory
+  defaults: { _controller: EventBundle:Categorie:UserCategory }
+
+event_AdminEventCategorieadd:
+  path:     /addCategorie
+  defaults: { _controller: EventBundle:Categorie:CategorieAdd}
+
+event_AdminEventCategorieupdate:
+  path:     /updateCategorie/{id}
+  defaults: { _controller: EventBundle:Categorie:Categorieupdate}
+
+event_AdminEventCategoriedelete:
+  path:     /deleteCategorie/{id}
+  defaults: { _controller: EventBundle:Categorie:Categoriedelete}
+
+event_AdminEventrchive:
+  path:     /archive
+  defaults: { _controller: EventBundle:Event:ArchiveEvents}
+
+event_AdminEventrchiveUpdate:
+  path:     /archiveupdate/{id}
+  defaults: { _controller: EventBundle:Event:ArchiveUpdate}
+
+event_SortedByDate:
+  path:     /sortdate
+  defaults: { _controller: EventBundle:Event:sortedByDate}
+
+event_SortedByPrice:
+  path:     /sortPrice
+  defaults: { _controller: EventBundle:Event:sortByPrice}
+
+event_SortedByLike:
+  path:     /sortPrice
+  defaults: { _controller: EventBundle:Event:sortByLike}
+
+event_EventRequest:
+  path:     /eventRequest
+  defaults: { _controller: EventBundle:Event:AfficheRequest}
+
+event_EventRequestaccept:
+  path:     /eventRequestupdate/{id}
+  defaults: { _controller: EventBundle:Event:UpdateRequest}
+
+event_EventRequestrefuse:
+  path:     /eventRequestdelete/{id}
+  defaults: { _controller: EventBundle:Event:deleteRequest}
+
+event_CatLike:
+  path:     /verif/{id}
+  defaults: { _controller: EventBundle:Categorie:CategorieLike}
+
