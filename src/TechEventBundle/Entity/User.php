@@ -205,5 +205,22 @@ use Doctrine\ORM\Mapping as ORM;
          $this->lastName = $last_name;
      }
 
+     /**
+      * @return string
+      */
+     public function getEmail()
+     {
+         return $this->email;
+     }
+
+     /**
+      * @param string $email
+      */
+     public function setEmail($email)
+     {
+         $this->email = $email;
+     }
+
+
 
  }

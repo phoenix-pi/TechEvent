@@ -1,1 +1,12 @@
-Hello World!
+{% for i in e %}
+<h1>{{ i.event_name }}</h1>
+<form method="post" action="{{ path('ticket_add',{'id':i.id_event}) }}">
+
+   <button type="submit" name="participer"  id="js-participe">participer</button>
+    <h1></h1>
+</form>
+
+
+
+{% endfor %}
+

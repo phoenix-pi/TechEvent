@@ -10,7 +10,7 @@ namespace TechEventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="CartBundle\Repository\TicketRepository")
  */
 class Ticket
 {
@@ -23,7 +23,8 @@ class Ticket
 
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
+     *
      */
     private $code;
     /**
@@ -101,7 +102,7 @@ class Ticket
     }
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="boolean")
      */
     private $status;
 
@@ -116,7 +117,7 @@ class Ticket
     }
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $qr_code;
 

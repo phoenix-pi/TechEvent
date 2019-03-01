@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new CommentBundle\CommentBundle(),
             new ClubBundle\ClubBundle(),
             new ProfilBundle\ProfilBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

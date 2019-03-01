@@ -26,10 +26,7 @@ class Cart
      * @ORM\Column(type="float")
      */
     private $total;
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $nb_line;
+
     /**
      * @ORM\OneToOne(targetEntity="User")
      * @ORM\JoinColumn(name="user_id",referencedColumnName="id")
@@ -56,18 +53,6 @@ class Cart
     public function setTotal($total)
     {
         $this->total = $total;
-    }
-
-
-    public function getNb_Line()
-    {
-        return $this->nb_line;
-    }
-
-
-    public function setNb_Line($nb_line)
-    {
-        $this->nb_line = $nb_line;
     }
 
 
