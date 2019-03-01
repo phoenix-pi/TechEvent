@@ -1,4 +1,4 @@
-{% extends 'backoffice.html.twig' %}
+{% extends not app.user or not app.user.hasRole('ROLE_ADMIN') ?  '@Club/Default/denied.html.twig' : 'backoffice.html.twig' %}
 {% block content %}
     <div class="col-lg-12">
         <h2>Themes</h2>

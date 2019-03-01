@@ -21,11 +21,18 @@ class ClubRepository extends EntityRepository
             ->setParameter('name',$name);
         return $q->getResult();
     }
+    public function FindByNameClub($name)
+    {
+        $q=$this->getEntityManager()
+            ->createQuery("select c from TechEventBundle:Club c where c.club_name=:name")
+            ->setParameter('name',$name);
+        return $q->getResult();
+    }
 
     public function FindOwnerClub($id)
     {
         $q=$this->getEntityManager()
-            ->createQuery("select c from TechEventBundle:Club c where c.owner=:id")
+            ->createQuery("select c from TechEventBundle:Club c where c.owner=:id and c.club_status='Accepted'")
             ->setParameter('id',$id);
         return $q->getResult();
     }

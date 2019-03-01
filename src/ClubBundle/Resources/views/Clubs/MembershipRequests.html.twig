@@ -5,6 +5,7 @@
                     <div class="container">
 
                             <table class="table table-striped custab">
+
                                 <tr><td><b>First Name</b></td><td><b>Last Name</b></td><td><b>Email</b></td><td><b>Why he wants to join us</b></td><td><b>He is a</b></td><td><b>His skills</b></td><td><b>Status</b></td><td colspan="2" class="text-center"><b>Action</b></td></tr>
     {% for m in members  %}
         <form method="post" action="{{ path('member',{'id':m.id_club_user}) }}">
@@ -14,6 +15,8 @@
                 <td><button  name="member" class="btn btn-danger btn-sm" value="Refused">Refuse</button></td>
                    <td> <button name="member" class="btn btn-success btn-sm" value="Accepted">Accept</button></td>
             </tr>
+
+             <div class="text-center"><h3>{{ m.club.club_Name }}</h3></div>
         </form>
     {% endfor %}
 </table>

@@ -3,9 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="65019412-c43c-4cfe-8a35-19bdafef63e3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/inbox.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/inbox.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/newThread.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/newThread.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/thread.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/thread.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/threads_list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/threads_list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClubBundle/Controller/ClubsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Controller/ClubsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClubBundle/Repository/ClubRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Repository/ClubRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubCreate.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubCreate.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubPage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubPage.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/Clubs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/Clubs.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Clubs/css/flip.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/Clubs/css/flip.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/MembershipRequests.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/MembershipRequests.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/RequestAdmin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/RequestAdmin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/adminClub.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/adminClub.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Theme/CreateTheme.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Theme/CreateTheme.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/upW.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/upW.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TechEventBundle/Entity/Club.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/TechEventBundle/Entity/Club.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,53 +57,53 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="adminClub" value="1" />
-          <entry key="css" value="16" />
+          <entry key="css" value="17" />
           <entry key="html" value="1" />
           <entry key="jpg" value="2" />
           <entry key="js" value="4" />
           <entry key="json" value="1" />
-          <entry key="php" value="205" />
+          <entry key="php" value="212" />
           <entry key="scss" value="1" />
-          <entry key="twig" value="214" />
+          <entry key="twig" value="241" />
           <entry key="xml" value="24" />
-          <entry key="yml" value="49" />
+          <entry key="yml" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="16" />
+          <entry key="CSS" value="17" />
           <entry key="HTML" value="1" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="4" />
-          <entry key="PHP" value="205" />
+          <entry key="PHP" value="212" />
           <entry key="SCSS" value="1" />
-          <entry key="Twig" value="215" />
+          <entry key="Twig" value="242" />
           <entry key="XML" value="24" />
-          <entry key="YAML" value="49" />
+          <entry key="YAML" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="adminClub" value="1" />
-          <entry key="css" value="71" />
+          <entry key="css" value="77" />
           <entry key="dummy" value="1" />
           <entry key="html" value="5" />
-          <entry key="php" value="4703" />
+          <entry key="php" value="4798" />
           <entry key="scss" value="3" />
-          <entry key="twig" value="7643" />
-          <entry key="txt" value="204" />
+          <entry key="twig" value="7887" />
+          <entry key="txt" value="208" />
           <entry key="yml" value="641" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="71" />
+          <entry key="CSS" value="77" />
           <entry key="HTML" value="10" />
-          <entry key="PHP" value="4703" />
-          <entry key="PLAIN_TEXT" value="205" />
+          <entry key="PHP" value="4798" />
+          <entry key="PLAIN_TEXT" value="209" />
           <entry key="SCSS" value="3" />
-          <entry key="Twig" value="7639" />
+          <entry key="Twig" value="7883" />
           <entry key="YAML" value="641" />
         </counts>
       </usages-collector>
@@ -145,11 +157,104 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/newThread.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="126" />
+              <folding>
+                <element signature="e#12#46#0#Twig" expanded="true" />
+                <element signature="e#104#132#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/Clubs.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="31" column="63" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
+            <state relative-caret-position="68">
+              <caret line="27" column="52" lean-forward="true" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClubBundle/Controller/ClubsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="44" column="72" lean-forward="true" selection-start-line="44" selection-start-column="72" selection-end-line="44" selection-end-column="72" />
+              <folding>
+                <element signature="e#126#183#0#PHP" expanded="true" />
+                <element signature="e#972#1005#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ClubBundle/Repository/ClubRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="34" column="110" selection-start-line="34" selection-start-column="110" selection-end-line="34" selection-end-column="110" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TechEventBundle/Entity/Club.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/thread.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="102" selection-start-line="23" selection-start-column="102" selection-end-line="23" selection-end-column="102" />
+              <folding>
+                <element signature="e#12#46#0#Twig" expanded="true" />
+                <element signature="e#104#132#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Default/denied.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/adminClub.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="71" selection-start-column="71" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/RequestAdmin.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="71" selection-start-column="71" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Theme/CreateTheme.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="71" selection-start-column="71" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -199,7 +304,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s generate:bundle" />
       <command text="s doctrine:schema:create" />
       <command text="composer require symfony/templating" />
       <command text="s doctrine:schema:create" />
@@ -224,6 +328,7 @@
       <command text="s doctrine:database:create" />
       <command text="s doctrine:schema:update --force" />
       <command text="c clear-cache" />
+      <command text="s doctrine:schema:update --force" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -235,11 +340,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/TechEventBundle/Entity/Domain.php" />
-        <option value="$PROJECT_DIR$/src/NewsBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/web/Clubs/joinUs/css/main.css" />
-        <option value="$PROJECT_DIR$/web/Clubs/join/css/main.css" />
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/TechEventBundle/Entity/Workshop.php" />
@@ -255,37 +355,42 @@
         <option value="$PROJECT_DIR$/web/Clubs/Message/msg.css" />
         <option value="$PROJECT_DIR$/web/Clubs/Message/msg.js" />
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Controller/MessageController.php" />
-        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/adminClub.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Theme/CreateTheme.html.twig" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/listPart.html.twig" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/Cancel.html.twig" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/Affiche.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/backoffice.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/threads_list.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/MembershipRequests.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubCreate.html.twig" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/JoinedClubs.html.twig" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/update.html.twig" />
-        <option value="$PROJECT_DIR$/src/TechEventBundle/Entity/Club.php" />
         <option value="$PROJECT_DIR$/src/TechEventBundle/Entity/ClubUser.php" />
-        <option value="$PROJECT_DIR$/src/ClubBundle/Repository/ClubRepository.php" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/joinUs.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/RequestAdmin.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClubBundle/Controller/ClubsController.php" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/AddWorkshop.html.twig" />
-        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubPage.html.twig" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/update.html.twig" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Controller/ThemeController.php" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Controller/WorkshopController.php" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/upW.html.twig" />
         <option value="$PROJECT_DIR$/web/assets/css/material-kit.css" />
         <option value="$PROJECT_DIR$/web/assets/scss/material-kit/_carousel.scss" />
+        <option value="$PROJECT_DIR$/web/Clubs/css/flip.css" />
+        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/upW.html.twig" />
+        <option value="$PROJECT_DIR$/web/Clubs/join/css/main.css" />
+        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubPage.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/MembershipRequests.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/inbox.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubCreate.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/newThread.html.twig" />
-        <option value="$PROJECT_DIR$/web/Clubs/css/flip.css" />
+        <option value="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/threads_list.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/thread.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/denied.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/RequestAdmin.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Theme/CreateTheme.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/adminClub.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Default/denied.html.twig" />
+        <option value="$PROJECT_DIR$/src/TechEventBundle/Entity/Club.php" />
+        <option value="$PROJECT_DIR$/src/ClubBundle/Controller/ClubsController.php" />
         <option value="$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/Clubs.html.twig" />
+        <option value="$PROJECT_DIR$/src/ClubBundle/Repository/ClubRepository.php" />
       </list>
     </option>
   </component>
@@ -340,7 +445,7 @@
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1940" />
@@ -393,9 +498,7 @@
               <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="FOSMessageBundle" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Message" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
@@ -403,6 +506,7 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
@@ -435,14 +539,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ClubBundle" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ClubBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -458,25 +554,14 @@
               <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
               <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ClubBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Theme" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ClubBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Workshop" type="462c0819:PsiDirectoryNode" />
+              <item name="TechEventBundle" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TechEvent" type="b2602c69:ProjectViewProjectNode" />
               <item name="TechEvent" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="TechEventBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -493,6 +578,9 @@
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\TechEvent\src\ClubBundle\Resources\views\Default" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\TechEvent\src\ClubBundle\Resources\views\Workshop" />
       <recent name="C:\wamp64\www\TechEvent\app\Resources\FOSMessageBundle" />
@@ -532,18 +620,18 @@
       <workItem from="1550651678079" duration="5444000" />
       <workItem from="1550658147771" duration="719000" />
       <workItem from="1550744245557" duration="186000" />
-      <workItem from="1550745389953" duration="105654000" />
+      <workItem from="1550745389953" duration="119659000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181448000" />
+    <option name="totallyTimeSpent" value="195453000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="-5" width="1376" height="778" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22163388" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22163388" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -572,49 +660,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/config/routing/security.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/config/routing/all.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/inbox.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#12#46#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Clubs/Message/msg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -673,17 +718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Controller/MessageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="89" column="20" selection-start-line="89" selection-start-column="20" selection-end-line="89" selection-end-column="20" />
-          <folding>
-            <element signature="e#733#775#0#PHP" expanded="true" />
-            <element signature="e#3145#3191#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/backoffice.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -691,35 +725,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/sent.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding>
-            <element signature="e#161#208#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/FormType/NewThreadMessageFormType.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/threads_list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/adminClub.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#12#32#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TechEventBundle/Entity/Theme.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -745,55 +752,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TechEventBundle/Entity/Club.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TechEventBundle/Entity/ClubUser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="29" column="32" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Repository/ClubRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="35" column="89" selection-start-line="35" selection-start-column="89" selection-end-line="35" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/MembershipRequests.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="80" selection-start-line="9" selection-start-column="80" selection-end-line="9" selection-end-column="80" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/RequestAdmin.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="201" selection-start-line="6" selection-start-column="201" selection-end-line="6" selection-end-column="201" />
-          <folding>
-            <element signature="e#12#32#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Controller/ClubsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="97" column="69" selection-start-line="97" selection-start-column="69" selection-end-line="97" selection-end-column="69" />
-          <folding>
-            <element signature="e#126#183#0#PHP" expanded="true" />
-            <element signature="e#972#1005#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -807,33 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/upW.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="61" column="150" selection-start-line="61" selection-start-column="150" selection-end-line="61" selection-end-column="150" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Theme/CreateTheme.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="68" column="111" lean-forward="true" selection-start-line="68" selection-start-column="111" selection-end-line="68" selection-end-column="111" />
-          <folding>
-            <element signature="e#12#32#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubPage.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="98" selection-start-line="19" selection-start-column="98" selection-end-line="19" selection-end-column="98" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/JoinedClubs.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -841,13 +776,6 @@
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -871,34 +799,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubCreate.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="73" column="100" selection-start-line="73" selection-start-column="100" selection-end-line="73" selection-end-column="100" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/AddWorkshop.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1319">
           <caret line="116" column="34" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Controller/WorkshopController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="90" column="34" selection-start-line="90" selection-start-column="34" selection-end-line="90" selection-end-column="34" />
-          <folding>
-            <element signature="e#125#172#0#PHP" expanded="true" />
-            <element signature="e#1455#1485#0#PHP" expanded="true" />
-            <element signature="e#3166#3199#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -977,21 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/newThread.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-          <folding>
-            <element signature="e#12#46#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/Clubs/css/flip.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -999,10 +890,204 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/Clubs.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Workshop/upW.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="31" column="63" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
+          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Clubs/join/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-760">
+          <caret line="249" column="22" selection-start-line="249" selection-start-column="22" selection-end-line="249" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="29" column="55" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubPage.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="117" selection-start-line="24" selection-start-column="117" selection-end-line="24" selection-end-column="117" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Controller/WorkshopController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="90" column="34" selection-start-line="90" selection-start-column="34" selection-end-line="90" selection-end-column="34" />
+          <folding>
+            <element signature="e#125#172#0#PHP" expanded="true" />
+            <element signature="e#1455#1485#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/MembershipRequests.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/thread.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+          <folding>
+            <element signature="e#12#46#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Controller/MessageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+          <folding>
+            <element signature="e#733#775#0#PHP" expanded="true" />
+            <element signature="e#2369#2412#0#PHP" expanded="true" />
+            <element signature="e#3145#3191#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/ClubCreate.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/threads_list.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/search.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#12#46#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/sent.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+          <folding>
+            <element signature="e#161#208#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/inbox.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="111" selection-start-line="5" selection-start-column="111" selection-end-line="5" selection-end-column="111" />
+          <folding>
+            <element signature="e#12#46#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/newThread.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="126" />
+          <folding>
+            <element signature="e#12#46#0#Twig" expanded="true" />
+            <element signature="e#104#132#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSMessageBundle/views/Message/thread.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="102" selection-start-line="23" selection-start-column="102" selection-end-line="23" selection-end-column="102" />
+          <folding>
+            <element signature="e#12#46#0#Twig" expanded="true" />
+            <element signature="e#104#132#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/RequestAdmin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="71" selection-start-column="71" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Theme/CreateTheme.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="71" selection-start-column="71" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Default/denied.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/adminClub.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="71" selection-start-column="71" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TechEventBundle/Entity/Club.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Resources/views/Clubs/Clubs.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="27" column="52" lean-forward="true" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Controller/ClubsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="44" column="72" lean-forward="true" selection-start-line="44" selection-start-column="72" selection-end-line="44" selection-end-column="72" />
+          <folding>
+            <element signature="e#126#183#0#PHP" expanded="true" />
+            <element signature="e#972#1005#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClubBundle/Repository/ClubRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="34" column="110" selection-start-line="34" selection-start-column="110" selection-end-line="34" selection-end-column="110" />
         </state>
       </provider>
     </entry>

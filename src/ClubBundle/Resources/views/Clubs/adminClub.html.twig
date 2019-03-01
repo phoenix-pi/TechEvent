@@ -1,4 +1,4 @@
-{% extends 'backoffice.html.twig' %}
+{% extends not app.user or not app.user.hasRole('ROLE_ADMIN') ?  '@Club/Default/denied.html.twig' : 'backoffice.html.twig' %}
 {% block content %}
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>

@@ -22,7 +22,7 @@
                             </li>
                             <li>
                              {% for x in m %}
-                            <a href="{{ path('members',{'id':x.club.id_club}) }}">{% endfor %} Membership requests</a>
+                            <a href="{{ path('member',{'id':x.club.id_club}) }}">{% endfor %} Membership requests</a>
                            </li>
 
                             <li><a href="{{ url('fos_message_thread_new') }}"> Chat</a>

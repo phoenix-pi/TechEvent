@@ -94,10 +94,12 @@ class ClubsController extends Controller
         $user = $this->getDoctrine()->getRepository(Club::class)->FindOwnerClub($owner);
         $mem = $this->getDoctrine()->getRepository(ClubUser::class)->FindMyClub($owner);
         $Clubs = $this->getDoctrine()->getRepository(Club::class)->FindClub($request->get('query'));
+        $rech = $this->getDoctrine()->getRepository(Club::class)->FindByNameClub($request->get('rech'));
         return $this->render('@Club/Clubs/Clubs.html.twig',array(
-            'Club'=>$Clubs,'theme'=>$themes,'user'=>$user,'mem'=>$mem
+            'Club'=>$Clubs,'theme'=>$themes,'user'=>$user,'mem'=>$mem,'recherche'=>$rech
         ));
     }
+
     public function joinAction(Request $request,$id)
     {
 
@@ -122,12 +124,13 @@ class ClubsController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
+        $mem = $this->getDoctrine()->getRepository(ClubUser::class)->FindMembersClub($id);
         $member = $em->getRepository(ClubUser::class)->find($id);
         if ($request->isMethod('POST')) {
             $member->setClub_User_Status($request->get('member'));
             $em->flush();
         }
-        return $this->redirectToRoute('members');
+        return $this->render('@Club/Clubs/MembershipRequests.html.twig', array('members'=>$mem));
     }
     public function manClubAction($id)
     {

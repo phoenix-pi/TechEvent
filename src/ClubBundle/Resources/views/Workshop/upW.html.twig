@@ -16,43 +16,43 @@
             <table class="table table-striped custab">
                 <thead >
                 <tr>
-                    <td class="cell">
-                        <b>Title</b>
+                    <td class="cell text-center">
+                        <b >Title</b>
                     </td>
-                    <td class="cell">
+                    <td class="cell text-center" >
                         <b>Description</b>
                     </td>
-                    <td class="cell">
+                    <td class="cell text-center">
                         <b>Location</b>
                     </td>
-                    <td class="cell">
+                    <td class="cell text-center">
                         <b>Date</b>
                     </td>
-                    <td class="cell">
+                    <td class="cell text-center">
                         <b>Remaining places</b>
                     </td>
-                    <td class="cell pull-center" colspan="2">
+                    <td class="cell text-center text-center" colspan="2">
                         <b>Action</b>
                     </td>
                 </tr>
                 </thead>
-                {% for w in wo %}
+                {% for w in wo |reverse %}
 
                 <tr>
 
-                    <td >
+                    <td class="text-center" >
                         {{ w.title }}
                     </td>
-                    <td >
+                    <td class="text-center">
                         {{ w.workshop_Description }}
                     </td>
-                    <td>
+                    <td class="text-center">
                         {{ w.location }}
                     </td>
-                    <td>
-                        {{ w.start_Date | date('Y-m-d') }}
+                    <td class="text-center">
+                        {{ w.start_Date | date }}
                     </td>
-                    <td>
+                    <td class="text-center">
                         {{ w.nbr_Places }}
                     </td>
 

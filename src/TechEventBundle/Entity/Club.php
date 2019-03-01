@@ -26,7 +26,7 @@ class Club
      * @ORM\Column(type="string")
      */private $club_name;
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string",nullable=true)
      */private $logo;
     /**
      * @ORM\Column(type="string")

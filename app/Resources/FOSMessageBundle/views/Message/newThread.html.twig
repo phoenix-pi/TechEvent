@@ -1,7 +1,7 @@
 {% extends 'FOSMessageBundle::layout.html.twig' %}
 
 {% block fos_message_content %}
-
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 <form action="{{ url('fos_message_thread_new') }}" method="post">
     <div class="tab-pane" id="compose">
