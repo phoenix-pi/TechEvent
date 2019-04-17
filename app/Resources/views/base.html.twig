@@ -35,7 +35,7 @@
                         <div class="up-item">
                             <i class="flaticon-profile"></i>
                             {% if app.user %}
-                                <a href="{{ path('fos_user_profile_show') }}"> {{ app.user.username }} </a> |
+                                <a href="{{ path('profil_homepage', { 'id': app.user.id }) }}"> {{ app.user.username }} </a> |
                                 <a href="{{ path('fos_user_security_logout') }}">
                                     Logout
                                 </a>
@@ -146,6 +146,8 @@
                                 <input type="password" class="form-control" id="password" name="_password" required="required" autocomplete="current-password">
                             </div>
                             <div class="checkbox">
+                                <div> <a href="{{ path('reset_password') }}">Forgot password?</a></div>
+                                </br>
                                 <label>
                                     <input type="checkbox" id="remember_me" name="_remember_me" value="on">Remember Me
                                 </label>

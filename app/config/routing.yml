@@ -32,3 +32,9 @@ app:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+fos_user_profile_show:
+    path: /
+
+reset_password:
+    path: /resetting/request

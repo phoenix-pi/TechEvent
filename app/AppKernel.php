@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new CommentBundle\CommentBundle(),
             new ClubBundle\ClubBundle(),
             new ProfilBundle\ProfilBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

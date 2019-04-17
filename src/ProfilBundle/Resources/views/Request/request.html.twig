@@ -1,0 +1,31 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{%  block content %}
+
+<div class="flex-container">
+<div>
+<h3>Send a VIP-membership request  </h3>
+
+    </br>
+        <div class="request">
+<p>Your request content:</p>
+                {{ form_start(form) }}
+                {{ form_row(form.content_request, {'attr': {'class': 'form-control md-textarea',  'rows' : '8',
+                    'cols' : '50' } }) }}
+        </br>
+
+
+                {{ form_row(form.devisFile, {'attr': {'class': 'input-group-text mb-3' } }) }}
+
+
+
+                {{ form_row(form.save, {'attr': {'class': 'btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect' } }) }}
+
+            {{ form_end(form)}}
+
+        </div>
+    </div>
+</div>
+
+
+
+{%  endblock %}

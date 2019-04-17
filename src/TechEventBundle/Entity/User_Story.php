@@ -5,9 +5,8 @@ namespace TechEventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- *
+ **@ORM\Entity(repositoryClass="ProfilBundle\Repository\User_StoryRepository")
  * @ORM\Table(name="user_story")
- * @ORM\Entity
  */
 class User_Story
 {

@@ -9,3 +9,31 @@ tech_event_homepage_user:
 tech_event_homepage_admin:
     path:     /admin/
     defaults: { _controller: TechEventBundle:User:AdminRedirect }
+
+tech_event_requests_list:
+    path:     /admin/requestslist
+    defaults: { _controller: ProfilBundle:Vip_request:index }
+
+tech_event_members_list:
+    path:     /admin/memberslist
+    defaults: { _controller: ProfilBundle:User:index }
+
+tech_event_ban_member:
+        path:     /admin/memberslist/{id}
+        defaults: { _controller: ProfilBundle:User:ban }
+
+
+tech_event_accept_vip_request:
+    path:     /admin/request/{idreq}-{idus}
+    defaults: { _controller: ProfilBundle:Vip_request:accept }
+
+tech_event_check_request:
+    path:      /admin/request/check/{id}
+    defaults: { _controller: ProfilBundle:Vip_request:check }
+
+
+
+
+
+
+

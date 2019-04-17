@@ -3,11 +3,14 @@
 namespace TechEventBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
 * @ORM\Entity
+ * @Vich\Uploadable
  * @ORM\Table(name="fos_user")
  */
  class User extends BaseUser
@@ -39,15 +42,15 @@ use Doctrine\ORM\Mapping as ORM;
      private $phone;
 
      /**
-      * @ORM\Column(type="string")
+      * @ORM\Column(type="string" , nullable=true)
       */
      private $status;
 
-     /**
-      * @ORM\Column(type="string")
-      */
-     private $picture;
 
+     /**
+      * @Assert\File(maxSize="500k")
+      */
+     public $file;
 
      /**
       * @ORM\Column(name="facebook_id", type="string", nullable=true)
@@ -68,6 +71,82 @@ use Doctrine\ORM\Mapping as ORM;
       * @ORM\Column(name="google_access_token", type="string", length=255, nullable=true)
       */
      protected $google_access_token;
+
+
+
+
+
+
+     /**
+      * @Vich\UploadableField(mapping="devis", fileNameProperty="devisName")
+      *
+      * @var File
+      */
+     private $devisFile;
+
+     /**
+      * @ORM\Column(type="string", length=255)
+      *
+      * @var string
+      */
+     private $devisName;
+
+     /**
+      * @ORM\Column(type="datetime")
+      *
+      * @var \DateTime
+      */
+     private $updatedAt;
+
+     /**
+      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $devis
+      *
+      * @return Devis
+      */
+     public function setDevisFile(File $devis = null)
+     {
+         $this->devisFile = $devis;
+
+         if ($devis)
+             $this->updatedAt = new \DateTimeImmutable();
+
+         return $this;
+     }
+
+     /**
+      * @return File|null
+      */
+     public function getDevisFile()
+     {
+         return $this->devisFile;
+     }
+
+     /**
+      * @param string $devisName
+      *
+      * @return Devis
+      */
+     public function setDevisName($devisName)
+     {
+         $this->devisName = $devisName;
+
+         return $this;
+     }
+
+     /**
+      * @return string|null
+      */
+     public function getDevisName()
+     {
+         return $this->devisName;
+     }
+
+
+
+
+
+
+
 
 
 
@@ -109,11 +188,18 @@ use Doctrine\ORM\Mapping as ORM;
          return $this->google_id;
      }
 
- 
+
      public function setGoogle_Id($google_id)
      {
          $this->google_id = $google_id;
      }
+
+     public function getFile()
+     {
+         return $this->file;
+     }
+
+
 
 
      public function getGoogle_Access_Token()
@@ -163,16 +249,7 @@ use Doctrine\ORM\Mapping as ORM;
          $this->status = $status;
      }
 
-     public function getPicture()
-     {
-         return $this->picture;
-     }
 
-
-     public function setPicture($picture)
-     {
-         $this->picture = $picture;
-     }
 
 
 

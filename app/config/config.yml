@@ -68,11 +68,13 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
-    spool: { type: memory }
+     transport: smtp
+     username : pi.phoenix.2019@gmail.com
+     encryption: ssl
+     port: 465
+     password : phoenixpi2019
+     host:      smtp.gmail.com
+     spool:     { type: memory }
 
 sensio_framework_extra:
    router:
@@ -82,9 +84,28 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: TechEventBundle\Entity\User
-    service:
-        mailer: fos_user.mailer.twig_swift
-    from_email:
-        address: "iheb.chakroun@esprit.tn"
-        sender_name: "iheb"
 
+
+
+    service:
+      mailer: fos_user.mailer.twig_swift
+    from_email:
+      address: "pi.phoenix.2019@gmail.com"
+      sender_name: "phoenix"
+    resetting:
+      retry_ttl: 5
+      email:
+        template:   email/password_resetting.email.twig
+
+
+    profile:
+        form:
+            type: AppBundle\Form\ProfileFormType
+
+vich_uploader:
+  db_driver: orm
+  mappings:
+    devis:
+      uri_prefix: /devis/
+      upload_destination: '%kernel.root_dir%/../web/devis/'
+      namer: vich_uploader.namer_uniqid

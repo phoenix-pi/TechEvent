@@ -1,3 +1,23 @@
+profil_story_publish:
+    path:     /publish/{id}
+    defaults: { _controller: ProfilBundle:Story:publish }
+
+
 profil_homepage:
-    path:     /
-    defaults: { _controller: ProfilBundle:Default:index }
+    path:     /{id}
+    defaults: { _controller: ProfilBundle:Story:index }
+
+
+profil_story_share:
+    path:     /share/{iduser}-{idstory}
+    defaults: { _controller: ProfilBundle:User_Story:share }
+
+
+
+send_vip_request:
+    path:     /request/send
+    defaults: { _controller: ProfilBundle:Vip_request:send }
+
+
+
+

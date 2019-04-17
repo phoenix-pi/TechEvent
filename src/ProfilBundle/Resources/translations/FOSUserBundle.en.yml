@@ -1,0 +1,10 @@
+resetting:
+    email:
+        subject: hello %username%
+        message: |
+            Hello %username%!
+
+            To reset your password - please visit %confirmationUrl%
+
+            Regards,
+            Phoenix Team

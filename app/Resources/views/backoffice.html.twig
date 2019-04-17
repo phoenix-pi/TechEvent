@@ -22,21 +22,23 @@
             <!-- sidebar-brand  -->
             <div class="sidebar-item sidebar-brand">
                 <a href="#">Admin Dashboard</a>
+
             </div>
             <!-- sidebar-header  -->
             <div class="sidebar-item sidebar-header d-flex flex-nowrap">
                 <div class="user-pic">
-                    <img class="img-responsive img-rounded" src="{% block admin_img %}{{ asset('backoffice/img/user.jpg') }}{% endblock %}" alt="User picture">
+                    <img class="img-responsive img-rounded" src="{{ asset('devis/' ~ app.user.devisName) }}" alt="User picture">
                 </div>
+                <a href="{{ path('profil_homepage', { 'id': app.user.id }) }}">
                 <div class="user-info">
-                        <span class="user-name">{% block admin_name %}Jhon{% endblock %}
-                            <strong>{% block admin_last_name %}Smith{% endblock %}</strong>
+                        <span class="user-name">
+                            <strong>{{ app.user.firstName }} {{ app.user.lastName }}</strong>
                         </span>
                     <span class="user-status">
                             <i class="fa fa-circle"></i>
                             <span>Online</span>
                         </span>
-                </div>
+                </div></a>
             </div>
             <div class="sidebar-item sidebar-menu">
                 <ul>
@@ -58,13 +60,10 @@
                             <ul>
                                 {% block user_tache %}
                                     <li>
-                                        <a href="#">Products </a>
+                                        <a href="{{ path('tech_event_members_list')}}">Members List </a>
                                     </li>
                                     <li>
-                                        <a href="#">Orders</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Credit cart</a>
+                                        <a href="{{ path('tech_event_requests_list')}}">VIP-membership Requests List</a>
                                     </li>
                                 {% endblock %}
                             </ul>
@@ -145,12 +144,7 @@
                             <span class="menu-text">Reports</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-star"></i>
-                            <span class="menu-text">VIP Request</span>
-                        </a>
-                    </li>
+
                 </ul>
             </div>
             <!-- sidebar-menu  -->

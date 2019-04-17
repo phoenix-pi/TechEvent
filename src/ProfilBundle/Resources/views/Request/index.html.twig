@@ -1,0 +1,38 @@
+{% extends 'backoffice.html.twig' %}
+
+{% block content %}
+<style>
+    table, td, th {
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+    table { border-collapse: collapse;
+        width: 100%;}
+
+    th, td {
+        height: 40px;
+    }
+</style>
+
+
+
+<h2> VIP-membership requests list :</h2>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Username</th>
+        <th>Request</th>
+    </tr>
+    {% for r in requests %}
+    <tr>
+        <td> {{ r.creation_date|date }}</td>
+        <td><a href="{{ path('profil_homepage', { 'id': r.user.id })}}"> {{ r.user }}</a></td>
+        <td><a href="{{ path('tech_event_check_request', { 'id': r.id_request })}}"> check request</a></td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+</table><br/><br/>
+{% endblock %}
