@@ -19,7 +19,7 @@ class Story
 
     /**
      *@ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumn(name="id_user",referencedColumnName="id")
+     * @ORM\JoinColumn(name="id_user",referencedColumnName="id", onDelete="CASCADE")
      */private $user;
 
     /**
@@ -39,6 +39,10 @@ class Story
         return $this->id_story;
     }
 
+    public function getIdStory()
+    {
+        return $this->id_story;
+    }
 
     public function setId_Story($id_story)
     {
@@ -51,6 +55,11 @@ class Story
         return $this->content_story;
     }
 
+    public function getContentStory()
+    {
+        return $this->content_story;
+    }
+
 
     public function setContent_Story($content_story)
     {
@@ -59,6 +68,11 @@ class Story
 
 
     public function getCreation_Date()
+    {
+        return $this->creation_date;
+    }
+
+    public function getCreationDate()
     {
         return $this->creation_date;
     }

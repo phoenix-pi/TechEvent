@@ -1,0 +1,131 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Join us</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{{ asset('Clubs/join/images/icons/favicon.ico') }}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/join/vendor/bootstrap/css/bootstrap.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/join/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/join/vendor/animate/animate.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/join/vendor/css-hamburgers/hamburgers.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/join/vendor/animsition/css/animsition.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/join/vendor/select2/select2.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/join/vendor/daterangepicker/daterangepicker.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/join/css/util.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('Clubs/join/css/main.css') }}">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+
+<div class="container pull-center">
+ <div class="wrap-contact100 ">
+    <form method="post" class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Join Us!
+				</span>
+
+        <div class="wrap-input100 validate-input" data-validate="Name is required">
+            <span class="label-input100">Your Name</span>
+            <input class="input100" type="text" name="name" placeholder="Enter your name">
+            <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+            <span class="label-input100">Email</span>
+            <input class="input100" type="text" name="email" placeholder="Enter your email addess">
+            <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 input100-select">
+            <span class="label-input100">You are a:</span>
+            <div>
+                <select class="selection-2" name="youAre">
+                    <option>Student</option>
+                    <option>Pro</option>
+                    <option>Organization</option>
+                </select>
+            </div>
+            <span class="focus-input100"></span>
+        </div>
+
+
+        <div class="wrap-input100 validate-input" data-validate = "Message is required">
+            <span class="label-input100">Why you want to join us</span>
+            <textarea class="input100" name="why" placeholder="Your message here..."></textarea>
+            <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input" data-validate = "Message is required">
+            <span class="label-input100">Describe your self (skills)</span>
+            <textarea class="input100" name="skills" placeholder="Your message here..."></textarea>
+            <span class="focus-input100"></span>
+        </div>
+
+        <div class="container-contact100-form-btn">
+            <div class="wrap-contact100-form-btn">
+                <div class="contact100-form-bgbtn"></div>
+                <button class="contact100-form-btn">
+							<span>
+								Submit
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+
+
+
+
+<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+<script src="{{ asset('Clubs/join/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+<script src="{{ asset('Clubs/join/vendor/animsition/js/animsition.min.js') }}"></script>
+<!--===============================================================================================-->
+<script src="{{ asset('Clubs/join/vendor/bootstrap/js/popper.js') }}"></script>
+<script src="{{ asset('Clubs/join/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+<script src="{{ asset('Clubs/join/vendor/select2/select2.min.js') }}"></script>
+<script>
+    $(".selection-2").select2({
+        minimumResultsForSearch: 20,
+        dropdownParent: $('#dropDownSelect1')
+    });
+</script>
+<!--===============================================================================================-->
+<script src="{{ asset('Clubs/join/vendor/daterangepicker/moment.min.js') }}"></script>
+<script src="{{ asset('Clubs/join/vendor/daterangepicker/daterangepicker.js') }}"></script>
+<!--===============================================================================================-->
+<script src="{{ asset('Clubs/join/vendor/countdowntime/countdowntime.js') }}"></script>
+<!--===============================================================================================-->
+<script src="{{ asset('Clubs/join/js/main.js') }}"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>
+{% endblock %}

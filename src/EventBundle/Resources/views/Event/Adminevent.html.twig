@@ -1,0 +1,79 @@
+{% block admin_name %}{{ app.user.firstName }}{% endblock %}
+{% block admin_last_name %}{{ app.user.lastName }}{% endblock %}
+{% extends app.user.hasRole('ROLE_ADMIN')  ? 'backoffice.html.twig' : '@Event/Default/index.html.twig'%}
+
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- cart section end -->
+<section class="cart-section spad"  style="padding-top: 10px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="cart-table">
+                    <h3>Event</h3>
+                    <div class="cart-table-warp">
+                        <table>
+                            <thead>
+
+                            </thead>
+                            <tbody>
+
+                            <tr>
+                                <td class="product-col">
+                                    <img src="img/cart/3.jpg" alt="">
+                                    <div class="pc-title">
+                                        <h4>Skinny Jeans</h4>
+                                        <p>$45.90</p>
+                                    </div>
+                                </td>
+                                <td class="quy-col">
+                                <td class="size-col"><h4>Size M</h4></td>
+                                </td>
+                                <td class="size-col"><h4>Size M</h4></td>
+                                <td class="total-col"><h4>$45.90</h4></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4 card-right">
+
+                <a href="" class="site-btn">Categorie</a>
+                <a href="" class="site-btn sb-dark">Archive</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.slicknav.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+<!-- cart section end -->
+{% endblock %}

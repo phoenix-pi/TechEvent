@@ -1,3 +1,102 @@
-club_homepage:
+clubs_managment_homepage:
+    path:     /clubs
+    defaults: { _controller: ClubBundle:Clubs:afficherClub }
+AdminClub:
+    path:     /admin/club
+    defaults: { _controller: ClubBundle:Clubs:AdminClub }
+My_Club:
+    path:     /clubs/MyClub/{id}
+    defaults: { _controller: ClubBundle:Clubs:ClubPage }
+Join_us:
+    path:     /clubs/joinUs/{id}
+    defaults: { _controller: ClubBundle:Clubs:Join }
+
+create:
+    path:     /create
+    defaults: { _controller: ClubBundle:Clubs:create }
+
+Status:
+    path:     /refuse/{id}
+    defaults: { _controller: ClubBundle:Clubs:StatusClub }
+Joined:
+    path:     /joined
+    defaults: { _controller: ClubBundle:Clubs:joinedClubs }
+member:
+    path:     /member/{id}
+    defaults: { _controller: ClubBundle:Clubs:StatusMemberClub }
+
+members:
+    path:     /members/{id}
+    defaults: { _controller: ClubBundle:Clubs:manClub }
+FindClub:
+    path:     /Find
+    defaults: { _controller: ClubBundle:Clubs:findClubWeb }
+Club_admin:
+    path:     /admin/action
+    defaults: { _controller: ClubBundle:Clubs:ClubsList }
+delete:
+    path:     /admin/close/{id}
+    defaults: { _controller: ClubBundle:Clubs:delete }
+
+
+
+
+
+Theme_create:
+    path:     /admin/theme
+    defaults: { _controller: ClubBundle:Theme:create }
+Theme_del:
+    path:     /admin/theme/del{id}
+    defaults: { _controller: ClubBundle:Theme:delete }
+Theme_ed:
+    path:     /admin/theme/edit{id}
+    defaults: { _controller: ClubBundle:Theme:update }
+
+
+Workshop_new:
+    path:     /workshop
+    defaults: { _controller: ClubBundle:Workshop:createWorkshop }
+
+up:
+    path:     /up_workshop
+    defaults: { _controller: ClubBundle:Workshop:upWorkshop }
+workUp:
+    path:     /myWork
+    defaults: { _controller: ClubBundle:Workshop:work }
+participer:
+    path:     /parti/{id}
+    defaults: { _controller: ClubBundle:Workshop:particpe }
+cancel:
+    path:     /cancel/{id}
+    defaults: { _controller: ClubBundle:Workshop:cancel }
+
+UpdateWorkshop:
+    path:     /updateW/{id}
+    defaults: { _controller: ClubBundle:Workshop:update }
+w_del:
+    path:     /del/{id}
+    defaults: { _controller: ClubBundle:Workshop:del }
+
+esprit_api_homepage:
     path:     /
     defaults: { _controller: ClubBundle:Default:index }
+all:
+    path:     /tasks/all
+    defaults: { _controller: ClubBundle:Clubs:all}
+find_task:
+    path:     /tasks/find/{id}
+    defaults: { _controller: ClubBundle:Clubs:find}
+
+create_task:
+    path:     /tasks/new/{id}
+    defaults: { _controller: ClubBundle:Clubs:new}
+
+acc_club:
+    path:     /tasks/acc
+    defaults: { _controller: ClubBundle:Clubs:acc}
+change:
+    path:     /tasks/change/{id}
+    defaults: { _controller: ClubBundle:Clubs:update}
+search:
+    path:     /tasks/search/{name}
+    defaults: { _controller: ClubBundle:Clubs:findClub}

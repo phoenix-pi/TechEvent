@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+{% block title %}Update subscribe{% endblock %}
+{% block content %}
+    <style>
+        .newsletter {
+            padding: 80px 0;
+            background: #f2f2f2;
+        }
+
+        .newsletter .content {
+            max-width: 650px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2; }
+        .newsletter .content h2 {
+            color: #243c4f;
+            margin-bottom: 40px; }
+        .newsletter .content .form-control {
+            height: 50px;
+            border-color: #ffffff;
+            border-radius:0;
+        }
+        .newsletter .content.form-control:focus {
+            box-shadow: none;
+            border: 2px solid #243c4f;
+        }
+        .newsletter .content .btn {
+            min-height: 50px;
+            border-radius:0;
+            background: #243c4f;
+            color: #fff;
+            font-weight:600;
+        }
+    </style>
+<section class="newsletter">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="content">
+                    {% if confirm is not defined %}
+                    <form method="post">
+                        <h2>Update what I will recieve</h2>
+                        <div class="input-group">
+                            <input readonly type="email" name="email" value="{{ sub.email_subscriber }}" class="form-control" placeholder="Enter your email">
+                            <select class="form-control" name="domain_id">
+                                {% for d in domains %}
+                                <option value="{{ d.idDomain }}" {% if d.idDomain == sub.domain.idDomain %} selected {% endif %}>{{ d.nameDomain }}</option>
+                                {% endfor %}
+                            </select>
+                            <span class="input-group-btn">
+                                <button class="btn" type="submit">Update</button>
+                            </span>
+                        </div>
+                    </form>
+                    {% else %}
+                        <h2>Updated !!</h2>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

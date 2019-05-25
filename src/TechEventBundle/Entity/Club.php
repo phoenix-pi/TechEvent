@@ -12,7 +12,7 @@ namespace TechEventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ClubBundle\Repository\ClubRepository")
  * @ORM\Table(name="club")
  */
 class Club
@@ -26,24 +26,24 @@ class Club
      * @ORM\Column(type="string")
      */private $club_name;
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string",nullable=true)
      */private $logo;
     /**
      * @ORM\Column(type="string")
      */private $club_description;
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string",nullable=true)
      */private $email;
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string",nullable=true)
      */private $facebook;
     /**
-     * @ORM\Column(type="string")
-     */private $club_status;
+     * @ORM\Column(type="string",nullable=true)
+     */private $club_status="Waiting";
 
     /**
-     * @ORM\ManyToOne(targetEntity="theme")
-     * @ORM\JoinColumn(name="theme_id", referencedColumnName="id_theme")
+     * @ORM\ManyToOne(targetEntity="Theme")
+     * @ORM\JoinColumn(name="theme_id", referencedColumnName="id_theme",nullable=true, onDelete="CASCADE")
      */
      private $theme;
 
@@ -57,7 +57,27 @@ class Club
     {
         $this->id_club = $id_club;
     }
+    public function getIdClub()
+    {
+        return $this->id_club;
+    }
 
+
+    public function setIdClub($id_club)
+    {
+        $this->id_club = $id_club;
+    }
+
+    public function getClubName()
+    {
+        return $this->club_name;
+    }
+
+
+    public function setClubName($club_name)
+    {
+        $this->club_name = $club_name;
+    }
 
     public function getClub_Name()
     {
@@ -86,6 +106,16 @@ class Club
     }
 
     public function setClub_Description($club_description)
+    {
+        $this->club_description = $club_description;
+    }
+
+    public function getClubDescription()
+    {
+        return $this->club_description;
+    }
+
+    public function setClubDescription($club_description)
     {
         $this->club_description = $club_description;
     }
@@ -124,6 +154,17 @@ class Club
         $this->club_status = $club_status;
     }
 
+    public function getClubStatus()
+    {
+        return $this->club_status;
+    }
+
+
+    public function setClubStatus($club_status)
+    {
+        $this->club_status = $club_status;
+    }
+
     public function getTheme()
     {
         return $this->theme;
@@ -135,8 +176,8 @@ class Club
     }
 
     /**
-     * @ORM\ManyToOne(targetEntity="user")
-     * @ORM\JoinColumn(name="owner_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="owner_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $owner;
 

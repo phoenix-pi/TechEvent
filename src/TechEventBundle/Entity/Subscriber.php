@@ -11,7 +11,7 @@ namespace TechEventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="NewsBundle\Repository\SubscriberRepository")
  * @ORM\Table(name="subscriber")
  */
 class Subscriber
@@ -28,12 +28,17 @@ class Subscriber
     private $email_subscriber;
 
     /**
-     * @ORM\ManyToOne(targetEntity="domain")
-     * @ORM\JoinColumn(name="domain_id", referencedColumnName="id_domain")
+     * @ORM\ManyToOne(targetEntity="Domain")
+     * @ORM\JoinColumn(name="domain_id", referencedColumnName="id_domain", onDelete="CASCADE")
      */
     private $domain;
 
     public function getId_Subscriber()
+    {
+        return $this->id_subscriber;
+    }
+
+    public function getIdSubscriber()
     {
         return $this->id_subscriber;
     }
@@ -44,6 +49,11 @@ class Subscriber
     }
 
     public function getEmail_Subscriber()
+    {
+        return $this->email_subscriber;
+    }
+
+    public function getEmailSubscriber()
     {
         return $this->email_subscriber;
     }
@@ -62,6 +72,7 @@ class Subscriber
     {
         $this->domain = $domain;
     }
+
 
 
 

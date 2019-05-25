@@ -1,0 +1,52 @@
+{% extends not app.user or not app.user.hasRole('ROLE_ADMIN') ?  '@News/Default/notAllowed.html.twig' : 'backoffice.html.twig' %}
+{% block content %}
+
+    <style>
+        table,td,th{border:1px solid #ddd;text-align:left}table{border-collapse:collapse;width:100%;margin-top:10px;margin-bottom:10px}tr:nth-child(even){background-color:#f2f2f2}th,td{height:45px}.btns-group button{font-size:10px;background-color:#4CAF50;border:1px solid green;color:#fff;width:100%;cursor:pointer;display:block}.btn-group button:not(:last-child){border-bottom:none}.btn-group button:hover{background-color:#3e8e41}
+    </style>
+
+
+<h2> Members List</h2>
+    </br>
+
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone number</th>
+            <th>Status</th>
+            <th>Last login</th>
+            <th>Change Status</th>
+        </tr>
+        {%  for users in users %}
+        <tr>
+            <td>{{ users.username }}</td>
+            <td>{{ users.firstName }}</td>
+            <td>{{ users.lastName }}</td>
+            <td>{{ users.email }}</td>
+            <td>{{ users.address }}</td>
+            <td>{{ users.phone }}</td>
+            <td>{{ users.status }}</td>
+            <td> {{ users.lastLogin|date }}</td>
+            <td><form method="post" action="{{ path('tech_event_ban_member',{'id':users.id}) }}">
+                    <div class="btns-group">
+                        <button name="status" value="Admin">Admin</button>
+                        <button name="status" value="VIP">VIP</button>
+                        <button name="status" value="Member">Member</button>
+                    <button name="status" value="Banned">Ban</button>
+                    </div>
+                </form></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    </br>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: mbare
+ * Date: 2/24/2019
+ * Time: 9:55 AM
+ */
+
+namespace TechEventBundle\Entity;
+
+
+use Doctrine\ORM\Mapping as ORM;
+use FOS\MessageBundle\Entity\ThreadMetadata as BaseThreadMetadata;
+
+/**
+ * @ORM\Entity
+ */
+class ThreadMetadata extends BaseThreadMetadata
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\ManyToOne(
+     *   targetEntity="TechEventBundle\Entity\Thread",
+     *   inversedBy="metadata"
+     * )
+     * @var \FOS\MessageBundle\Model\ThreadInterface
+     */
+    protected $thread;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="TechEventBundle\Entity\User")
+     * @var \FOS\MessageBundle\Model\ParticipantInterface
+     */
+    protected $participant;
+}

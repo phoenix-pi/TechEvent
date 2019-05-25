@@ -1,0 +1,26 @@
+{% for event in events %}
+    <div class="col-lg-4 col-sm-6">
+        <div class="product-item">
+            <div class="pi-pic">
+                <img src="{{ asset('img/uploads/'~ event.photo) }}" alt="">
+                <div class="pi-links">
+                    {% if app.user %}   <a href="#" class="add-card"><i
+                                class="flaticon-bag"></i><span>ADD TO CART</span></a>
+                    <a href="#" data-id="{{ event.getId_Event() }}"
+                       class="wishlist-btn js-like"
+                       style="background-color: {{ (event.getisLiked()) ? 'red' : '' }}"><i
+                                class="flaticon-heart"></i></a>
+                </div>{% endif %}
+            </div>
+            <div class="pi-text">
+                {% if event.priceticket != 0 %}
+                    <h6>{{ event.priceticket }}TND</h6>
+                {% else %}
+                    <h6>Free</h6>
+                {% endif %}
+                <p>{{ event.event_name }} </p>
+                <a href="{{ path('event_Description',{'id':event.id_event}) }}">view more </a>
+            </div>
+        </div>
+    </div>
+{% endfor %}

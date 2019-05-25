@@ -8,11 +8,12 @@
 
 namespace TechEventBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(name="event")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="EventBundle\Repository\EventRepository")
  */
 class Event
 {
@@ -30,9 +31,20 @@ class Event
 
     /**
      * @ORM\ManyToOne(targetEntity="Category")
-     * @ORM\JoinColumn(name="category_id",referencedColumnName="id_category")
+     * @ORM\JoinColumn(name="category_id",referencedColumnName="id_category" , onDelete="CASCADE")
      */
     private $category;
+
+    /**
+     * @ORM\OneToMany(targetEntity="TechEventBundle\Entity\Event_likes" ,mappedBy="event")
+     *
+     */
+    private $eventsLike;
+
+    public function __construct()
+    {
+        $this->eventsLike = new ArrayCollection();
+    }
 
     public function getCategory()
     {
@@ -57,15 +69,38 @@ class Event
     private $nb_participant;
 
 
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $nb_like;
+
+    /**
+     * @return mixed
+     */
+    public function getNbLike()
+    {
+        return $this->nb_like;
+    }
+
+    /**
+     * @param mixed $nb_like
+     */
+    public function setNbLike($nb_like)
+    {
+        $this->nb_like = $nb_like;
+    }
+
+
     /**
      * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumn(name="organizer_id",referencedColumnName="id")
+     * @ORM\JoinColumn(name="organizer_id",referencedColumnName="id", onDelete="CASCADE")
      */
     private $organizer;
 
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $photo;
 
@@ -88,16 +123,9 @@ class Event
 
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="string")
      */
-    private $start_time;
-
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $end_time;
-
+    private $address;
 
     /**
      * @ORM\Column(type="boolean")
@@ -105,7 +133,51 @@ class Event
     private $archive;
 
 
+    private $isLiked;
+
+
+
+    private $timecompare ;
+
+    /**
+     * @return mixed
+     */
+    public function getTimecompare()
+    {
+        return $this->timecompare;
+    }
+
+    /**
+     * @param mixed $timecompare
+     */
+    public function setTimecompare($timecompare)
+    {
+        $this->timecompare = $timecompare;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param mixed $address
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+    }
+
     public function getId_Event()
+    {
+        return $this->id_event;
+    }
+
+
+    public function getIdEvent()
     {
         return $this->id_event;
     }
@@ -115,7 +187,22 @@ class Event
         $this->id_event = $id_event;
     }
 
+    public function setIdEvent($id_event)
+    {
+        $this->id_event = $id_event;
+    }
+
     public function getEvent_Name()
+    {
+        return $this->event_name;
+    }
+
+    public function setEventName($event_name)
+    {
+        $this->event_name = $event_name;
+    }
+
+    public function getEventName()
     {
         return $this->event_name;
     }
@@ -144,6 +231,17 @@ class Event
 
 
     public function setNb_Participant($nb_participant)
+    {
+        $this->nb_participant = $nb_participant;
+    }
+
+    public function getNbParticipant()
+    {
+        return $this->nb_participant;
+    }
+
+
+    public function setNbParticipant($nb_participant)
     {
         $this->nb_participant = $nb_participant;
     }
@@ -195,6 +293,17 @@ class Event
         $this->start_date = $start_date;
     }
 
+    public function getStartDate()
+    {
+        return $this->start_date;
+    }
+
+
+    public function setStartDate($start_date)
+    {
+        $this->start_date = $start_date;
+    }
+
 
     public function getEnd_Date()
     {
@@ -206,28 +315,14 @@ class Event
         $this->end_date = $end_date;
     }
 
-
-    public function getStart_Time()
+    public function getEndDate()
     {
-        return $this->start_time;
+        return $this->end_date;
     }
 
-
-    public function setStart_Time($start_time)
+    public function setEndDate($end_date)
     {
-        $this->start_time = $start_time;
-    }
-
-
-    public function getEnd_Time()
-    {
-        return $this->end_time;
-    }
-
-
-    public function setEnd_Time($end_time)
-    {
-        $this->end_time = $end_time;
+        $this->end_date = $end_date;
     }
 
 
@@ -256,6 +351,40 @@ class Event
     {
         $this->price_ticket = $price_ticket;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getisLiked()
+    {
+        return $this->isLiked;
+    }
+
+    /**
+     * @param mixed $isLiked
+     */
+    public function setIsLiked($isLiked)
+    {
+        $this->isLiked = $isLiked;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEventsLike()
+    {
+        return $this->eventsLike;
+    }
+
+    /**
+     * @param mixed $eventsLike
+     */
+    public function setEventsLike($eventsLike)
+    {
+        $this->eventsLike = $eventsLike;
+    }
+
+
 
 
 }

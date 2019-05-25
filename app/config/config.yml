@@ -9,13 +9,18 @@ imports:
     - { resource: "@CommentBundle/Resources/config/services.yml" }
     - { resource: "@ClubBundle/Resources/config/services.yml" }
     - { resource: "@ProfilBundle/Resources/config/services.yml" }
+    - { resource: "@ApiBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    uploads_directory: '%kernel.project_dir%/web/uploads/images'
+    img_directory:  '%kernel.project_dir%/web/img/uploads/'
 
 framework:
+    templating:
+        engines: ['twig', 'php']
     #esi: ~
     #translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
@@ -68,11 +73,13 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
-    spool: { type: memory }
+    transport: smtp
+    host: smtp.gmail.com
+    username: pi.phoenix.2019@gmail.com
+    password: phoenixpi2019
+    encryption: ssl
+    port: 465
+
 
 sensio_framework_extra:
    router:
@@ -82,9 +89,97 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: TechEventBundle\Entity\User
+
     service:
         mailer: fos_user.mailer.twig_swift
-    from_email:
-        address: "iheb.chakroun@esprit.tn"
-        sender_name: "iheb"
 
+    from_email:
+        address: "pi.phoenix.2019@gmail.com"
+        sender_name: "phoenix"
+
+    resetting:
+        retry_ttl : 60
+        email:
+            template:  email/password_resetting.email.twig
+
+
+
+        form:
+            type:               FOS\UserBundle\Form\Type\ResettingFormType # or 'fos_user_resetting' on Symfony < 2.8
+            name:               fos_user_resetting_form
+            validation_groups:  [ResetPassword, Default]
+    profile:
+        form:
+            type: AppBundle\Form\ProfileFormType
+
+knp_paginator:
+    page_range: 3                       # number of links showed in the pagination menu (e.g: you have 10 pages, a page_range of 3, on the 5th page you'll see links to page 4, 5, 6)
+    default_options:
+        page_name: page                 # page query parameter name
+        sort_field_name: sort           # sort field query parameter name
+        sort_direction_name: direction  # sort direction query parameter name
+        distinct: true                  # ensure distinct results, useful when ORM queries are using GROUP BY statements
+        filter_field_name: filterField  # filter field query parameter name
+        filter_value_name: filterValue  # filter value query parameter name
+    template:
+        pagination: 'pagination.html.twig'     # sliding pagination controls template
+        sortable: '@KnpPaginator/Pagination/sortable_link.html.twig' # sort link template
+        filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template
+
+nomaya_social:
+    buttons:
+        facebook:
+            url:            null
+            locale:         "fr_FR"
+            send:           false
+            width:          300
+            showFaces:      false
+            layout:         "button_count"
+        twitter:
+            url:            null
+            locale:         "fr"
+            message:        "Je veux partager ça avec vous"
+            text:           "Tweet"
+            via:            "L'Equipe cartedevisitevirtuelle.fr"
+            tag:            "ttot"
+        googleplus:
+            url:            null
+            locale :        "fr"
+            size :          "medium"
+            annotation :    "bubble"
+            width :         300
+        linkedin:
+            url:            null
+            locale:         "fr_FR"
+            counter:        "right"
+        pinterest:
+            url:            null
+    links:
+        facebook:           "http://www.facebook.com/yann.chauvel"
+        googleplus:         "https://plus.google.com/105931415830389032796"
+    theme:                  'default' # optional
+
+
+fos_message:
+    db_driver: orm
+    thread_class: TechEventBundle\Entity\Thread
+    message_class: TechEventBundle\Entity\Message
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        devis:
+            uri_prefix: /devis/
+            upload_destination: '%kernel.root_dir%/../web/devis/'
+            namer: vich_uploader.namer_uniqid
+
+
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
+        options:    []
+    image:
+        enabled:    true
+        binary:     /usr/local/bin/wkhtmltoimage #"\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\"" for Windows users
+        options:    []

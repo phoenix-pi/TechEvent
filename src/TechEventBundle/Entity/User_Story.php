@@ -5,9 +5,8 @@ namespace TechEventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- *
+ **@ORM\Entity(repositoryClass="ProfilBundle\Repository\User_StoryRepository")
  * @ORM\Table(name="user_story")
- * @ORM\Entity
  */
 class User_Story
 {
@@ -20,12 +19,12 @@ class User_Story
 
     /**
      *@ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumn(name="id_user",referencedColumnName="id")
+     * @ORM\JoinColumn(name="id_user",referencedColumnName="id", onDelete="CASCADE")
      */private $user;
 
     /**
      *@ORM\ManyToOne(targetEntity="Story")
-     * @ORM\JoinColumn(name="story_id",referencedColumnName="id_story")
+     * @ORM\JoinColumn(name="story_id",referencedColumnName="id_story", onDelete="CASCADE")
      */private $story;
 
     /**

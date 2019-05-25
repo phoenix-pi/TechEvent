@@ -1,0 +1,78 @@
+api_homepage:
+    path:     /
+    defaults: { _controller: ApiBundle:Default:index }
+
+alltask:
+    path:     /tasks/all
+    defaults: { _controller: ApiBundle:Task:all }
+find_task:
+    path:     /tasks/find/{id}
+    defaults: { _controller: ApiBundle:Task:find }
+create_task:
+    path:     /tasks/new
+    defaults: { _controller: ApiBundle:Task:new }
+
+Add_task:
+    path:     /Comment/ajouter
+    defaults: { _controller: ApiBundle:Task:Add}
+
+Afficher_task:
+    path:     /Comment/aff/{idevent}
+    defaults: { _controller: ApiBundle:Task:afficher }
+Delete_task:
+    path:     /Comment/del/{id}
+    defaults: { _controller: ApiBundle:Task:delete }
+Update_task:
+    path:     /Comment/upd/{id}/{content}
+    defaults: { _controller: ApiBundle:Task:update }
+Report_task:
+    path:     /Comment/rep/{id}
+    defaults: { _controller: ApiBundle:Task:report }
+
+Chart_task:
+    path:     /chart/{id}
+    defaults: { _controller: ApiBundle:Task:count }
+
+allComment:
+    path:     /allComment
+    defaults: { _controller: ApiBundle:Task:allComment }
+
+allEvent:
+    path:     /allEvent
+    defaults: { _controller: ApiBundle:Task:allEvent }
+
+Event_Affiche:
+    path:     /AfficheEvent
+    defaults: { _controller: ApiBundle:Event:AfficheEvent }
+
+Category_Affiche:
+    path:     /AfficheCategory
+    defaults: { _controller: ApiBundle:Event:AfficheCategories }
+
+Like_Affiche:
+    path:     /AfficheLike
+    defaults: { _controller: ApiBundle:Event:AfficheLike }
+
+Find_Affiche:
+    path:     /Event/{id}
+    defaults: { _controller: ApiBundle:Event:findEvent }
+
+Add_Event:
+    path:     /Add
+    defaults: { _controller: ApiBundle:Event:Add }
+
+Rech_Event:
+    path:     /search/{name}
+    defaults: { _controller: ApiBundle:Event:searchEvent }
+
+Like_Event:
+    path:     /like
+    defaults: { _controller: ApiBundle:Event:AddLike }
+
+DisLike_Event:
+    path:     /dislike
+    defaults: { _controller: ApiBundle:Event:DeleteLike }
+
+delete_Event:
+    path:     /delete/{id}
+    defaults: { _controller: ApiBundle:Event:deleteRequest }

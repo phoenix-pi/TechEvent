@@ -1,0 +1,23 @@
+{% extends not app.user or not app.user.hasRole('ROLE_ADMIN') ?  '@News/Default/notAllowed.html.twig' : 'backoffice.html.twig' %}
+{% block content %}
+
+    <div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+
+        <tr><td><b>Club Name</b></td><td><b>Email</b></td><td ><b>Description</b></td><td ></td><td ></td><td><b>Facebook</b></td><td><b>Status</b></td><td class="text-center" colspan="2"><b>Action</b></td></tr>
+    {% for c in Clubs %}
+        <form method="post" action="{{ path('Status',{'id':c.id_club}) }}">
+        <tr>
+            <td> {{ c.club_name }}</td><td>{{ c.email}}</td> <td colspan="3">{{ c.club_description}}</td><td>{{ c.facebook}}</td>
+            <td>{{ c.club_status }}</td>
+            <td class="text-center"><button  name="status" class="btn btn-danger btn-sm" value="Refused">Refuse</button></td>
+            <td><button name="status" class="btn btn-success btn-sm" value="Accepted">Accept</button></td>
+        </tr>
+        </form>
+    {% endfor %}
+</table>
+    </div>
+    </div>
+
+{% endblock %}

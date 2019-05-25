@@ -26,17 +26,18 @@ class Cart
      * @ORM\Column(type="float")
      */
     private $total;
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $nb_line;
+
     /**
      * @ORM\OneToOne(targetEntity="User")
-     * @ORM\JoinColumn(name="user_id",referencedColumnName="id")
+     * @ORM\JoinColumn(name="user_id",referencedColumnName="id", onDelete="CASCADE")
      */
     private $user_cart;
 
     public function getId_Cart()
+    {
+        return $this->id_cart;
+    }
+    public function getIdCart()
     {
         return $this->id_cart;
     }
@@ -59,23 +60,15 @@ class Cart
     }
 
 
-    public function getNb_Line()
-    {
-        return $this->nb_line;
-    }
-
-
-    public function setNb_Line($nb_line)
-    {
-        $this->nb_line = $nb_line;
-    }
-
-
     public function getUser_Cart()
     {
         return $this->user_cart;
     }
 
+    public function getUserCart()
+    {
+        return $this->user_cart;
+    }
 
     public function setUser_Cart($user_cart)
     {

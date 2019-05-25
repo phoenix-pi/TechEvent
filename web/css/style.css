@@ -1,14 +1,26 @@
-/* =================================
-------------------------------------
-  Divisima | eCommerce Template
-  Version: 1.0
- ------------------------------------
- ====================================*/
+.flex-container {
+  padding-top: 40px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.request {
+  border-radius: 50px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width:100%
+}
+.buttons{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;background-color:inherit;text-align:center}
+.btngreen{color:#fff!important;background-color:#4CAF50!important}
+.btnred{color:#fff!important;background-color:#f44336!important}
 
-
-/*----------------------------------------*/
-/* Template default CSS
-/*----------------------------------------*/
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%
+}
 
 html,
 body {

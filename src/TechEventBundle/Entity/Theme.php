@@ -36,6 +36,16 @@ class Theme
         $this->id_theme = $id_theme;
     }
 
+    public function getIdTheme()
+    {
+        return $this->id_theme;
+    }
+
+    public function setIdTheme($id_theme)
+    {
+        $this->id_theme = $id_theme;
+    }
+
     public function getTheme_Name()
     {
         return $this->theme_name;
@@ -43,6 +53,17 @@ class Theme
 
 
     public function setTheme_Name($theme_name)
+    {
+        $this->theme_name = $theme_name;
+    }
+
+    public function getThemeName()
+    {
+        return $this->theme_name;
+    }
+
+
+    public function setThemeName($theme_name)
     {
         $this->theme_name = $theme_name;
     }

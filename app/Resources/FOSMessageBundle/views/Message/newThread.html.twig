@@ -1,0 +1,25 @@
+{% extends 'FOSMessageBundle::layout.html.twig' %}
+
+{% block fos_message_content %}
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+<form action="{{ url('fos_message_thread_new') }}" method="post">
+    <div class="tab-pane" id="compose">
+    <div class="container">
+        <div class="content-container clearfix">
+            <h1 class="content-title">New message</h1>
+            <div class="col-md-12">
+    {{ form_widget(form) }}
+
+                <div class="btn-send">
+                    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-send"></span> Send</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+</form>
+
+{% endblock %}

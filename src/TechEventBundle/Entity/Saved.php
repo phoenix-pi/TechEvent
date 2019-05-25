@@ -11,7 +11,7 @@ namespace TechEventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="NewsBundle\Repository\SavedRepository")
  * @ORM\Table(name="saved")
  */
 
@@ -29,18 +29,23 @@ class Saved
     private $date_save;
 
     /**
-     * @ORM\ManyToOne(targetEntity="user")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="article")
-     * @ORM\JoinColumn(name="article_id", referencedColumnName="id_article")
+     * @ORM\ManyToOne(targetEntity="Article")
+     * @ORM\JoinColumn(name="article_id", referencedColumnName="id_article", onDelete="CASCADE")
      */
     private $article;
 
     public function getId_Saved()
+    {
+        return $this->id_saved;
+    }
+
+    public function getIdSaved()
     {
         return $this->id_saved;
     }

@@ -12,7 +12,7 @@ namespace TechEventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ClubBundle\Repository\ClubRepository")
  * @ORM\Table(name="club_user")
  */
 class ClubUser
@@ -27,7 +27,7 @@ class ClubUser
     private $id_club_user;
     /**
      * @ORM\Column(type="string")
-     */private $club_user_status;
+     */private $club_user_status="Waiting";
     /**
      * @ORM\Column(type="string")
      */private $why;
@@ -39,15 +39,31 @@ class ClubUser
      */private $skills;
 
     /**
-     * @ORM\ManyToOne(targetEntity="user")
-     * @ORM\JoinColumn(name="member_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="member_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $member;
 
+    /**
+     * @return mixed
+     */
+    public function getMember()
+    {
+        return $this->member;
+    }
 
     /**
-     * @ORM\ManyToOne(targetEntity="club")
-     * @ORM\JoinColumn(name="club_id", referencedColumnName="id_club")
+     * @param mixed $member
+     */
+    public function setMember($member)
+    {
+        $this->member = $member;
+    }
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Club")
+     * @ORM\JoinColumn(name="club_id", referencedColumnName="id_club", onDelete="CASCADE")
      */
     private $club;
 

@@ -1,0 +1,31 @@
+{% extends not app.user or not app.user.hasRole('ROLE_ADMIN') ?  '@News/Default/notAllowed.html.twig' : 'backoffice.html.twig' %}
+{% block content %}
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+
+    <div class="mainbody container-fluid">
+        <div class="flex-container">
+
+            <div class="panel panel-default">
+               <h3 style="padding: 10px">VIP-membership request of
+                    <a href="{{ path('profil_homepage', { 'id': request.user.id }) }}"> {{ request.user }} </a>
+                    : </h3>
+                <p style="padding: 10px"> Date of Request : {{ request.creation_date|date }}</p>
+                <div style="padding: 50px" class="panel-body">
+                    <div class="request">
+                        <output> {{ request.content_request }} </output>
+
+                    </div> <a class="flex-container" href="{{ asset('devis/' ~ request.devisName) }}">See File</a></br>
+
+                    <form class="flex-container" method="post" action="{{ path('tech_event_accept_vip_request',{'idreq':request.id_request ,'idus':request.user.id}) }}">
+
+
+                    <button class="btngreen buttons" name="status" value="Accepted">Accept</button>
+                    <button class="btnred buttons" name="status" value="Declined">Decline</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

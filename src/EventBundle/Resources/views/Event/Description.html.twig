@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+
+
+	<section class="product-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="product-pic-zoom">
+						<img class="product-big-img" src="{{ asset('img/uploads/'~ e.photo) }}" alt="">
+					</div>
+
+				</div>
+
+				<div class="col-lg-6 product-details">
+					<h2 class="p-title"></h2>
+
+					<h3 class="p-price">{{ e.event_name }}</h3>
+
+					<div class="p-review">
+						<h4>{{ e.organizer }}</h4>
+					</div>
+
+{% if app.user %}
+					<a href="{{ path('ticket_add',{'id':e.id_event}) }}" class="site-btn">Participate</a>
+{% endif %}
+					<div id="accordion" class="accordion-area">
+						<div class="panel">
+							<div class="panel-header" id="headingOne">
+								<button class="panel-link active" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">information</button>
+							</div>
+							<div id="collapse1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+								<div class="panel-body">
+									<h4>{{ e.address }}</h4>
+									<p>start Date :{{ e.start_Date |date('y-m-d')}} </p>
+									<p>End   Date :{{ e.end_Date |date('y-m-d')}}</p>
+                                    {% if e.priceticket != 0 %}
+										<p>Price:{{ e.priceticket }}TND</p>
+                                    {% else %}
+										<p>Price :Free</p>
+                                    {% endif %}
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="panel-header" id="headingTwo">
+								<button class="panel-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Description </button>
+							</div>
+							<div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+								<div class="panel-body">
+									<img src="" alt="">
+									<p>{{ e.description }}</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="contact-social">
+
+                        {# {{ socialButtons( { 'googleplus':false , 'twitter':false } ) }} #}
+					</div>
+
+				</div>
+			</div>
+			<a href="{{ path('comment_comment_show',{'id':e.id_event}) }}" class="btn btn-secondary float-right">show comments</a>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+	
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends not app.user or not app.user.hasRole('ROLE_ADMIN') ?  '@News/Default/notAllowed.html.twig' : 'backoffice.html.twig' %}
+{% block admin_name %}{{ app.user.firstName }}{% endblock %}
+{% block admin_last_name %}{{ app.user.lastName }}{% endblock %}
+{% block news_tache %}
+    <li>
+        <a href="{{ path('news_domain_homepage') }}">Domain</a>
+    </li>
+    <li>
+        <a href="{{ path('news_article_show') }}">Articles</a>
+    </li>
+    <li>
+        <a href="{{ path('news_front_subs_getAll') }}">Subscribers</a>
+    </li>
+    <li>
+        <a href="{{ path('news_letter_create') }}">Send newsletters</a>
+    </li>
+{% endblock %}
+{% block content %}
+    {% if s == true %}
+        <h2>All newsletter has been sent !!</h2>
+    {% else %}
+        <h2>There is no new newsletter to send</h2>
+    {% endif %}
+{% endblock %}

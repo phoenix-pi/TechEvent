@@ -12,8 +12,9 @@ namespace TechEventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="CommentBundle\Repository\CommentRepository")
  * @ORM\Table(name="comment")
+ *
  */
 class Comment
 {
@@ -24,6 +25,11 @@ class Comment
      */private $id_comment;
 
     public function getId_Comment()
+    {
+        return $this->id_comment;
+    }
+
+    public function getIdComment()
     {
         return $this->id_comment;
     }
@@ -51,29 +57,38 @@ class Comment
 
     /**
      * @ORM\Column(type="datetime")
+     *
      */
-    private $date_of_comment;
+    private $dateofcomment;
 
-
-    public function getDate_Of_Comment()
+    /**
+     * @return mixed
+     */
+    public function getDateofcomment()
     {
-        return $this->date_of_comment;
-    }
-
-    public function setDate_Of_Comment($date_of_comment)
-    {
-        $this->date_of_comment = $date_of_comment;
+        return $this->dateofcomment;
     }
 
     /**
+     * @param mixed $dateofcomment
+     */
+    public function setDateofcomment($dateofcomment)
+    {
+        $this->dateofcomment = $dateofcomment;
+    }
+
+
+
+
+    /**
      * @ORM\ManyToOne(targetEntity="Event"))
-     * @ORM\JoinColumn(name="event_id",referencedColumnName="id_event")
+     * @ORM\JoinColumn(name="event_id",referencedColumnName="id_event", onDelete="CASCADE")
      */
     private $event;
 
     /**
      * @ORM\ManyToOne(targetEntity="User"))
-     * @ORM\JoinColumn(name="user_id",referencedColumnName="id")
+     * @ORM\JoinColumn(name="user_id",referencedColumnName="id", onDelete="CASCADE")
      */
     private $user;
 
@@ -96,6 +111,29 @@ class Comment
     {
         $this->user = $user;
     }
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $nbrep;
+
+    /**
+     * @return mixed
+     */
+    public function getNbrep()
+    {
+        return $this->nbrep;
+    }
+
+    /**
+     * @param mixed $nbrep
+     */
+    public function setNbrep($nbrep)
+    {
+        $this->nbrep = $nbrep;
+    }
+
+
 
 
 

@@ -1,3 +1,64 @@
 cart_homepage:
-    path:     /
-    defaults: { _controller: CartBundle:Default:index }
+  path:     /cart
+  defaults: { _controller: CartBundle:Default:index }
+
+ticket_affcihe:
+  path:     /show
+  defaults: { _controller: CartBundle:OrderLine:ShowLine }
+
+ticket_add:
+  path:     /add/{id}
+  defaults: { _controller: CartBundle:OrderLine:AddTicket }
+
+ticket_del:
+  path:     /delete/{id}
+  defaults: { _controller: CartBundle:OrderLine:DeleteTicket }
+
+ticket_show:
+  path:     /showtickettt
+  defaults: { _controller: CartBundle:Ticket:ShowTicket }
+
+
+order_quantity_update:
+  path:     /updateQuantity/{id}/{quantity}
+  defaults: { _controller: CartBundle:Ticket:UpdateQuantity }
+
+
+total_cart_order_line:
+  path:     /totalCart
+  defaults: { _controller: CartBundle:OrderLine:lineCount }
+
+show_cart:
+  path:     /ShowCart
+  defaults: { _controller: CartBundle:Cart:ShowCart }
+
+show_ticket:
+  path:     /ShowTicket
+  defaults: { _controller: CartBundle:OrderLine:SendTicket }
+
+show_API:
+  path:     /parse
+  defaults: { _controller: CartBundle:API:all }
+
+show_API3:
+  path:     /add
+  defaults: { _controller: CartBundle:API:new }
+
+show_API4:
+  path:     /ShowEvent/{id}
+  defaults: { _controller: CartBundle:API:findEvent }
+
+show_API6:
+  path:     /AllEvent
+  defaults: { _controller: CartBundle:API:allEvent }
+
+show_API7:
+  path:     /AllTicket
+  defaults: { _controller: CartBundle:API:allTicket }
+
+del_API7:
+  path:     /del/{idt}
+  defaults: { _controller: CartBundle:API:DeleteTicket }
+
+
+

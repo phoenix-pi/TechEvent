@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <link rel="stylesheet" href="{{ asset('Clubs/css/tab.css') }}"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <section class="category-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 order-2 order-lg-1">
+                    <div class="filter-widget">
+                        <h1 class="fw-title">My Club</h1>
+
+
+                        <ul class="category-menu">
+
+                            <li><a href="#">Workshops</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{{ path('Workshop_new') }}">New workshop</a></li>
+                                    <li><a href="{{ path('workUp') }}">Upcoming workshops</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                             {% for x in m %}
+                            <a href="{{ path('member',{'id':x.club.id_club}) }}">{% endfor %} Membership requests</a>
+                           </li>
+
+                            <li><a href="{{ url('fos_message_thread_new') }}"> Chat</a>
+                            </li>
+
+
+
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

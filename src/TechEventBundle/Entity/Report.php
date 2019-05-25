@@ -12,7 +12,7 @@ namespace TechEventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="CommentBundle\Repository\ReoprtRepository")
  * @ORM\Table(name="report")
  */
 class Report
@@ -22,12 +22,7 @@ class Report
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */private $id_report;
-    /**
-     * @ORM\Column(type="integer")
-     */private $nb_report_comment;
-    /**
-     * @ORM\Column(type="integer")
-     */private $nb_report_user;
+
 
     public function getIdReport()
     {
@@ -39,31 +34,37 @@ class Report
         $this->id_report = $id_report;
     }
 
-    public function getNbReportComment()
-    {
-        return $this->nb_report_comment;
-    }
-
-    public function setNbReportComment($nb_report_comment)
-    {
-        $this->nb_report_comment = $nb_report_comment;
-    }
-
-    public function getNbReportUser()
-    {
-        return $this->nb_report_user;
-    }
-
-    public function setNbReportUser($nb_report_user)
-    {
-        $this->nb_report_user = $nb_report_user;
-    }
 
     /**
      * @ORM\ManyToOne(targetEntity="Comment"))
-     * @ORM\JoinColumn(name="comment_id",referencedColumnName="id_comment")
+     * @ORM\JoinColumn(name="comment_id",referencedColumnName="id_comment",onDelete="CASCADE")
      */
     private $comment;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="User"))
+     * @ORM\JoinColumn(name="user_id",referencedColumnName="id", onDelete="CASCADE")
+     */
+    private $user;
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+
 
     public function getComment()
     {
@@ -75,21 +76,19 @@ class Report
         $this->comment = $comment;
     }
 
+
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="integer", nullable=true)
      */
-    private $date_of_report;
-
-    public function getDate_Of_Report()
-    {
-        return $this->date_of_report;
-    }
-
-    public function setDate_Of_Report($date_of_report)
-    {
-        $this->date_of_report = $date_of_report;
-    }
-
+    private $nb_report_comment;
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $nb_report_user;
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private  $date_of_report;
 
 
 

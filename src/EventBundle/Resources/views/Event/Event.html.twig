@@ -1,0 +1,195 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+
+
+
+
+
+
+
+
+
+    <section class="hero-section">
+        <div class="hero-slider owl-carousel" >
+            {% for i in e %}
+            <div class="hs-item set-bg" data-setbg="{{ asset('img/uploads/'~ i.photo) }}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-7 text-white">
+                            <h2>{{ i.event_name }}</h2>
+                            <p> </p>
+
+                        </div>
+                    </div>
+                    <div class="offer-card text-white" style="width: border-box">
+                        <span>{{ i.start_date|date('y-m-d') }}</span>
+                        {% if i.priceticket != 0 %}
+                            <h4> {{ i.priceticket }}TND</h4>
+                            <h4>{{ i.event_name }}</h4>
+                            <p>Book NOW</p>
+                            {% else %}
+                                <h4> Free</h4>
+                                {{ i.event_name }}
+                            {% endif %}
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row">
+        <div class="col-xl-3 col-lg-3">
+
+        </div>
+
+        <div class="col-xl-6 col-lg-5">
+            <form class="header-search-form mt-lg-3">
+                <input type="text" style="background: white" id="js-search-input" placeholder="Search ....">
+                <button><i class="flaticon-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <section class="category-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 order-2 order-lg-1">
+                    <div class="filter-widget">
+                        <h2 class="fw-title">Sorted By</h2>
+                        <ul class="category-menu">
+                            <li><a href="{{ path('event_SortedByDate') }}">Date</a></li>
+                            <li><a href="{{ path('event_SortedByLike') }}">Rate</a></li>
+                            <li><a href="{{ path('event_SortedByPrice') }}">Price</a></li>
+
+                         {% if app.user %}   <li><a href="{{ path('event_UserEvent') }}">My Event List</a></li>
+                             <li><a href="{{ path('event_UserCategorie') }}">My Favorit Events</a></li>
+
+                            <form method="post" action="{{ path('event_AddEvent') }}">
+                                <li>
+
+                                        <button class="site-btn sb-line sb-dark" type="submit">Add New Event</button>
+
+                                </li>
+                            </form>{% endif %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-9  order-1 order-lg-2 mb-5 mb-lg-0">
+                    <div class="row data-search">
+
+
+                        {% for i in e %}
+                            {% if i.status =='ACCEPTED' %}
+
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="product-item">
+                                    <div class="pi-pic">
+                                        <img src="{{ asset('img/uploads/'~ i.photo) }}" alt="">
+                                        {% if app.user %}     <div class="pi-links">
+                                             <a href="{{ path('ticket_add',{'id':i.id_event}) }}" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+                                            <a href="#" data-id="{{ i.getId_Event() }}" class="wishlist-btn js-like" style="background-color: {{ (i.getisLiked()) ? 'red' : '' }}"><i class="flaticon-heart"> </i></a>
+
+                                        </div> {% endif %}
+                                    </div>
+                                    <div class="pi-text">
+                                        {% if i.priceticket != 0 %}
+                                        <h6>{{ i.priceticket }}TND</h6>
+                                        {% else %}
+                                            <h6>Free</h6>
+                                            {% endif %}
+                                            <h6></h6>
+                                        <p>{{ i.event_name }} : {{ i.start_date |date('y-m-d') }} </p>
+                                        <a href="{{ path('event_Description',{'id':i.id_event}) }}">view more </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready(function () {
+
+
+
+            $('#js-search-input').keyup(function () {
+                search = $("#js-search-input").val();
+                if (search == "") {
+                    $.get("searchAll", function (data) {
+                        $('.data-search').html(data);
+                    });
+                } else {
+                    $.get("eventSearch/" + search, function (data) {
+                        $('.data-search').html(data);
+                    });
+                }
+
+            });
+
+
+
+            $(".js-like").on('click', function (ev) {
+                ev.preventDefault();
+                ev.stopPropagation();
+                $item = $(this);
+                $id = $item.attr('data-id');
+
+                $.get('eventLike/' + $id, function (data) {
+                    if (data == 'liked') {
+                        $item.css("background-color", "red");
+                    } else {
+                        $item.css("background-color", "");
+                    }
+                });
+            })
+
+        });
+    </script>
+{% endblock %}

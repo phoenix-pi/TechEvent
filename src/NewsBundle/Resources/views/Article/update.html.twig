@@ -1,0 +1,42 @@
+{% extends not app.user or not app.user.hasRole('ROLE_ADMIN') ?  '@News/Default/notAllowed.html.twig' : 'backoffice.html.twig' %}
+{% block admin_name %}{{ app.user.firstName }}{% endblock %}
+{% block admin_last_name %}{{ app.user.lastName }}{% endblock %}
+{% block news_tache %}
+    <li>
+        <a href="{{ path('news_domain_homepage') }}">Domain</a>
+    </li>
+    <li>
+        <a href="{{ path('news_article_show') }}">Articles</a>
+    </li>
+    <li>
+        <a href="{{ path('news_front_subs_getAll') }}">Subscribers</a>
+    </li>
+    <li>
+        <a href="{{ path('news_letter_create') }}">Send newsletters</a>
+    </li>
+{% endblock %}
+{% block content %}
+    {% form_theme form 'bootstrap_4_horizontal_layout.html.twig' %}
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 border-right">
+                        <h4>Update Post</h4>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_start(form) }}
+                        {{ form_row(form.titleArticle , {'attr': {'class': 'form-control here'}}) }}
+                        {{ form_row(form.ContentArticle, {'attr': {'class': 'form-control here', 'cols':'40', 'rows':'4'}}) }}
+                        {{ form_row(form.image) }}
+                        {{ form_row(form.domain) }}
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

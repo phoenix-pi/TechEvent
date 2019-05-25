@@ -25,6 +25,13 @@ class AppKernel extends Kernel
             new CommentBundle\CommentBundle(),
             new ClubBundle\ClubBundle(),
             new ProfilBundle\ProfilBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Nomaya\SocialBundle\NomayaSocialBundle(),
+            new FOS\MessageBundle\FOSMessageBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new Ob\HighchartsBundle\ObHighchartsBundle(),
+            new ApiBundle\ApiBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

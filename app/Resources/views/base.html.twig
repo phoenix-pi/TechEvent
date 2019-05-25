@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body style="background: #f2f2f2">
 <!-- Header section -->
 <header class="header-section">
     <div class="header-top">
@@ -35,7 +35,7 @@
                         <div class="up-item">
                             <i class="flaticon-profile"></i>
                             {% if app.user %}
-                                <a href="{{ path('fos_user_profile_show') }}"> {{ app.user.username }} </a> |
+                                <a href="{{ path('profil_homepage', { 'id': app.user.id }) }}"> {{ app.user.username }} </a> |
                                 <a href="{{ path('fos_user_security_logout') }}">
                                     Logout
                                 </a>
@@ -44,17 +44,19 @@
                             {% endif %}
                         </div>
                         {% if app.user %}
-                        <div class="up-item">
-                            <div class="shopping-card">
-                                <i class="flaticon-bag"></i>
-                                <span>0</span>
-                            </div>
-                            <a href="#">Cart</a>
-                        </div>
+                            {% block cart %}
+                                <div class="up-item">
+                                    <div class="shopping-card">
+                                        <i class="flaticon-bag"></i>
+                                        <span id="number">0</span>
+                                    </div>
+                                    <a href="{{ path('show_cart') }}">Cart</a>
+                                </div>
+                            {% endblock %}
                         {% else %}
-                        <div class="up-item">
-                            <a href="{{ path('fos_user_registration_register') }}">Register</a>
-                        </div>
+                            <div class="up-item">
+                                <a href="{{ path('fos_user_registration_register') }}">Register</a>
+                            </div>
                         {% endif %}
                     </div>
                 </div>
@@ -67,26 +69,20 @@
             <ul class="main-menu">
                 <li><a href="{{ path('tech_event_homepage') }}">Home</a></li>
                 <li>
-                    <a href="#">Events</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Category 1 </a></li>
-                        <li><a href="#">Category 2</a></li>
-                        <li><a href="#">Category 3</a></li>
-                        <li><a href="#">Category 4</a></li>
-                        <li><a href="#">Category 5</a></li>
-                    </ul>
+                    <a href="{{ path('event_homeAffiche') }}">Events</a>
                 </li>
                 <li>
-                    <a href="#">Club</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Category 1 </a></li>
-                        <li><a href="#">Category 2</a></li>
-                        <li><a href="#">Category 3</a></li>
-                        <li><a href="#">Category 4</a></li>
-                        <li><a href="#">Category 5</a></li>
-                    </ul>
+                    <a href="{{ path('clubs_managment_homepage') }}">Club</a>
                 </li>
-                <li><a href="#">News</a></li>
+                <li>
+                    <a href="{{ path('news_front_article_show') }}">News</a>
+                    {% if app.user %}
+                    <ul class="sub-menu">
+
+                        <li><a href="{{ path('news_front_article_show_bookmark') }}">My bookmarks </a></li>
+                    </ul>
+                    {% endif %}
+                </li>
             </ul>
         </div>
     </nav>
@@ -149,6 +145,7 @@
                                 <label>
                                     <input type="checkbox" id="remember_me" name="_remember_me" value="on">Remember Me
                                 </label>
+                                <div> <a href="{{ path('reset_password') }}">Forgot password?</a></div>
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-danger" id="_submit" name="_submit" >Sign in</button>
@@ -172,7 +169,13 @@
 <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
 <script src="{{ asset('js/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
-
+<script>
+    $(document).ready(function () {
+        $.get('{{ path('total_cart_order_line') }}', function (data) {
+            $('#number').html(data);
+        })
+    });
+</script>
 {% block javascripts %}{% endblock %}
 
 </body>

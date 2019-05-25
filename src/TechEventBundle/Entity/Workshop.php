@@ -32,11 +32,9 @@ class Workshop
      * @ORM\Column(type="string")
      */private $workshop_description;
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */private $start_date;
-    /**
-     * @ORM\Column(type="date")
-     */private $end_date;
+
     /**
      * @ORM\Column(type="string")
      */private $location;
@@ -44,7 +42,7 @@ class Workshop
     /**
      *
      * @ORM\ManyToOne(targetEntity="Club")
-     * @ORM\JoinColumn(name="club_id",referencedColumnName="id_club")
+     * @ORM\JoinColumn(name="club_id",referencedColumnName="id_club", onDelete="CASCADE")
      */
     protected $club;
 

@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ article.titleArticle }}{% endblock %}
+{% block content %}
+    <style type="text/css">
+        img{width:75%;}
+    </style>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="news-title">
+                                            <h2>{{ article.titleArticle }}</h2>
+                                        </div>
+                                        <div class="news-cats">
+                                            <ul class="list-unstyled list-inline mb-1">
+                                                <li class="list-inline-item">
+                                                    <i class="fa fa-folder-o text-danger"></i>
+                                                    <a href="#"><small>{{ article.domain.nameDomain }}</small> </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <i class="fa fa-folder-o text-danger"></i>
+                                                    <a href="#"><small>{{ article.dateOfPublish | date }}</small></a>
+                                                </li>
+                                                {% if app.user %}
+                                                    {% if added == 1 %}
+                                                        <li class="list-inline-item float-right">
+                                                            <i class="fa fa-save text-danger"></i>
+                                                            <a href="{{ path('news_front_article_remove',{'id':article.idArticle}) }}"><small>Remove from bookmark</small></a>
+                                                        </li>
+                                                        {% else %}
+                                                            <li class="list-inline-item float-right">
+                                                                <i class="fa fa-save text-danger"></i>
+                                                                <a href="{{ path('news_front_article_add',{'id':article.idArticle}) }}"><small>Add to bookmark</small></a>
+                                                            </li>
+                                                        {% endif %}
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                        <hr>
+                                        <div class="news-image text-center">
+                                            <img src="{{ asset('uploads/images/' ~ article.image) }}">
+                                        </div>
+                                        <br>
+                                        <div class="news-content">
+                                            <p>{{ article.contentArticle }}</p>
+
+                                        </div>
+                                        <div class="row float-right">
+                                            {{ socialButtons( { 'googleplus':false , 'twitter':false } ) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

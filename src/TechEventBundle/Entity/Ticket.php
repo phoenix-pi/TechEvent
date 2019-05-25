@@ -10,7 +10,7 @@ namespace TechEventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="CartBundle\Repository\TicketRepository")
  */
 class Ticket
 {
@@ -23,7 +23,8 @@ class Ticket
 
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
+     *
      */
     private $code;
     /**
@@ -32,17 +33,21 @@ class Ticket
     private $time_booked;
     /**
      * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumn(name="user_id",referencedColumnName="id")
+     * @ORM\JoinColumn(name="user_id",referencedColumnName="id", onDelete="CASCADE")
      */
     private $user_ticket;
     /**
      * @ORM\ManyToOne(targetEntity="Event")
-     * @ORM\JoinColumn(name="event_id",referencedColumnName="id_event")
+     * @ORM\JoinColumn(name="event_id",referencedColumnName="id_event", onDelete="CASCADE")
      */
     private $event_ticket;
 
 
     public function getId_Ticket()
+    {
+        return $this->id_ticket;
+    }
+    public function getIdTicket()
     {
         return $this->id_ticket;
     }
@@ -70,6 +75,10 @@ class Ticket
         return $this->time_booked;
     }
 
+    public function getTimeBooked()
+    {
+        return $this->time_booked;
+    }
 
     public function setTime_Booked($time_booked)
     {
@@ -83,6 +92,11 @@ class Ticket
     }
 
 
+    public function getUserTicket()
+    {
+        return $this->user_ticket;
+    }
+
     public function setUser_Ticket($user_ticket)
     {
         $this->user_ticket = $user_ticket;
@@ -94,6 +108,10 @@ class Ticket
         return $this->event_ticket;
     }
 
+    public function getEventTicket()
+    {
+        return $this->event_ticket;
+    }
 
     public function setEvent_Ticket($event_ticket)
     {
@@ -101,7 +119,7 @@ class Ticket
     }
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="boolean")
      */
     private $status;
 
@@ -116,7 +134,7 @@ class Ticket
     }
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $qr_code;
 

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<link rel="stylesheet" href="{{ asset('Clubs/css/tab.css') }}"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<section class="category-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 order-2 order-lg-1">
+                <div class="filter-widget">
+
+
+
+                    <ul class="category-menu">
+
+                        <li><a href="{{ path('up') }}">Upcoming workshops</a></li>
+                        <li><a href="{{ url('fos_message_thread_new') }}"> Chat</a></li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

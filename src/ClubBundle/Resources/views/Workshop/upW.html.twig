@@ -1,0 +1,89 @@
+{% extends 'base.html.twig'%}
+{% block content %}
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Table V02</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle">
+            <table class="table table-striped custab">
+                <thead >
+                <tr>
+                    <td class="cell text-center">
+                        <b >Title</b>
+                    </td>
+                    <td class="cell text-center" >
+                        <b>Description</b>
+                    </td>
+                    <td class="cell text-center">
+                        <b>Location</b>
+                    </td>
+                    <td class="cell text-center">
+                        <b>Date</b>
+                    </td>
+                    <td class="cell text-center">
+                        <b>Remaining places</b>
+                    </td>
+                    <td class="cell text-center text-center" colspan="2">
+                        <b>Action</b>
+                    </td>
+                </tr>
+                </thead>
+                {% for w in wo |reverse %}
+
+                <tr>
+
+                    <td class="text-center" >
+                        {{ w.title }}
+                    </td>
+                    <td class="text-center">
+                        {{ w.workshop_Description }}
+                    </td>
+                    <td class="text-center">
+                        {{ w.location }}
+                    </td>
+                    <td class="text-center">
+                        {{ w.start_Date | date }}
+                    </td>
+                    <td class="text-center">
+                        {{ w.nbr_Places }}
+                    </td>
+
+                        <td class="cell" data-title="Action">
+                            <form method="post">
+                                <a href="{{ path('UpdateWorkshop',{'id':w.id_workshop}) }}"><i class="fa fa-edit"></i> Edit</a>
+                               <td> <a class="text-danger" href="{{ path('w_del',{'id':w.id_workshop}) }}"><i class="fa fa-trash"></i> Cancel</a></td>
+                            </form>
+                        </td>
+                </tr>
+
+{% endfor %}
+
+
+</table></div></div>
+
+
+
+
+    <!--===============================================================================================-->
+    <script src="{{ asset('Clubs/table/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('Clubs/table/vendor/bootstrap/js/popper.js') }}"></script>
+    <script src="{{ asset('Clubs/table/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('Clubs/table/vendor/select2/select2.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('Clubs/table/js/main.js') }}"></script>
+
+    </body>
+
+    </html>
+
+{% endblock %}

@@ -33,12 +33,22 @@ class Newsletter
         return $this->id_newsletter;
     }
 
+    public function getIdNewsletter()
+    {
+        return $this->id_newsletter;
+    }
+
     public function setId_Newsletter($id_newsletter)
     {
         $this->id_newsletter = $id_newsletter;
     }
 
     public function getCreation_Date()
+    {
+        return $this->creation_date;
+    }
+
+    public function getCreationDate()
     {
         return $this->creation_date;
     }

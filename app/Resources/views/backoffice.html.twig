@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="{{ asset('backoffice/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('backoffice/css/sidebar-themes.css') }}">
     <link rel="shortcut icon" type="image/png" href="{{ asset('backoffice/img/favicon.png') }}" />
+    {% block css %} {% endblock %}
 </head>
 
-<body>
+<body style="background: #f2f2f2">
 <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
     <nav id="sidebar" class="sidebar-wrapper">
         <div class="sidebar-content">
@@ -26,16 +27,14 @@
             <!-- sidebar-header  -->
             <div class="sidebar-item sidebar-header d-flex flex-nowrap">
                 <div class="user-pic">
-                    <img class="img-responsive img-rounded" src="{% block admin_img %}{{ asset('backoffice/img/user.jpg') }}{% endblock %}" alt="User picture">
+                    <img class="img-responsive img-rounded" src="{% block admin_img %}{{ asset('devis/' ~ app.user.devisName ) }}{% endblock %}" alt="User picture">
                 </div>
                 <div class="user-info">
-                        <span class="user-name">{% block admin_name %}Jhon{% endblock %}
-                            <strong>{% block admin_last_name %}Smith{% endblock %}</strong>
+                    <a href="{{ path('profil_homepage', {'id': app.user.id }) }}">
+                        <span class="user-name">{% block admin_name %}{{ app.user.lastName }}{% endblock %}
+                            <strong>{% block admin_last_name %}{{ app.user.firstName }}{% endblock %}</strong>
                         </span>
-                    <span class="user-status">
-                            <i class="fa fa-circle"></i>
-                            <span>Online</span>
-                        </span>
+                    </a>
                 </div>
             </div>
             <div class="sidebar-item sidebar-menu">
@@ -58,13 +57,10 @@
                             <ul>
                                 {% block user_tache %}
                                     <li>
-                                        <a href="#">Products </a>
+                                        <a href="{{ path('tech_event_members_list')}}">Members List </a>
                                     </li>
                                     <li>
-                                        <a href="#">Orders</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Credit cart</a>
+                                        <a href="{{ path('tech_event_requests_list')}}">VIP-membership Requests List</a>
                                     </li>
                                 {% endblock %}
                             </ul>
@@ -79,13 +75,13 @@
                             <ul>
                                 {% block event_tache %}
                                 <li>
-                                    <a href="#">Products </a>
+                                    <a href="{{ path('event_AdminEventCategorie') }}">Categories</a>
                                 </li>
                                 <li>
-                                    <a href="#">Orders</a>
+                                    <a href="{{ path('event_EventRequest') }}">Requests</a>
                                 </li>
                                 <li>
-                                    <a href="#">Credit cart</a>
+                                    <a href="{{ path('event_AdminEventrchive') }}">Archive</a>
                                 </li>
                                 {% endblock %}
                             </ul>
@@ -99,15 +95,19 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 {% block club_tache %}
+                                             <li>
+                                        <a href="{{ path('Club_admin') }}">Clubs</a>
+                                 </li>
                                 <li>
-                                    <a href="#">General</a>
+                                    <a href="{{ path('AdminClub') }}">Requests</a>
                                 </li>
                                 <li>
-                                    <a href="#">Panels</a>
+                                    <a href="{{ path('Theme_create') }}">Themes</a>
                                 </li>
-                                <li>
-                                    <a href="#">Tables</a>
-                                </li>
+                                    <li>
+                                        <a href="{{ url('fos_message_thread_new') }}">Chat</a>
+                                    </li>
+
                                 {% endblock %}
                             </ul>
                         </div>
@@ -120,18 +120,18 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 {% block news_tache %}
-                                <li>
-                                    <a href="#">Pie chart</a>
-                                </li>
-                                <li>
-                                    <a href="#">Line chart</a>
-                                </li>
-                                <li>
-                                    <a href="#">Bar chart</a>
-                                </li>
-                                <li>
-                                    <a href="#">Histogram</a>
-                                </li>
+                                    <li>
+                                        <a href="{{ path('news_domain_homepage') }}">Domain</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('news_article_show') }}">Articles</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('news_front_subs_getAll') }}">Subscribers</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('news_letter_create') }}">Send newsletters</a>
+                                    </li>
                                 {% endblock %}
                             </ul>
                         </div>
@@ -140,15 +140,15 @@
                         <span>Extra</span>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ path('comment_reportAdmin') }}">
                             <i class="fa fa-book"></i>
                             <span class="menu-text">Reports</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ path('comment_graphe') }}">
                             <i class="fa fa-star"></i>
-                            <span class="menu-text">VIP Request</span>
+                            <span class="menu-text">Stats</span>
                         </a>
                     </li>
                 </ul>
@@ -187,7 +187,7 @@
     <!-- page-content" -->
 </div>
 <!-- page-wrapper -->
-
+{% block js %} {% endblock %}
 <script src="{{ asset('backoffice/js/jquery.min.js') }}"></script>
 <script src="{{ asset('backoffice/js/popper.min.js') }}" ></script>
 <script src="{{ asset('backoffice/js/bootstrap.min.js') }}"></script>

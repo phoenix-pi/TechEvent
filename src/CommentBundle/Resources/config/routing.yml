@@ -1,3 +1,43 @@
 comment_homepage:
     path:     /
     defaults: { _controller: CommentBundle:Default:index }
+
+comment_comment_show:
+    path:     /show/{id}
+    defaults: { _controller: CommentBundle:Comment:show }
+
+comment_showeventcomment:
+  path:     /show1/{id}
+  defaults: { _controller: CommentBundle:Comment:showeventcomment }
+
+comment_comment_delete:
+    path:     /delete/{id}
+    defaults: { _controller: CommentBundle:Comment:delete }
+
+comment_comment_add2:
+    path:     /add/{id}
+    defaults: { _controller: CommentBundle:Comment:add2 }
+
+comment_comment_update:
+  path:     /update/{id}
+  defaults: { _controller: CommentBundle:Comment:Update }
+comment_graphe:
+  path:     /admin/stat
+  defaults: { _controller: CommentBundle:Graphe:stat}
+
+comment_reportAdmin:
+  path:     /reported
+  defaults: { _controller: CommentBundle:Report:Affichlist}
+
+comment_report:
+  path:     /report/{id}
+  defaults: { _controller: CommentBundle:Report:report}
+
+delete_report_action:
+  path:     /del/{id}
+  defaults: { _controller: CommentBundle:Report:deleteReport}
+
+comment_blacklist:
+  path:     /black
+  defaults: { _controller: CommentBundle:Report:AffichBlacklist}
+

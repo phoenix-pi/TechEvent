@@ -1,0 +1,70 @@
+{% extends not app.user or not app.user.hasRole('ROLE_ADMIN') ?  '@News/Default/notAllowed.html.twig' : 'backoffice.html.twig' %}
+{% block admin_name %}{{ app.user.firstName }}{% endblock %}
+{% block admin_last_name %}{{ app.user.lastName }}{% endblock %}
+{% block news_tache %}
+    <li>
+        <a href="{{ path('news_domain_homepage') }}">Domain</a>
+    </li>
+    <li>
+        <a href="{{ path('news_article_show') }}">Articles</a>
+    </li>
+    <li>
+        <a href="{{ path('news_front_subs_getAll') }}">Subscribers</a>
+    </li>
+    <li>
+        <a href="{{ path('news_letter_create') }}">Send newsletters</a>
+    </li>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row float-right">
+            <form class="navbar-form" role="search" method="get" action="{{ path('news_sub_search') }}">
+                <div class="input-group">
+                    <input type="text"
+                           {% if email is defined %} value="{{ email }}" {% endif %}
+                           class="form-control" placeholder="Search" name="email" >
+                    <div class="input-group-btn">
+                        <button class="btn btn-dark" type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<div class="container">
+    <br>
+</div>
+    <div class="container">
+    <div class="row">
+    <table class="table table-hover " id="myTable" style="background: white">
+        <thead class="bg-light ">
+        <tr>
+            <th style="width: 60%">E-mail</th>
+            <th style="width: 60%">Domain</th>
+            <th style="width: 20%">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {%  for s in subs %}
+            <tr>
+                <td>{{ s.email_subscriber }}</td>
+                <td>{{ s.domain.nameDomain }}</td>
+                <td>
+                    <a href="{{ path('news_front_subs_remove',{'id':s.id_subscriber}) }}"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+    </div>
+    </div>
+
+    <div class="navigation">
+        <div class="d-flex justify-content-center">
+            <div class="col-md-12"></div>
+            <div class="col-md-6"></div>
+            <div class="col-md-1">{{ knp_pagination_render(subs) }}</div>
+        </div>
+
+    </div>
+{% endblock %}

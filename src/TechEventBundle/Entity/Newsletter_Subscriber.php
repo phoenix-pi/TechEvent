@@ -26,13 +26,14 @@ class Newsletter_Subscriber
 
     /**
      * @ORM\ManyToOne(targetEntity="newsletter")
-     * @ORM\JoinColumn(name="newsletter_id", referencedColumnName="id_newsletter")
+     * @ORM\JoinColumn(name="newsletter_id", referencedColumnName="id_newsletter", onDelete="CASCADE")
      */
     private $newsletter;
 
     /**
      * @ORM\ManyToOne(targetEntity="subscriber")
-     * @ORM\JoinColumn(name="subscriber_id", referencedColumnName="id_subscriber")
+     * @ORM\JoinColumn(name="subscriber_id", referencedColumnName="id_subscriber", onDelete="CASCADE",)
+     *
      */
     private $subscriber;
 

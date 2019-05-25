@@ -1,0 +1,131 @@
+{% extends not app.user or not app.user.hasRole('ROLE_ADMIN') ?  '@News/Default/notAllowed.html.twig' : 'backoffice.html.twig' %}
+{% block admin_name %}{{ app.user.firstName }}{% endblock %}
+{% block admin_last_name %}{{ app.user.lastName }}{% endblock %}
+{% block news_tache %}
+    <li>
+        <a href="{{ path('news_domain_homepage') }}">Domain</a>
+    </li>
+    <li>
+        <a href="{{ path('news_article_show') }}">Articles</a>
+    </li>
+    <li>
+        <a href="{{ path('news_front_subs_getAll') }}">Subscribers</a>
+    </li>
+    <li>
+        <a href="{{ path('news_letter_create') }}">Send newsletters</a>
+    </li>
+{% endblock %}
+{% block content %}
+
+    <style type="text/css">
+        img {width:100%;}
+    </style>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-2 border-right">
+                <h3>List of News</h3>
+            </div>
+            <div class="col-md-10">
+                <div class="container">
+                    <div class="row float-right">
+                        <div class="col-sm-12 pull-center well ">
+                            <form class="form-inline" action="{{ path('news_article_search') }}" method="get">
+                                <select name="domain" class="form-control">
+                                    <option value="any">Select domain</option>
+                                    {% for d in domains %}
+                                        <option
+                                                {% if domain is defined %}
+                                                    {% if domain == d.idDomain %}
+                                                        selected
+                                                    {% endif %}
+                                                {% endif %}
+                                                value="{{ d.idDomain }}">
+                                            {{ d.nameDomain }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                <select name="orderBy" class="form-control">
+                                    <option value="any">Order by</option>
+                                    <option value="viewsNumber"
+                                            {% if orderBy is defined %}
+                                            {% if orderBy == 'viewsNumber' %}
+                                                selected
+                                            {% endif %}
+                                            {% endif %}>
+                                        Number of views
+                                    </option>
+                                    <option value="dateOfPublish"
+                                            {% if orderBy is defined %}
+                                            {% if orderBy == 'dateOfPublish' %}
+                                                selected
+                                            {% endif %}
+                                            {% endif %}>Date of publish
+                                    </option>
+                                </select>
+                                <div class="input-group custom-search-form">
+                                    <input type="text" name="keyword" class="form-control"
+                                            {% if keyword is defined %}  value="{{ keyword }}" {% endif  %}
+                                           placeholder="Search...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-secondary" type="submit">Search</button>
+                                        <a href="{{ path('news_article_show') }}"><button class="btn btn-secondary" type="button">Reset</button></a>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 border-right">
+                    <a href="{{ path('news_article_add') }}"><button type="button" class="btn btn-md btn-primary float-right">Add New</button></a>
+                </div>
+            </div>
+
+
+        </div>
+<br>
+
+      <div class="row">
+          <table class="table table-hover " id="myTable" style="background: white">
+              <thead class="bg-light ">
+              <tr>
+                  <th style="width: 60%">Title</th>
+                  <th style="width: 60%">Date of publish</th>
+                  <th>Views number</th>
+                  <th>Domain</th>
+                  <th style="width: 20%">Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              {% for a in articles  %}
+                  <tr>
+                      <td> <a href="{{ path('news_article_showOne',{'id':a.idArticle}) }}">{{ a.titleArticle }}</a></td>
+                      <td>{{ a.dateOfPublish | date }}</td>
+                      <td>{{ a.viewsNumber }}</td>
+                      <td>{{ a.domain.nameDomain }}</td>
+                      <td>
+                          <a href="{{ path('news_article_delete', {'id':a.idArticle}) }}"><i class="fa fa-trash"></i></a>
+                          <a href="{{ path('news_article_update', {'id':a.idArticle}) }}"><i class="fa fa-edit"></i></a>
+                      </td>
+                  </tr>
+              {% endfor %}
+
+              </tbody>
+          </table>
+      </div>
+
+
+
+
+
+    </div>
+
+    <div class="navigation">
+        <div class="d-flex justify-content-center">
+            <div class="col-md-12"></div>
+            <div class="col-md-6"></div>
+            <div class="col-md-1">{{ knp_pagination_render(articles) }}</div>
+        </div>
+
+    </div>
+{% endblock %}

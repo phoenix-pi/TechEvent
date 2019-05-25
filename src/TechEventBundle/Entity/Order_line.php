@@ -12,7 +12,7 @@ namespace TechEventBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="CartBundle\Repository\OrderRepository")
  */
 class Order_line
 {
@@ -24,7 +24,7 @@ class Order_line
     private $id_line;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $quantity;
 
@@ -34,16 +34,21 @@ class Order_line
     private $price;
     /**
      * @ORM\ManyToOne(targetEntity="Ticket")
-     * @ORM\JoinColumn(name="ticket_id",referencedColumnName="id_ticket")
+     * @ORM\JoinColumn(name="ticket_id",referencedColumnName="id_ticket", onDelete="CASCADE")
      */
     private $line_ticket;
     /**
      * @ORM\ManyToOne(targetEntity="Cart")
-     * @ORM\JoinColumn(name="cart_id",referencedColumnName="id_cart")
+     * @ORM\JoinColumn(name="cart_id",referencedColumnName="id_cart", onDelete="CASCADE")
      */
     private $line_cart;
 
     public function getId_Line()
+    {
+        return $this->id_line;
+    }
+
+    public function getIdLine()
     {
         return $this->id_line;
     }
@@ -79,6 +84,10 @@ class Order_line
         return $this->line_ticket;
     }
 
+    public function getLineTicket()
+    {
+        return $this->line_ticket;
+    }
 
     public function setLine_Ticket($line_ticket)
     {
@@ -87,6 +96,11 @@ class Order_line
 
 
     public function getLine_Cart()
+    {
+        return $this->line_cart;
+    }
+
+    public function getLineCart()
     {
         return $this->line_cart;
     }

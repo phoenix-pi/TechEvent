@@ -1,0 +1,129 @@
+{% extends 'base.html.twig' %}
+{% block title %}Articles{% endblock %}
+{% block content %}
+<br>
+    <style type="text/css">
+        img {width:100%;}
+    </style>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-9">
+                <div class="container">
+                    <div class="row float-right">
+                        <div class="col-sm-12 pull-center well ">
+                            {% if bookmark is not defined %}
+                                <form class="form-inline" action="{{ path('news_front_article__search') }}" method="get">
+                                {% else %}
+                                <form class="form-inline" action="{{ path('news_front_article_bookmark_search') }}" method="get">
+                                {% endif %}
+                                    <select name="domain" class="form-control">
+                                        <option value="any">Select domain</option>
+                                        {% for d in domains %}
+                                            <option
+                                                    {% if domain is defined %}
+                                                        {% if domain == d.idDomain %}
+                                                            selected
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    value="{{ d.idDomain }}">
+                                                {{ d.nameDomain }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    <select name="orderBy" class="form-control">
+                                        <option value="any">Order by</option>
+                                        <option value="viewsNumber"
+                                                {% if orderBy is defined %}
+                                            {% if orderBy == 'viewsNumber' %}
+                                                selected
+                                            {% endif %}
+                                                {% endif %}>
+                                            Number of views
+                                        </option>
+                                        <option value="dateOfPublish"
+                                                {% if orderBy is defined %}
+                                            {% if orderBy == 'dateOfPublish' %}
+                                                selected
+                                            {% endif %}
+                                                {% endif %}>Date of publish
+                                        </option>
+                                    </select>
+                                    <div class="input-group custom-search-form">
+                                        <input type="text" name="keyword" class="form-control"
+                                                {% if keyword is defined %}  value="{{ keyword }}" {% endif  %}
+                                               placeholder="Search...">
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-success" type="submit">Search</button>
+                                    </span>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 border-right">
+                </div>
+            </div>
+
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row mb-2">
+                    {% for a in articles %}
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="{{ asset('uploads/images/' ~ a.image) }}">
+                                        </div>
+                                        <div class="col-md-10">
+                                            <div class="card-body">
+                                                <div class="news-content">
+                                                    <a href="{{ path('news_front_article_showOne',{'id':a.idArticle}) }}"><h2>{{ a.titleArticle }}</h2></a>
+                                                    <p>{{ a.contentArticle|length > 200 ?  a.contentArticle|slice(0, 200) ~ '...' :  a.contentArticle  }}</p>
+                                                </div>
+                                                <div class="news-footer">
+                                                    <div class="news-author">
+                                                        <ul class="list-inline list-unstyled">
+                                                            <li class="list-inline-item text-secondary">
+                                                                <i class="fa fa-list-alt"></i>
+                                                                {{ a.domain.nameDomain }}
+                                                            </li>
+                                                            <li class="list-inline-item text-secondary">
+                                                                <i class="fa fa-eye"></i>
+                                                                {{ a.viewsNumber }}
+                                                            </li>
+                                                            <li class="list-inline-item text-secondary">
+                                                                <i class="fa fa-calendar"></i>
+                                                                {{ a.dateOfPublish | date }}
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-5"></div>
+            <div class="col-md-4 pull-center">{{ knp_pagination_render(articles) }}</div>
+
+    </div>
+    </div>
+    <br>
+    <div class="row"></div>
+{% endblock %}

@@ -1,3 +1,4 @@
+
 <link href="{{ asset('css/style_profile.css')}}" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="{{ asset('css/style_profile.css')}}">
 <div class="mainbody container-fluid">
@@ -26,11 +27,11 @@
                     <hr>
                     <h3><strong>Username</strong></h3>
                     <p>
-                        {% block username %}{{ user.username }} {% endblock%}</p>
+                        {% block username %} {% endblock%}</p>
                     <hr>
                     <h3><strong>Email</strong></h3>
                     <p>
-                        {% block email %}{{ user.email }} {% endblock%}</p>
+                        {% block email %} {% endblock%}</p>
                     <hr>
                     <h3><strong>Date of Birth</strong></h3>
                     <p>
@@ -47,6 +48,7 @@
                     <h3><strong>Status</strong></h3>
                     <p>
                         {% block status %}member/vip member/banned{% endblock%}</p>
+                    <a href="{{ path('send_vip_request')}}"> send request</a>
                     <hr>
                     <h3><strong>Clubs</strong></h3>
                     <p>
@@ -60,8 +62,10 @@
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
     <div class="panel panel-default">
         <div class="panel-body">
-            <textarea class="form-control" rows="5" placeholder="Hey !!!"></textarea>
-            <a class="btn btn-default btn-xs"><i class="fa fa-retweet" aria-hidden="true"></i> Publish </a>
+            <form class="navbar-form" role="publish" method="post" action="{{ path('profil_story_publish') }}">
+                <textarea name="content" class="form-control" rows="5" placeholder="Hey !!!"></textarea>
+                <button class="btn btn-dark" type="submit"><i class="fa fa-search"></i></button>
+            </form>
         </div>
     </div>
     <hr>

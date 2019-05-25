@@ -1,3 +1,52 @@
+profil_story_publish:
+    path:     /publish/{id}
+    defaults: { _controller: ProfilBundle:Story:publish }
+
+
 profil_homepage:
-    path:     /
-    defaults: { _controller: ProfilBundle:Default:index }
+    path:     /{id}
+    defaults: { _controller: ProfilBundle:Story:index }
+
+
+profil_story_share:
+    path:     /share/{iduser}-{idstory}
+    defaults: { _controller: ProfilBundle:User_Story:share }
+
+send_vip_request:
+    path:     /request/send
+    defaults: { _controller: ProfilBundle:Vip_request:send }
+
+
+
+
+loginmob:
+    path:     /login/login/{_username}/{_password}
+    defaults: { _controller: ProfilBundle:User:login }
+
+
+
+regeistermob:
+    path:     /register/register/{username}/{firstname}/{lastname}/{password}/{phone}/{address}/{email}
+    defaults: { _controller: ProfilBundle:User:registermob }
+
+
+
+currentusermob:
+    path:     /login/getuser/{username}
+    defaults: { _controller: ProfilBundle:User:currentuser }
+
+
+profil_story_publishmob:
+    path:     /publish/publish/{id}/{content}
+    defaults: { _controller: ProfilBundle:Story:publishmob }
+
+
+
+profil_homepagemob:
+    path:     /profile/{id}
+    defaults: { _controller: ProfilBundle:Story:indexmob }
+
+
+return_all_users:
+    path:     /all/all
+    defaults: { _controller: ProfilBundle:User:all }

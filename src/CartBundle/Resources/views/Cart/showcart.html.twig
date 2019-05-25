@@ -1,0 +1,126 @@
+{% extends app.user.hasRole('ROLE_USER')  ? 'base.html.twig' : '@Cart/Default/index.html.twig' %}
+{% block title %}Cart{% endblock %}
+{% block content %}
+<section class="cart-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="cart-table">
+                    <h3>Your Cart</h3>
+                    <div class="cart-table-warp">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th class="product-th">Event</th>
+
+                                <th class="quy-th">Quantity</th>
+
+                                <th class="size-th"> Price</th>
+
+                                <th class="total-th"></th>
+                                <th class="total-th"></th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in l %}
+                            <tr>
+
+                                <td class="product-col">
+                                    <img src="{{ asset('img/uploads/'~ i.line_ticket.event_ticket.photo ) }}" alt="">
+                                    <div class="pc-title">
+                                        <h4>{{ i.line_ticket.event_ticket ? i.line_ticket.event_ticket.event_name }}</h4>
+
+                                    </div>
+                                </td>
+                                <td class="size-col" style="padding-left:50px">
+
+                                    <div class="promo-code-form">
+                                        <input type="number"
+                                               data-price="{{ i.line_Ticket.event_ticket.PriceTicket }}"
+                                               data-total="{{ i.line_Ticket.event_ticket.PriceTicket * i.quantity}}"
+                                               data-id="{{ i.id_line }}"
+                                               class="js-quantity" name="t"
+                                               value="{% if i.quantity is null %}1{% else %}{{ i.quantity }}{% endif %}"
+                                               style="width: 180px" min="1">
+                                    </div>
+                                </td>
+                                <td class="total-col js-price">{{ i.line_Ticket.event_ticket ? i.line_Ticket.event_ticket.PriceTicket }}
+                                    DT
+                                </td>
+                                <td class="total-col"><h4 id="js-total">  {% for flashMessage in app.session.flashbag.get('notice') %}
+
+                                            <div class="alert alert-success">
+                                                {{ flashMessage }}
+                                            </div>
+
+                                        {% endfor %}</h4></td>
+                                <td class="quy-col">
+                                    <div class="quantity" style="padding-left: 50px;">
+
+                                        <a href="{{ path('ticket_del', {'id':i.id_line}) }}"><img
+                                                    src="{{ asset('img/delete.png') }} " width="25"/>
+                                           </a>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="total-cost">
+                        <h6>Total <span id="js-all-total">{{ totalPrice }}DT</span></h6>
+                    </div>
+                </div>
+                <div class="col-lg-4 card-right">
+                </div>
+                <br>
+                    <form class="promo-code-form" style="padding-left: 600px">
+                                    <a href="{{ path('show_ticket') }}" class="site-btn">Submit</a>
+                    </form>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
+    <!-- cart section end -->
+
+{% endblock %}
+
+{% block javascripts %})
+    <script>
+        console.log("hello world");
+        $(document).ready(function () {
+            $('.js-quantity').on('input keyup keydown change', function (e) {
+                $item = $(this);
+                $price = $(this).attr('data-price')
+                $quantity = $(this).val();
+                $total = $price * $quantity;
+                $(this).attr('data-total', $total);
+                $sum = 0;
+
+
+                $("input[data-total]").each(function () {
+                    $sum += parseInt($(this).attr('data-total'));
+                });
+                $('#js-all-total').text($sum + "DT");
+
+                // Update Quantity
+                $id = $(this).attr('data-id');
+                $.get('updateQuantity/' + $id + '/' + $quantity, function (data) {
+                    // console.log(data);
+                });
+            });
+
+
+
+
+        });
+
+    </script>
+{% endblock %}

@@ -1,1 +1,146 @@
-Hello World!
+{% extends "@FOSUser/layout.html.twig" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+    <link href="{{ asset('css/style_profile.css')}}" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="{{ asset('css/style_profile.css')}}">
+    <div class="mainbody container-fluid">
+        <div class="row">
+            <div class="navbar-wrapper">
+                <div class="container-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block fos_user_content %}
+        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="media">
+                        <div class="media-body">
+                            {% for user in user %}
+                                <div align="center">
+                                    <img class="thumbnail img-responsive"  width="250px" height="300px" src="{{ asset('devis/' ~ user.devisName) }}">
+                                </div>
+                                <p>
+                                <h2><strong>
+                                    {{ user.username }}
+                                    </strong>
+                                </h2>
+                                </p>
+                                {% if app.user.id == id %}
+                                    <p><a href="{{ path('fos_user_profile_edit')}}"> Update profile</a></p>
+                                {% endif %}
+                                <hr>
+                                <h4><strong>Full name</strong></h4>
+                                <p>
+                                     {{ user.firstname }} {{ user.lastname }}
+                                </p>
+                                <hr>
+                                <h4><strong>Email</strong></h4>
+                                <p>
+                                    {{ user.email }}
+                                </p>
+                                <hr>
+                                <h4><strong>Address</strong></h4>
+                                <p>
+                                    {{ user.address }}
+                                </p>
+                                <hr>
+                                <h4><strong>Phone Number</strong></h4>
+                                <p>
+                                    {{ user.phone }}
+                                </p>
+                                <hr>
+                                <h4><strong>Status</strong></h4>
+                                <p>
+                                    {{ user.status }}
+                                </p>
+                                {% if app.user.id == id %}
+                                    {% if user.status != 'VIP' %}
+                                        <a href="{{ path('send_vip_request')}}"> send request</a>
+                                    {% endif %}
+                                {% endif %}
+                                <hr>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+    {% block stories %}
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        {% if app.user.id == id %}
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form class="navbar-form" name="publish" method="post" action="{{ path('profil_story_publish', { 'id': app.user.id })}}">
+                        <textarea name="content" class="form-control" cols="120" rows="5" placeholder="Hey !!!"></textarea>
+                        <button style="margin:5px;padding:4px" name="publish" class="btn btn-dark" >Publish</button>
+                    </form>
+                </div>
+            </div>
+        {% endif %}
+        {% for story in stories %}
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+                    <div class="pull-left">
+                        <a href="#">
+                            <img class="media-object img-circle" src="{{ asset('devis/' ~ story.user.devisName) }}" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                        </a>
+                    </div>
+                    <h4><a href="{{ path('profil_homepage', { 'id': story.user.id }) }}" style="text-decoration:none;"><strong>
+                                {{ story.user }}
+                            </strong></a>  <small><small><i><i class="fa fa-clock-o"></i> {{ story.creation_date|date }}</i></small></small>
+                    </h4>
+
+                    <hr>
+                    <div class="post-content">
+                        <p>{{ story.content_story }}.</p>
+                    </div>
+                    <div class="pull-right btn-group-xs">
+
+                    </div>
+
+                    {% if app.user.id != id %}
+
+                        <form class="navbar-form"  method="post" action="{{ path('profil_story_share', {'iduser': app.user.id ,'idstory':story.id_story})}}">
+
+                            <button style="float:right;margin:5px;padding:4px" name="share" class="btn btn-dark" >Share</button>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        </hr>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h2>Shared Stories :</h2>
+                <hr>
+                {% for shared in shared %}
+                    <div class="post-content">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="pull-left">
+                                    <a href="#">
+                                        <img class="media-object img-circle" src="{{ asset('devis/' ~ shared.user.devisName) }}" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                                    </a>
+                                </div>
+                                <h4><a href="{{ path('profil_homepage', { 'id': shared.user.id }) }}" ><strong>{{ shared.user }}</strong></a>  <small><small><i><i class="fa fa-clock-o"></i> {{ shared.creation_date|date }}</i></small></small></h4>
+                                <hr>
+                                <div class="post-content">
+                                    {{ shared.content_story }}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+        </div>
+    {% endblock %}
+{% endblock %}

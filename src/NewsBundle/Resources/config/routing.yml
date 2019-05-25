@@ -1,5 +1,124 @@
-news_homepage:
-    path:     /
+news_notAllowed:
+    path:     /notAllowed
+    defaults: { _controller: NewsBundle:Default:NotAllowed }
+
+news_domain_homepage:
+    path:     /domain/
     defaults: { _controller: NewsBundle:Domain:index }
 
+news_domain_delete:
+    path:     /domain/delete/{id}
+    defaults: { _controller: NewsBundle:Domain:delete }
 
+news_domain_update:
+    path:     domain/update/{id}
+    defaults: { _controller: NewsBundle:Domain:update }
+
+news_domain_search:
+    path:     domain/search
+    defaults: { _controller: NewsBundle:Domain:search }
+
+news_article_add:
+    path:     /article/add
+    defaults: { _controller: NewsBundle:Article:add }
+
+news_article_show:
+    path:     /article/show
+    defaults: { _controller: NewsBundle:Article:show }
+
+news_article_showOne:
+    path:     /article/show/{id}
+    defaults: { _controller: NewsBundle:Article:showOne }
+
+news_article_delete:
+    path:   /article/delete/{id}
+    defaults: { _controller: NewsBundle:Article:delete }
+
+news_article_update:
+    path:   /article/update/{id}
+    defaults: { _controller: NewsBundle:Article:update }
+
+news_article_search:
+    path:   /article/search
+    defaults: { _controller: NewsBundle:Article:search }
+
+news_front_article_show:
+    path:   /front/article/show
+    defaults: { _controller: NewsBundle:Article:showfront }
+
+news_front_article_showOne:
+    path:     /front/article/show/{id}
+    defaults: { _controller: NewsBundle:Article:showOneFront }
+
+news_front_article__search:
+    path:     /front/article/search
+    defaults: { _controller: NewsBundle:Article:searchFront }
+
+news_front_article_add:
+    path:     /front/article/save/{id}
+    defaults: { _controller: NewsBundle:Save:addBookmark }
+
+news_front_article_show_bookmark:
+    path:     /front/article/saved
+    defaults: { _controller: NewsBundle:Save:showBookmarks }
+
+news_front_article_bookmark_search:
+    path:     /front/article/bookmark/search
+    defaults: { _controller: NewsBundle:Save:searchFrontBookmark }
+
+news_front_article_remove:
+    path:     /front/article/remove/{id}
+    defaults: { _controller: NewsBundle:Save:removeBookmark }
+
+news_front_subs_add:
+    path:     /subscribe
+    defaults: { _controller: NewsBundle:Subscribe:subscribe }
+
+news_front_subs_getAll:
+    path:     /sub/all
+    defaults: { _controller: NewsBundle:Subscribe:getAll }
+
+news_front_subs_remove:
+    path:     /sub/remove/{id}
+    defaults: { _controller: NewsBundle:Subscribe:remove }
+
+news_sub_search:
+    path:     /sub/search
+    defaults: { _controller: NewsBundle:Subscribe:search }
+
+news_front_subs_remove_visitor:
+    path:     /sub/removeVisitor/{id}
+    defaults: { _controller: NewsBundle:Subscribe:removeVisitor }
+
+news_sub_update:
+    path:     /sub/update/{id}
+    defaults: { _controller: NewsBundle:Subscribe:update }
+
+news_letter_create:
+    path:     /newsletter/create
+    defaults: { _controller: NewsBundle:Newsletter:create }
+
+
+mobile_article_all:
+    path:     /all
+    defaults: { _controller: NewsBundle:Article:all }
+
+mobile_article_bookmark_save:
+    path:     /save/{idArticle}/{idUser}
+    defaults: { _controller: NewsBundle:Save:saveBookmark }
+
+mobile_article_bookmark_unsave:
+    path:     /unsave/{idArticle}/{idUser}
+    defaults: { _controller: NewsBundle:Save:unsaveBookmark }
+
+mobile_article_bookmark_all:
+    path:     /all/{idUser}
+    defaults: { _controller: NewsBundle:Save:allBookmarks}
+
+mobile_domain_all:
+    path:     /domains
+    defaults: { _controller: NewsBundle:Domain:all }
+
+mobile_subs_add:
+    path:     /subscribeMobile
+    defaults: { _controller: NewsBundle:Subscribe:subscribeMobile }
